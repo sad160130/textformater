@@ -33,42 +33,31 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['capitalize words', 'headline capitalization', 'title capitalization rules', 'AP style', 'Chicago style', 'APA format', 'convert to title case', 'proper case', 'capitalize each word', 'headline case generator'],
     relatedEntities: ['Associated Press Stylebook', 'Chicago Manual of Style', 'MLA format', 'text formatting', 'typography', 'content writing'],
     longDescription: `
-      <p>The <strong>Title Case Converter</strong> is a powerful online text formatting tool that automatically capitalizes the first letter of each major word in your text, following standard English title capitalization rules. This essential writing utility transforms lowercase or mixed-case text into professionally formatted titles suitable for headlines, book titles, article headings, email subject lines, and academic papers.</p>
+      <p>Ever stared at a headline wondering if "with" should be capitalized? You're not alone. Title case trips up even experienced writers because the rules aren't as straightforward as "capitalize everything" — and that's exactly why this tool exists.</p>
 
-      <h3>Understanding Title Case Capitalization Rules</h3>
-      <p>Title case follows specific capitalization conventions established by major style guides including the <em>Associated Press (AP) Stylebook</em>, <em>Chicago Manual of Style</em>, and <em>APA Publication Manual</em>. The fundamental rules include:</p>
-      <ul>
-        <li><strong>Always capitalize</strong> the first and last word of the title</li>
-        <li><strong>Capitalize all major words</strong> including nouns, verbs, adjectives, adverbs, and pronouns</li>
-        <li><strong>Lowercase minor words</strong> such as articles (a, an, the), coordinating conjunctions (and, but, or, for, nor, so, yet), and short prepositions (at, by, for, in, of, on, to, up)</li>
-        <li><strong>Capitalize prepositions</strong> of four or more letters (about, above, across, after, along)</li>
-      </ul>
+      <p>Here's the deal: title case capitalizes major words while keeping minor ones lowercase. Sounds simple until you realize "through" gets capitalized (5+ letters) but "from" doesn't (4 letters). The Associated Press says one thing, Chicago Manual says another, and your boss probably has their own opinion entirely.</p>
 
-      <h3>How Our Title Case Converter Works</h3>
-      <p>Our intelligent algorithm analyzes each word in your input text and applies the appropriate capitalization based on its grammatical role and position. The converter processes text instantly in your browser, providing real-time results as you type. Unlike simple "capitalize every word" tools, our converter implements smart logic to handle edge cases like hyphenated words, contractions, and words following colons.</p>
+      <table>
+        <tr><th>Word Type</th><th>Rule</th><th>Examples</th></tr>
+        <tr><td>Nouns, verbs, adjectives</td><td>Always capitalize</td><td>Dog, Running, Beautiful</td></tr>
+        <tr><td>Articles</td><td>Lowercase (unless first/last)</td><td>a, an, the</td></tr>
+        <tr><td>Short prepositions</td><td>Lowercase</td><td>at, by, for, in, of, on, to</td></tr>
+        <tr><td>Long prepositions (4+ letters)</td><td>Capitalize</td><td>About, Through, Between</td></tr>
+        <tr><td>Conjunctions</td><td>Lowercase</td><td>and, but, or, nor</td></tr>
+      </table>
 
-      <h3>Common Applications for Title Case</h3>
-      <p>Professional writers, content creators, journalists, and academics rely on title case for various purposes:</p>
-      <ul>
-        <li><strong>Blog post titles and article headlines</strong> - Create attention-grabbing, professionally formatted headings</li>
-        <li><strong>Book titles and chapter headings</strong> - Follow publishing industry standards</li>
-        <li><strong>Email subject lines</strong> - Improve open rates with properly formatted subjects</li>
-        <li><strong>Presentation slides</strong> - Maintain consistent formatting throughout your deck</li>
-        <li><strong>Academic papers and essays</strong> - Meet citation and formatting requirements</li>
-        <li><strong>Social media posts</strong> - Stand out with professional-looking headlines</li>
-      </ul>
+      <p>The converter handles the weird edge cases too. Hyphenated compounds like "Self-Aware" or words after colons — stuff that makes you second-guess yourself at 2am before a deadline.</p>
 
-      <h3>Title Case vs Other Text Cases</h3>
-      <p>Understanding the difference between text cases helps you choose the right format:</p>
-      <ul>
-        <li><strong>Title Case:</strong> The Quick Brown Fox Jumps Over the Lazy Dog</li>
-        <li><strong>Sentence case:</strong> The quick brown fox jumps over the lazy dog</li>
-        <li><strong>UPPERCASE:</strong> THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG</li>
-        <li><strong>lowercase:</strong> the quick brown fox jumps over the lazy dog</li>
-      </ul>
+      <h3>Why does any of this matter?</h3>
+      <p>Inconsistent capitalization looks unprofessional. Period. Whether you're writing email subject lines (which directly impact open rates, by the way), formatting a thesis, or just trying to make your Medium article look legit — proper title case signals that you know what you're doing.</p>
 
-      <h3>Browser-Based Privacy Protection</h3>
-      <p>Your text never leaves your device. All title case conversion processing happens locally in your web browser using JavaScript, ensuring complete privacy for sensitive content like unpublished article titles, confidential document headings, or proprietary business materials.</p>
+      <blockquote>Quick comparison:<br/>
+      ✗ "how to write better content for your website"<br/>
+      ✓ "How to Write Better Content for Your Website"</blockquote>
+
+      <p>One looks like a draft. The other looks published.</p>
+
+      <p>Everything runs in your browser — no server uploads, no data collection. Type something confidential? It never leaves your machine. That's not marketing speak; it's just how client-side JavaScript works.</p>
     `,
     examples: [
       {
@@ -135,45 +124,25 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['capitalize first letter', 'sentence capitalization', 'proper sentence format', 'text case converter', 'lowercase converter', 'fix capitalization', 'grammar formatting', 'automatic capitalization'],
     relatedEntities: ['grammar rules', 'punctuation', 'writing style', 'text formatting', 'content editing'],
     longDescription: `
-      <p>The <strong>Sentence Case Converter</strong> transforms your text into proper sentence case format, where only the first letter of each sentence and proper nouns are capitalized. This natural, readable text format is the standard for body text, paragraphs, and general writing across virtually all content types.</p>
+      <p>Got text that looks like someone held down Caps Lock by accident? Or maybe you've copied something from a PDF and the capitalization came out completely wrong. Sentence case fixes that — capitalize the first letter of each sentence, lowercase everything else.</p>
 
-      <h3>What Is Sentence Case?</h3>
-      <p>Sentence case is the conventional capitalization style used in everyday writing. It follows standard English grammar rules:</p>
-      <ul>
-        <li><strong>First word of each sentence</strong> is capitalized</li>
-        <li><strong>Proper nouns</strong> (names of people, places, organizations) remain capitalized</li>
-        <li><strong>All other words</strong> are lowercase</li>
-        <li><strong>The pronoun "I"</strong> is always capitalized</li>
-      </ul>
+      <p>That's it. That's what this tool does. No overthinking required.</p>
 
-      <h3>Why Convert Text to Sentence Case?</h3>
-      <p>You might need sentence case conversion when:</p>
-      <ul>
-        <li><strong>Fixing ALL CAPS text</strong> - Convert shouting text to normal readable format</li>
-        <li><strong>Normalizing copied content</strong> - Standardize text from various sources</li>
-        <li><strong>Reformatting titles to body text</strong> - Convert headlines for use in paragraphs</li>
-        <li><strong>Cleaning up OCR text</strong> - Fix capitalization errors from scanned documents</li>
-        <li><strong>Standardizing data imports</strong> - Normalize database entries and spreadsheet content</li>
-      </ul>
+      <h3>When you'll actually use this</h3>
+      <p>1. Someone sends you a SHOUTY EMAIL and you need to quote it without looking aggressive.</p>
+      <p>2. You're reformatting headlines into regular body text for an article.</p>
+      <p>3. OCR software mangled your scanned document and now "ThE QuIcK BrOwN fOx" needs rescuing.</p>
+      <p>4. Data cleanup — spreadsheets full of inconsistent capitalization that need normalizing before import.</p>
 
-      <h3>Sentence Case vs Title Case</h3>
-      <p>Understanding when to use each format is crucial for professional writing:</p>
-      <ul>
-        <li><strong>Sentence case:</strong> "The quick brown fox jumps over the lazy dog" - Used for body text, paragraphs, and general content</li>
-        <li><strong>Title case:</strong> "The Quick Brown Fox Jumps Over the Lazy Dog" - Used for headlines, titles, and headings</li>
-      </ul>
+      <h3>Sentence case vs. title case — quick breakdown:</h3>
+      <p><strong>Sentence case:</strong> "The quick brown fox jumps over the lazy dog."<br/>
+      <strong>Title case:</strong> "The Quick Brown Fox Jumps Over the Lazy Dog"</p>
 
-      <h3>How Our Converter Works</h3>
-      <p>Our sentence case converter intelligently processes your text by:</p>
-      <ol>
-        <li>Converting all text to lowercase as a baseline</li>
-        <li>Identifying sentence boundaries (periods, exclamation marks, question marks)</li>
-        <li>Capitalizing the first letter following each sentence-ending punctuation</li>
-        <li>Processing text instantly in your browser for immediate results</li>
-      </ol>
+      <p>Sentence case reads naturally. It's what you're reading right now. Title case is for headlines and, well, titles. Mix them up and your content looks inconsistent.</p>
 
-      <h3>Perfect for Content Cleanup</h3>
-      <p>Whether you're editing articles, cleaning up copied text, or standardizing content from multiple sources, our sentence case converter ensures consistent, readable formatting throughout your documents.</p>
+      <p>One catch: the converter can't magically know which words are proper nouns. "paris" becomes "paris" not "Paris" — you'll need to fix names and places manually. That's a limitation of any automated tool that doesn't have a dictionary of every proper noun ever.</p>
+
+      <p>Processing happens locally. Your text stays on your device. Type whatever you want — confidential memos, embarrassing drafts, that passive-aggressive email you're workshopping — none of it gets uploaded anywhere.</p>
     `,
     examples: [
       {
@@ -231,43 +200,31 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['spongebob text', 'mocking text generator', 'sarcastic text', 'mixed case text', 'aLtErNaTiNg CaPiTaLs', 'meme text', 'troll text', 'mockery text'],
     relatedEntities: ['SpongeBob SquarePants meme', 'internet memes', 'social media text', 'Unicode text', 'text effects'],
     longDescription: `
-      <p>The <strong>Alternating Case Generator</strong> (also known as the <em>Mocking SpongeBob Text Generator</em> or <em>Sarcasm Text Generator</em>) creates text where uppercase and lowercase letters alternate, producing the iconic "aLtErNaTiNg CaSe" effect popularized by internet memes and social media.</p>
+      <p>"wE sHoULd aLL wAkE uP aT 5aM tO bE sUcCeSsFuL"</p>
 
-      <h3>The Origin of Alternating Case Text</h3>
-      <p>Alternating case text gained massive popularity through the "Mocking SpongeBob" meme that emerged in 2017. The meme features SpongeBob SquarePants in a chicken-like pose, with captions written in alternating case to convey mockery, sarcasm, or ironic repetition of someone's statement. Since then, this text style has become a universal symbol of sarcasm on the internet.</p>
+      <p>You know exactly what that means. You've seen the chicken-SpongeBob meme. You've probably used this text style to roast someone's bad take on Twitter. It's become the universal internet shorthand for "I'm mocking what you just said."</p>
 
-      <h3>How Alternating Case Works</h3>
-      <p>Our generator processes each letter in your text sequentially, alternating between lowercase and uppercase:</p>
-      <ul>
-        <li>First letter: lowercase (a)</li>
-        <li>Second letter: UPPERCASE (B)</li>
-        <li>Third letter: lowercase (c)</li>
-        <li>Pattern continues throughout the text</li>
-        <li>Non-alphabetic characters (numbers, spaces, punctuation) are preserved without affecting the pattern</li>
-      </ul>
+      <p>The Mocking SpongeBob meme exploded in May 2017 and somehow never died. Seven years later, alternating case is still the fastest way to convey sarcasm in text without adding "/s" like some kind of coward.</p>
 
-      <h3>When to Use Alternating Case</h3>
-      <p>This text style is perfect for:</p>
-      <ul>
-        <li><strong>Meme creation</strong> - Create authentic Mocking SpongeBob and similar memes</li>
-        <li><strong>Sarcastic responses</strong> - Convey irony and mockery in comments and messages</li>
-        <li><strong>Social media humor</strong> - Stand out on Twitter, Reddit, Discord, and other platforms</li>
-        <li><strong>Playful teasing</strong> - Good-natured ribbing among friends</li>
-        <li><strong>Mimicking someone</strong> - Ironically quote what someone said</li>
-      </ul>
+      <h3>How it actually works</h3>
+      <p>The generator alternates each letter between lowercase and uppercase. Simple. Spaces and punctuation don't break the pattern — they just pass through untouched.</p>
 
-      <h3>Cultural Significance</h3>
-      <p>Alternating case has evolved beyond simple mockery to become a nuanced form of digital communication. It can convey:</p>
-      <ul>
-        <li>Sarcasm and irony</li>
-        <li>Playful disagreement</li>
-        <li>Self-deprecating humor</li>
-        <li>Absurdist comedy</li>
-        <li>Commentary on perceived foolishness</li>
-      </ul>
+      <p>Input: "I think pineapple belongs on pizza"<br/>
+      Output: "i ThInK pInEaPpLe BeLonGs On PiZzA"</p>
 
-      <h3>Works Everywhere</h3>
-      <p>Since alternating case uses standard ASCII letters (no special Unicode characters), it displays correctly on virtually every platform and device, including Twitter, Facebook, Instagram, Discord, Reddit, SMS messages, and email.</p>
+      <p>Now paste that into your group chat and watch the chaos unfold.</p>
+
+      <h3>The unwritten rules</h3>
+      <p>There's an etiquette here that nobody explicitly teaches:</p>
+      <p>• Using it on someone's genuine opinion = mocking them<br/>
+      • Using it on yourself = self-deprecating humor<br/>
+      • Using it in professional contexts = career-limiting move<br/>
+      • Using it on your boss = definitely do not</p>
+
+      <p>It reads as sarcastic 100% of the time. There's no "sincere" way to use alternating case. If you type "i LoVe YoUr PrEsEnTaTiOn," HR might get involved.</p>
+
+      <h3>Platform compatibility</h3>
+      <p>Works everywhere — Twitter, Discord, Reddit, Instagram, TikTok, WhatsApp, texts, email. It's just regular ASCII letters alternating case, so there's nothing special for platforms to not support. No weird Unicode that might show up as boxes on someone's ancient phone.</p>
     `,
     examples: [
       {
@@ -325,47 +282,35 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['backwards text', 'mirror text', 'flip text', 'reverse letters', 'text reverser', 'backwards typing', 'reverse string', 'palindrome checker'],
     relatedEntities: ['palindromes', 'text manipulation', 'cryptography basics', 'word games', 'puzzles'],
     longDescription: `
-      <p>The <strong>Reverse Text Generator</strong> instantly flips your text backwards, either character-by-character or word-by-word. This versatile tool is useful for creating mirror text effects, checking palindromes, adding mystery to messages, and various creative applications.</p>
+      <p>Leonardo da Vinci filled 13,000 pages of notebooks with mirror writing — text that reads normally when held up to a mirror. Was he hiding secrets from the Catholic Church? Protecting intellectual property centuries before patents existed? Or was he just left-handed and trying not to smudge ink?</p>
 
-      <h3>Two Reversal Modes</h3>
-      <p>Our tool offers two distinct ways to reverse your text:</p>
-      <ul>
-        <li><strong>Character reversal:</strong> "Hello World" → "dlroW olleH" - Every character is reversed, creating true mirror text</li>
-        <li><strong>Word reversal:</strong> "Hello World" → "World Hello" - Words maintain their spelling but appear in reverse order</li>
-      </ul>
+      <p>Historians still argue about it. But the technique works, and you don't need to be a Renaissance genius to use it.</p>
 
-      <h3>Practical Applications</h3>
-      <p>Reverse text generation serves many purposes:</p>
-      <ul>
-        <li><strong>Palindrome verification</strong> - Check if a word or phrase reads the same forwards and backwards</li>
-        <li><strong>Creative writing</strong> - Add mysterious or magical elements to stories</li>
-        <li><strong>Puzzle creation</strong> - Design word puzzles and games</li>
-        <li><strong>Secret messages</strong> - Create simple encoded messages for fun</li>
-        <li><strong>Mirror text art</strong> - Design symmetrical text-based artwork</li>
-        <li><strong>Programming practice</strong> - Verify string reversal algorithm outputs</li>
-        <li><strong>Social media fun</strong> - Post intriguing backwards messages</li>
-      </ul>
+      <h3>Two ways to flip text</h3>
 
-      <h3>Understanding Palindromes</h3>
-      <p>A palindrome reads the same forwards and backwards. Famous examples include:</p>
-      <ul>
-        <li><strong>Words:</strong> radar, level, civic, kayak, madam</li>
-        <li><strong>Phrases:</strong> "A man a plan a canal Panama"</li>
-        <li><strong>Sentences:</strong> "Was it a car or a cat I saw"</li>
-      </ul>
-      <p>Use our reverse text tool to verify palindromes by comparing the original to the reversed version.</p>
+      <p><strong>Character reversal</strong> gives you true mirror text:</p>
+      <p>"Meet me at midnight" → "thgindim ta em teeM"</p>
 
-      <h3>Historical Context</h3>
-      <p>Reversed text has been used throughout history for various purposes, from Leonardo da Vinci's famous mirror writing in his notebooks to modern applications in design and entertainment. The technique adds an element of mystery and requires readers to engage more actively with the content.</p>
+      <p><strong>Word reversal</strong> keeps words readable but reorders them:</p>
+      <p>"Meet me at midnight" → "midnight at me Meet"</p>
 
-      <h3>Technical Details</h3>
-      <p>Our reverse text generator processes Unicode characters correctly, handling:</p>
-      <ul>
-        <li>Standard ASCII letters and numbers</li>
-        <li>Punctuation and special characters</li>
-        <li>Accented characters and diacritics</li>
-        <li>Multi-byte Unicode characters</li>
-      </ul>
+      <p>Different effects, different uses. Character reversal is the classic "secret message" approach. Word reversal is more like Yoda-speak.</p>
+
+      <h3>The palindrome thing</h3>
+      <p>Here's a neat trick: type a word and reverse it. If both versions match, you've got a palindrome.</p>
+
+      <p>racecar → racecar ✓<br/>
+      kayak → kayak ✓<br/>
+      hello → olleh ✗</p>
+
+      <p>Works for phrases too, if you ignore spaces: "A man a plan a canal Panama" reads the same both directions. People have written entire novels with palindromic constraints. (They're not great novels, but still impressive.)</p>
+
+      <h3>What people actually use this for</h3>
+      <p>Creating puzzles for escape rooms and scavenger hunts. Adding mysterious text to fantasy stories and games. Making social media posts that reward people who actually read them. Checking if their string reversal algorithm actually works (devs, you know who you are).</p>
+
+      <p>Sometimes kids just think backwards text is cool. They're right.</p>
+
+      <p>Technical note: handles Unicode properly — emojis, accented characters, all of it. Though some complex emojis with modifiers might get weird. Standard text works perfectly.</p>
     `,
     examples: [
       {
@@ -428,52 +373,28 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['flip text upside down', 'inverted text', 'flipped letters', 'rotated text', 'Unicode upside down', 'ǝʇoɹ text', 'turned text', 'flip font'],
     relatedEntities: ['Unicode characters', 'special text effects', 'social media formatting', 'text art', 'character mapping'],
     longDescription: `
-      <p>The <strong>Upside Down Text Generator</strong> transforms your text into ʇxǝʇ uʍop ǝpᴉsdn using special Unicode characters that appear rotated 180 degrees. This eye-catching effect works on most websites, social media platforms, and messaging apps, allowing you to create unique, attention-grabbing content.</p>
+      <p>ʇxǝʇ sᴉɥʇ pɐǝɹ uɐɔ noʎ</p>
 
-      <h3>How Upside Down Text Works</h3>
-      <p>Our generator doesn't simply flip an image—it replaces each standard letter with a corresponding Unicode character that visually resembles the letter rotated 180 degrees. For example:</p>
-      <ul>
-        <li>a → ɐ</li>
-        <li>b → q</li>
-        <li>e → ǝ</li>
-        <li>m → ɯ</li>
-        <li>t → ʇ</li>
-      </ul>
-      <p>The text is also reversed so it reads correctly when viewed upside down, creating an authentic rotated appearance.</p>
+      <p>If you just tilted your head (or your phone), congrats — you've discovered why upside-down text is weirdly compelling. It's not an image trick. Each character gets swapped with a Unicode lookalike that happens to resemble the original letter flipped 180°.</p>
 
-      <h3>Unicode Character Mapping</h3>
-      <p>The upside-down effect relies on carefully selected Unicode characters from various character sets including:</p>
-      <ul>
-        <li><strong>IPA (International Phonetic Alphabet)</strong> - Characters like ɐ, ǝ, ɹ</li>
-        <li><strong>Latin Extended</strong> - Characters like ʍ, ʎ</li>
-        <li><strong>Mathematical symbols</strong> - Characters like ∀ (for A), ∩ (for U)</li>
-        <li><strong>Special Unicode blocks</strong> - Various rotated character representations</li>
-      </ul>
+      <h3>The Unicode wizardry behind it</h3>
+      <p>There's no "rotate text" button in Unicode. Instead, we're raiding obscure character sets for letters that happen to look upside-down:</p>
 
-      <h3>Creative Uses for Upside Down Text</h3>
-      <ul>
-        <li><strong>Social media profiles</strong> - Create unique bios and usernames</li>
-        <li><strong>Comments and posts</strong> - Stand out in discussion threads</li>
-        <li><strong>Discord and gaming</strong> - Unique server nicknames and messages</li>
-        <li><strong>Text art and design</strong> - Creative typography effects</li>
-        <li><strong>Jokes and pranks</strong> - Humorous messages for friends</li>
-        <li><strong>Attention grabbing</strong> - Make important text stand out</li>
-      </ul>
+      <p>The letter 'a' becomes 'ɐ' (from the International Phonetic Alphabet — linguists use it for the "uh" sound in "about").</p>
+      <p>The letter 'e' becomes 'ǝ' (another IPA character, the schwa).</p>
+      <p>For 'A', we use '∀' — which is actually the mathematical "for all" symbol.</p>
 
-      <h3>Platform Compatibility</h3>
-      <p>Upside-down text works on most modern platforms:</p>
-      <ul>
-        <li>✓ Twitter, Facebook, Instagram</li>
-        <li>✓ Discord, Slack, WhatsApp</li>
-        <li>✓ YouTube comments</li>
-        <li>✓ Reddit posts and comments</li>
-        <li>✓ Email (most clients)</li>
-        <li>✓ Most websites and forums</li>
-      </ul>
-      <p>Some older systems or specific fonts may not display all characters correctly, showing boxes or question marks instead.</p>
+      <p>It's a hack. A clever, decades-old hack that exploits the fact that Unicode has 150,000+ characters and some of them just happen to look like other letters doing a headstand.</p>
 
-      <h3>Limitations</h3>
-      <p>Not every letter has a perfect upside-down equivalent in Unicode. Some characters (like 's' or 'o') look similar when rotated, while others are approximations. Numbers have their own rotated versions where possible.</p>
+      <h3>Where it works (and where it doesn't)</h3>
+      <p>Most modern platforms handle Unicode fine: Twitter, Discord, Reddit, Instagram, Facebook, WhatsApp, YouTube comments. Your upside-down bio will display correctly.</p>
+
+      <p>Where it might break: ancient forum software, some email clients, systems with limited font support. Instead of ɐ you might see □ or a question mark. Nothing you can do about that — blame their font, not the text.</p>
+
+      <h3>The imperfect letters</h3>
+      <p>Some letters don't have great upside-down equivalents. 'S' looks basically the same flipped, so it stays as 's'. Same with 'o', 'x', 'z'. Others are approximations at best. It's close enough to read, which is the whole point.</p>
+
+      <p>Fun fact: the text also gets reversed left-to-right. Otherwise "Hello" would read as "ollǝH" upside down instead of "ollǝH" — wait, that's the same. Bad example. Point is: the reversal matters for it to read correctly when you actually flip your screen.</p>
     `,
     examples: [
       {
@@ -531,45 +452,26 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['small capitals', 'ᴜɴɪᴄᴏᴅᴇ small caps', 'fancy text', 'small capital letters', 'stylish text', 'social media fonts', 'text decoration', 'typography effects'],
     relatedEntities: ['Unicode', 'typography', 'font styles', 'text formatting', 'social media text'],
     longDescription: `
-      <p>The <strong>Small Caps Generator</strong> converts your text into sᴍᴀʟʟ ᴄᴀᴘɪᴛᴀʟs using special Unicode characters. This elegant typographic style uses capital letter forms at a smaller size, creating a sophisticated, distinctive appearance perfect for social media bios, usernames, and stylish text content.</p>
+      <p>ᴛʜɪs ɪs ᴡʜᴀᴛ sᴍᴀʟʟ ᴄᴀᴘs ʟᴏᴏᴋ ʟɪᴋᴇ.</p>
 
-      <h3>What Are Small Caps?</h3>
-      <p>Small caps (small capitals) is a typographic convention where lowercase letters are replaced with smaller versions of capital letters. In traditional typography, small caps are typically the height of lowercase letters (x-height) but use uppercase letterforms. Our generator achieves this effect using Unicode characters.</p>
+      <p>Typography nerds have loved small caps for centuries. In print, they're capital letters scaled down to x-height (roughly the height of a lowercase 'x'). On the web, there's a CSS property for it. But on Instagram? Twitter? Discord? You're on your own.</p>
 
-      <h3>Traditional vs Unicode Small Caps</h3>
-      <p>Traditional small caps require special font support and CSS styling, limiting where they can be used. Our Unicode small caps work differently:</p>
-      <ul>
-        <li><strong>Traditional small caps:</strong> CSS property (font-variant: small-caps) - only works where CSS is supported</li>
-        <li><strong>Unicode small caps:</strong> Special characters that look like small capitals - works anywhere Unicode is supported</li>
-      </ul>
+      <p>Unless you use Unicode substitutions. That's what this tool does.</p>
 
-      <h3>The Unicode Small Caps Alphabet</h3>
-      <p>Our generator maps standard letters to these Unicode small cap characters:</p>
-      <p>ᴀ ʙ ᴄ ᴅ ᴇ ғ ɢ ʜ ɪ ᴊ ᴋ ʟ ᴍ ɴ ᴏ ᴘ ǫ ʀ s ᴛ ᴜ ᴠ ᴡ x ʏ ᴢ</p>
-      <p>Note: Not all letters have perfect small cap equivalents in Unicode (like 's' and 'x'), so standard lowercase letters are used for those.</p>
+      <h3>The actual character mapping</h3>
+      <p>We swap each letter with its closest Unicode equivalent from the IPA (International Phonetic Alphabet) or Latin Extended blocks:</p>
 
-      <h3>Popular Uses for Small Caps</h3>
-      <ul>
-        <li><strong>Instagram bios</strong> - Create elegant, distinctive profiles</li>
-        <li><strong>Twitter names</strong> - Stand out with stylish display names</li>
-        <li><strong>Discord usernames</strong> - Unique server identities</li>
-        <li><strong>Brand aesthetics</strong> - Consistent, stylish text across platforms</li>
-        <li><strong>Formal emphasis</strong> - Highlight text with sophisticated styling</li>
-        <li><strong>Design mockups</strong> - Preview small caps before implementing with CSS</li>
-      </ul>
+      <p>A→ᴀ B→ʙ C→ᴄ D→ᴅ E→ᴇ F→ғ G→ɢ H→ʜ I→ɪ J→ᴊ K→ᴋ L→ʟ M→ᴍ N→ɴ O→ᴏ P→ᴘ Q→ǫ R→ʀ S→s T→ᴛ U→ᴜ V→ᴠ W→ᴡ X→x Y→ʏ Z→ᴢ</p>
 
-      <h3>Typography Heritage</h3>
-      <p>Small caps have a rich typographic history, traditionally used for:</p>
-      <ul>
-        <li>Acronyms and initialisms (NATO, NASA)</li>
-        <li>Roman numerals in text (ɪɪɪ, ɪᴠ, ᴠɪ)</li>
-        <li>Author names in bibliographies</li>
-        <li>Running headers in books</li>
-        <li>Formal document formatting</li>
-      </ul>
+      <p>Notice the gaps? S and X don't have proper small cap Unicode characters. They just stay lowercase. It's annoying but there's no fix — Unicode simply doesn't have characters for every typographic whim.</p>
 
-      <h3>Accessibility Considerations</h3>
-      <p>Screen readers may pronounce Unicode small caps characters differently than intended letters. For accessibility-critical content, use traditional CSS small caps instead. Unicode small caps are best for decorative purposes where visual appearance is the priority.</p>
+      <h3>Why people use this</h3>
+      <p>Mostly aesthetics. Small caps feel more refined than ALL CAPS (which feels like yelling) but more formal than regular lowercase. Luxury brands do this constantly. So do law firms, fashion labels, wedding invitations.</p>
+
+      <p>On social media, small caps make your bio look intentional. Like you thought about your typography choices. Whether or not that actually matters is debatable, but perception is perception.</p>
+
+      <h3>A word about screen readers</h3>
+      <p>These aren't "real" small caps — they're IPA characters being misused for visual effect. Screen readers might pronounce 'ᴀ' as "Latin letter small capital A" instead of just "A". For anything accessibility-critical, stick to CSS. For your Instagram aesthetic? This works fine.</p>
     `,
     examples: [
       {
@@ -627,54 +529,28 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['crossed out text', 'strike text', 'strikethrough font', 's̶t̶r̶i̶k̶e̶ text', 'line through text', 'deleted text effect', 'Unicode strikethrough', 'text decoration'],
     relatedEntities: ['Unicode combining characters', 'text formatting', 'social media text', 'proofreading marks', 'text effects'],
     longDescription: `
-      <p>The <strong>Strikethrough Text Generator</strong> creates s̶t̶r̶i̶k̶e̶t̶h̶r̶o̶u̶g̶h̶ ̶t̶e̶x̶t̶ using Unicode combining characters. This horizontal line through text effect is perfect for indicating deleted content, showing corrections, creating humor through visible edits, or adding emphasis in ways that aren't possible with regular formatting.</p>
+      <p>"My boss is t̶e̶r̶r̶i̶b̶l̶e̶ wonderful."</p>
 
-      <h3>How Unicode Strikethrough Works</h3>
-      <p>Unlike HTML or CSS strikethrough (which only works where formatting is supported), our generator adds the Unicode combining character U+0336 (COMBINING LONG STROKE OVERLAY) after each character. This creates a line through the text that works anywhere Unicode is supported.</p>
+      <p>That's the magic of strikethrough. You get to say the thing and un-say it simultaneously. The crossed-out text is still perfectly readable — that's the whole point. It's plausible deniability with maximum comedic impact.</p>
 
-      <h3>The Technical Details</h3>
-      <p>Unicode combining characters are special characters that modify the character before them. The strikethrough effect works by:</p>
-      <ol>
-        <li>Taking each character in your text</li>
-        <li>Appending the combining strikethrough character (̶) after it</li>
-        <li>Your device renders the combination as a struck-through character</li>
-      </ol>
+      <h3>How this actually works</h3>
+      <p>Each character gets a Unicode combining character (U+0336) appended to it. Your device then renders both characters stacked together — the letter with a line through it. It's not one "strikethrough letter," it's actually two characters pretending to be one.</p>
 
-      <h3>Creative Uses for Strikethrough</h3>
-      <ul>
-        <li><strong>Humorous corrections:</strong> "I'm ̶a̶l̶w̶a̶y̶s̶ sometimes right"</li>
-        <li><strong>Showing thought process:</strong> "We should ̶g̶i̶v̶e̶ ̶u̶p̶ keep trying"</li>
-        <li><strong>Price reductions:</strong> "̶$̶9̶9̶ NOW $49"</li>
-        <li><strong>Dramatic reveals:</strong> "The ̶b̶u̶t̶l̶e̶r̶ gardener did it"</li>
-        <li><strong>Self-deprecating humor:</strong> "Having a ̶m̶e̶l̶t̶d̶o̶w̶n̶ great day"</li>
-        <li><strong>Showing edits:</strong> Display what was removed or changed</li>
-      </ul>
+      <p>This means strikethrough text takes up more data than regular text. "Hello" becomes "H̶e̶l̶l̶o̶" — technically 10 characters instead of 5. Not that you'll notice unless you're hitting character limits.</p>
 
-      <h3>Platform Compatibility</h3>
-      <p>Unicode strikethrough works on most modern platforms:</p>
-      <ul>
-        <li>✓ Twitter, Facebook, Instagram</li>
-        <li>✓ Discord, Slack, WhatsApp</li>
-        <li>✓ Reddit, YouTube comments</li>
-        <li>✓ Most email clients</li>
-        <li>✓ Standard text editors</li>
-      </ul>
+      <h3>The social media context</h3>
+      <p>Discord has native strikethrough with ~~tildes~~. So does Slack and Reddit. Twitter doesn't. Instagram doesn't. Facebook doesn't.</p>
 
-      <h3>Strikethrough vs Other Methods</h3>
-      <ul>
-        <li><strong>Unicode strikethrough:</strong> Works anywhere, but character-by-character</li>
-        <li><strong>HTML &lt;del&gt; or &lt;s&gt;:</strong> Clean line, but only works in HTML</li>
-        <li><strong>Markdown ~~text~~:</strong> Platform-specific support (Discord, Reddit, Slack)</li>
-        <li><strong>CSS text-decoration:</strong> Best for web design, no portability</li>
-      </ul>
+      <p>That's where this tool comes in. Unicode strikethrough works everywhere because it's just text — no special platform support required.</p>
 
-      <h3>Visual Variations</h3>
-      <p>The appearance of strikethrough may vary slightly depending on:</p>
-      <ul>
-        <li>The font being used</li>
-        <li>The operating system and browser</li>
-        <li>Screen resolution and zoom level</li>
-      </ul>
+      <h3>Classic use cases:</h3>
+      <p>• "I'm h̶a̶v̶i̶n̶g̶ ̶a̶ ̶m̶e̶l̶t̶d̶o̶w̶n̶ doing great" (the classic bit)</p>
+      <p>• "$̶9̶9̶ NOW $49!" (sale pricing that feels dynamic)</p>
+      <p>• "The m̶u̶r̶d̶e̶r̶e̶r̶ ̶w̶a̶s̶ plot twist..." (dramatic reveals)</p>
+      <p>• Showing track changes, edit history, or "what I really wanted to say"</p>
+
+      <h3>Visual quirks</h3>
+      <p>Different fonts render the strikethrough line at slightly different heights. Sometimes it's perfectly centered, sometimes a bit high. The effect is consistent enough to read, but don't expect pixel-perfect uniformity across devices. That's just how combining characters work.</p>
     `,
     examples: [
       {
@@ -732,48 +608,26 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['underlined text', 'u̲n̲d̲e̲r̲l̲i̲n̲e̲ font', 'text underline', 'Unicode underline', 'social media underline', 'text decoration', 'emphasis text', 'line under text'],
     relatedEntities: ['Unicode combining characters', 'text formatting', 'typography', 'text emphasis'],
     longDescription: `
-      <p>The <strong>Underline Text Generator</strong> creates u̲n̲d̲e̲r̲l̲i̲n̲e̲d̲ text using Unicode combining characters. This text decoration effect works on social media platforms, messaging apps, and anywhere Unicode is supported—even where traditional formatting options aren't available.</p>
+      <p>U̲n̲d̲e̲r̲l̲i̲n̲e̲. Simple, right?</p>
 
-      <h3>How Unicode Underline Works</h3>
-      <p>Our generator adds the Unicode combining character U+0332 (COMBINING LOW LINE) after each character in your text. When your device renders this character combination, it displays a continuous line beneath the text.</p>
+      <p>Except most platforms don't let you underline text. No button for it. No markdown syntax. Nothing. So we use a Unicode workaround: a combining character that adds a line under each letter.</p>
 
-      <h3>Why Use Unicode Underline?</h3>
-      <p>Traditional underline methods have limitations:</p>
-      <ul>
-        <li><strong>HTML underline:</strong> Only works in web browsers and HTML-enabled content</li>
-        <li><strong>CSS text-decoration:</strong> Requires styling support</li>
-        <li><strong>Word processor underline:</strong> Doesn't transfer when copying plain text</li>
-      </ul>
-      <p>Unicode underline works anywhere text works, making it perfect for social media, messaging, and plain text documents.</p>
+      <h3>Quick technical explanation</h3>
+      <p>U+0332 (COMBINING LOW LINE) gets appended after each character. Your device renders them together as one underlined glyph. Same trick as strikethrough, different character.</p>
 
-      <h3>Applications for Underlined Text</h3>
-      <ul>
-        <li><strong>Emphasis:</strong> Highlight important words and phrases</li>
-        <li><strong>Titles and headings:</strong> Add distinction to headers in plain text</li>
-        <li><strong>Social media bios:</strong> Create unique profile descriptions</li>
-        <li><strong>Discord and gaming:</strong> Stand out in chat messages</li>
-        <li><strong>Text art:</strong> Design decorative text elements</li>
-        <li><strong>Emphasis in comments:</strong> Draw attention to key points</li>
-      </ul>
+      <h3>Fair warning about web contexts</h3>
+      <p>On websites, underlined text almost always means "this is a link." Users have been trained for decades to click underlined text. If you use underlines in a web context for emphasis, some people will try to click it. Then they'll be confused when nothing happens.</p>
 
-      <h3>The Typography of Underlines</h3>
-      <p>In traditional typography and web design, underlines have specific meanings:</p>
-      <ul>
-        <li><strong>Hyperlinks:</strong> On the web, underlined text typically indicates a clickable link</li>
-        <li><strong>Emphasis:</strong> In handwriting and typewritten text, underlines substitute for italics</li>
-        <li><strong>Titles:</strong> Book and publication titles are often underlined in handwritten text</li>
-      </ul>
-      <p>Consider context when using underlines—on the web, users may expect underlined text to be clickable.</p>
+      <p>On social media bios and text messages? Less of an issue. But worth knowing.</p>
 
-      <h3>Visual Appearance</h3>
-      <p>The underline's appearance varies based on:</p>
-      <ul>
-        <li>Font choice (some fonts have lower baselines)</li>
-        <li>Operating system text rendering</li>
-        <li>App or website styling</li>
-        <li>Screen resolution</li>
-      </ul>
-      <p>In most cases, the underline appears as a continuous line directly beneath each character.</p>
+      <h3>When underlines actually make sense:</h3>
+      <p>• Emphasizing specific words in a caption</p>
+      <p>• Creating visual hierarchy in a bio</p>
+      <p>• Book/movie/album titles (traditional style)</p>
+      <p>• Mimicking handwritten notes where you'd naturally underline</p>
+
+      <h3>Visual inconsistencies</h3>
+      <p>Depending on the font, the underline might have small gaps between letters or appear at slightly different heights. Combining characters just don't render perfectly uniformly. On most devices it looks fine. On some it looks a bit janky. That's the tradeoff for portability.</p>
     `,
     examples: [
       {
@@ -831,55 +685,25 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['𝗯𝗼𝗹𝗱 Unicode text', 'bold font generator', 'social media bold', 'Instagram bold text', 'Twitter bold', 'bold letters', 'mathematical bold', 'bold symbols'],
     relatedEntities: ['Unicode Mathematical Bold', 'social media formatting', 'text emphasis', 'typography'],
     longDescription: `
-      <p>The <strong>Bold Text Generator</strong> creates 𝗯𝗼𝗹𝗱 text using Unicode Mathematical Bold characters. This allows you to post bold text on platforms like Twitter, Instagram, Facebook, and Discord—even though these platforms don't natively support text formatting in posts.</p>
+      <p>Twitter doesn't have bold. Instagram doesn't have bold. Most social platforms don't let you format text at all.</p>
 
-      <h3>How Unicode Bold Text Works</h3>
-      <p>Our generator replaces standard letters with characters from the "Mathematical Bold" Unicode block. These characters look like bold versions of regular letters:</p>
-      <ul>
-        <li>Standard: A B C D E → Bold: 𝗔 𝗕 𝗖 𝗗 𝗘</li>
-        <li>Standard: a b c d e → Bold: 𝗮 𝗯 𝗰 𝗱 𝗲</li>
-        <li>Standard: 0 1 2 3 4 → Bold: 𝟬 𝟭 𝟮 𝟯 𝟰</li>
-      </ul>
-      <p>Since these are actual Unicode characters (not formatting), they work anywhere text is supported.</p>
+      <p>But they do support Unicode. And Unicode has something called "Mathematical Bold" — letters that are inherently bolder. Meant for math equations originally, now used by everyone who wants their bio to pop a little harder.</p>
 
-      <h3>Mathematical Bold Character Set</h3>
-      <p>The Mathematical Bold characters were originally designed for use in mathematical notation but have become popular for social media text styling. They include:</p>
-      <ul>
-        <li>Complete uppercase alphabet (𝗔-𝗭)</li>
-        <li>Complete lowercase alphabet (𝗮-𝘇)</li>
-        <li>Digits (𝟬-𝟵)</li>
-      </ul>
-      <p>Special characters and punctuation remain unchanged since there are no bold Unicode equivalents.</p>
+      <h3>What you're actually getting</h3>
+      <p>Your 'A' becomes '𝗔'. Your 'a' becomes '𝗮'. Numbers too — '1' becomes '𝟭'. These aren't styled letters; they're completely different characters that just happen to look like bold versions of the regular alphabet.</p>
 
-      <h3>Social Media Applications</h3>
-      <p>Bold Unicode text is incredibly useful for:</p>
-      <ul>
-        <li><strong>Twitter/X:</strong> Make tweets stand out in crowded feeds</li>
-        <li><strong>Instagram:</strong> Create bold bios and captions</li>
-        <li><strong>Facebook:</strong> Emphasize key parts of posts</li>
-        <li><strong>Discord:</strong> Highlight messages in servers</li>
-        <li><strong>YouTube:</strong> Bold video descriptions and comments</li>
-        <li><strong>LinkedIn:</strong> Make profile sections stand out</li>
-      </ul>
+      <p>Punctuation stays unchanged. There's no Mathematical Bold comma or exclamation point. Unicode doesn't have everything.</p>
 
-      <h3>Bold vs Regular Text: When to Use</h3>
-      <p>Use bold text to:</p>
-      <ul>
-        <li>Highlight key information in posts</li>
-        <li>Create visual hierarchy in bios</li>
-        <li>Emphasize important words or phrases</li>
-        <li>Draw attention to calls-to-action</li>
-        <li>Make headings within longer text</li>
-      </ul>
-      <p>Avoid overusing bold—when everything is emphasized, nothing stands out.</p>
+      <h3>Where it works</h3>
+      <p>Basically everywhere modern: Twitter, Instagram bios and captions, Facebook posts, Discord, LinkedIn, YouTube descriptions and comments, TikTok bios. If the platform accepts text, it accepts Unicode, which means it accepts Mathematical Bold.</p>
 
-      <h3>Limitations and Considerations</h3>
-      <ul>
-        <li><strong>Search:</strong> Search engines may not match bold Unicode with regular text queries</li>
-        <li><strong>Accessibility:</strong> Screen readers may read these as "mathematical bold A" instead of just "A"</li>
-        <li><strong>Older devices:</strong> Some older systems may not display mathematical symbols correctly</li>
-        <li><strong>Copy-paste issues:</strong> Some applications may strip or replace Unicode characters</li>
-      </ul>
+      <h3>The catch (there's always a catch)</h3>
+      <p>Screen readers might announce "Mathematical Bold Capital A" instead of just "A." It's annoying for users with accessibility needs. Also, searches won't match — if someone searches "hello," they won't find your "𝗵𝗲𝗹𝗹𝗼" because they're technically different characters.</p>
+
+      <p>For decorative use? Go wild. For important searchable content? Maybe stick to regular text.</p>
+
+      <h3>The design psychology</h3>
+      <p>Bold text draws the eye. On a feed full of plain-text posts, a little bold stands out. But if you bold everything, nothing stands out. Use it for headers, key phrases, calls-to-action — not entire paragraphs. Restraint makes emphasis actually emphatic.</p>
     `,
     examples: [
       {
@@ -937,53 +761,26 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['𝘪𝘵𝘢𝘭𝘪𝘤 Unicode text', 'italic font generator', 'slanted text', 'cursive text generator', 'social media italic', 'fancy italic', 'mathematical italic'],
     relatedEntities: ['Unicode Mathematical Italic', 'typography', 'text emphasis', 'social media formatting'],
     longDescription: `
-      <p>The <strong>Italic Text Generator</strong> creates 𝘪𝘵𝘢𝘭𝘪𝘤 text using Unicode Mathematical Italic characters. This elegant, slanted text style works on all social media platforms, messaging apps, and anywhere Unicode is supported—giving you formatting options where none exist natively.</p>
+      <p>𝘐𝘵𝘢𝘭𝘪𝘤𝘴 𝘩𝘢𝘷𝘦 𝘢𝘭𝘸𝘢𝘺𝘴 𝘮𝘦𝘢𝘯𝘵 𝘴𝘰𝘮𝘦𝘵𝘩𝘪𝘯𝘨.</p>
 
-      <h3>Understanding Unicode Italic</h3>
-      <p>Traditional italic formatting uses font styling that doesn't transfer in plain text. Our generator solves this by using characters from the "Mathematical Italic" Unicode block—characters that inherently appear italicized:</p>
-      <ul>
-        <li>Standard: A B C D E → Italic: 𝘈 𝘉 𝘊 𝘋 𝘌</li>
-        <li>Standard: a b c d e → Italic: 𝘢 𝘣 𝘤 𝘥 𝘦</li>
-      </ul>
+      <p>In print, italics signal emphasis — a word you'd stress if speaking aloud. They mark book titles, foreign phrases, species names (𝘏𝘰𝘮𝘰 𝘴𝘢𝘱𝘪𝘦𝘯𝘴), thoughts in fiction, and words being discussed as words rather than used normally.</p>
 
-      <h3>The Beauty of Italic Text</h3>
-      <p>Italic text has traditionally served important purposes in writing:</p>
-      <ul>
-        <li><strong>Emphasis:</strong> Highlighting important words or phrases</li>
-        <li><strong>Titles:</strong> Book titles, movie names, artistic works</li>
-        <li><strong>Foreign words:</strong> Words from other languages</li>
-        <li><strong>Thoughts:</strong> Internal dialogue in creative writing</li>
-        <li><strong>Scientific names:</strong> Species names in biology (𝘏𝘰𝘮𝘰 𝘴𝘢𝘱𝘪𝘦𝘯𝘴)</li>
-        <li><strong>Tone:</strong> Adding elegance or softness to text</li>
-      </ul>
+      <p>On social media, you get none of this. No italic button. No markdown. Just flat, unstyled text.</p>
 
-      <h3>Social Media Applications</h3>
-      <p>Since platforms like Twitter and Instagram don't offer native italic formatting, Unicode italic is invaluable for:</p>
-      <ul>
-        <li>Creating elegant, stylish bios</li>
-        <li>Emphasizing words in posts and captions</li>
-        <li>Adding aesthetic appeal to content</li>
-        <li>Mimicking book/movie title formatting</li>
-        <li>Creating visual variety in text-heavy posts</li>
-      </ul>
+      <h3>Enter Mathematical Italic</h3>
+      <p>Unicode includes a complete italicized alphabet in its Mathematical Alphanumeric Symbols block. These were designed for equations — setting variables in a distinct style from regular text. But characters are characters. The platform doesn't know you're "misusing" them for aesthetics.</p>
 
-      <h3>Italic vs Cursive vs Script</h3>
-      <p>These terms are often confused:</p>
-      <ul>
-        <li><strong>Italic:</strong> Slanted versions of regular letters (𝘵𝘩𝘪𝘴 𝘴𝘵𝘺𝘭𝘦)</li>
-        <li><strong>Cursive:</strong> Connected, flowing handwriting style</li>
-        <li><strong>Script:</strong> Decorative, calligraphic fonts</li>
-      </ul>
-      <p>Our generator creates true italics, not cursive or script fonts.</p>
+      <p>A → 𝘈. a → 𝘢. The whole alphabet, slanted and elegant.</p>
 
-      <h3>Design Considerations</h3>
-      <p>When using italic Unicode text:</p>
-      <ul>
-        <li>Use sparingly for maximum impact</li>
-        <li>Italics work best for emphasis, not entire paragraphs</li>
-        <li>Combine with regular text for contrast</li>
-        <li>Consider your audience—some may not render it correctly</li>
-      </ul>
+      <h3>Why italics feel different than bold</h3>
+      <p>Bold shouts. Italics whisper. There's a softness to slanted text that bold lacks. It's more literary, more refined. The kind of thing you'd see on a perfume ad or poetry anthology cover.</p>
+
+      <p>That's not arbitrary — centuries of typographic convention have conditioned readers to interpret italics as gentler emphasis. You can leverage that on your Instagram bio just as easily as a book designer leverages it on a dust jacket.</p>
+
+      <h3>Common confusion</h3>
+      <p>Italic ≠ cursive ≠ script. Italic is slanted printing. Cursive is connected handwriting. Script is decorative calligraphy. This tool generates italics — the slant, not the connections.</p>
+
+      <p>Screen reader caveat applies here too: accessibility tools might read these as "Mathematical Italic Capital A" which isn't ideal. For decorative text it's fine. For essential content, consider alternatives.</p>
     `,
     examples: [
       {
@@ -1045,42 +842,22 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['delete blank lines', 'remove blank rows', 'clean up text', 'remove whitespace lines', 'strip empty lines', 'text cleanup', 'remove line breaks', 'clean text formatting'],
     relatedEntities: ['text processing', 'data cleaning', 'code formatting', 'content management'],
     longDescription: `
-      <p>The <strong>Remove Empty Lines Tool</strong> instantly strips all blank lines from your text, creating clean, compact content without unnecessary gaps. This essential text cleanup utility is perfect for processing code, cleaning up copied content, preparing data for import, and improving document formatting.</p>
+      <p>You know the frustration. You paste something from a website and suddenly there are seventeen blank lines scattered through your text. Or you export from Excel and every row has a ghost line after it. Or someone emails you a "quick note" that's 90% whitespace.</p>
 
-      <h3>Why Remove Empty Lines?</h3>
-      <p>Empty lines accumulate in text from various sources:</p>
-      <ul>
-        <li><strong>Copy-paste operations</strong> - Content from websites often includes extra spacing</li>
-        <li><strong>Email formatting</strong> - Forwarded emails add blank lines between sections</li>
-        <li><strong>Code editing</strong> - Development leaves behind unnecessary whitespace</li>
-        <li><strong>Document conversion</strong> - Converting between formats introduces gaps</li>
-        <li><strong>OCR scanning</strong> - Scanned documents often have erratic line spacing</li>
-      </ul>
+      <p>This tool deletes all of them. Every blank line, gone.</p>
 
-      <h3>How It Works</h3>
-      <p>Our tool processes your text line by line, identifying and removing:</p>
-      <ul>
-        <li>Completely empty lines (no characters)</li>
-        <li>Lines containing only spaces</li>
-        <li>Lines with only tabs or whitespace characters</li>
-      </ul>
-      <p>The result is compact text where every line contains actual content.</p>
+      <h3>What counts as "empty"?</h3>
+      <p>Lines with zero characters. Lines with just spaces. Lines with just tabs. If there's nothing visible, it gets removed. The tool is aggressive about it — that's the point.</p>
 
-      <h3>Common Use Cases</h3>
-      <ul>
-        <li><strong>Code cleanup</strong> - Remove excessive spacing in source files</li>
-        <li><strong>Data preparation</strong> - Clean lists before database import</li>
-        <li><strong>Email processing</strong> - Compact forwarded message chains</li>
-        <li><strong>Document formatting</strong> - Standardize spacing in documents</li>
-        <li><strong>Log file analysis</strong> - Remove blank entries from logs</li>
-        <li><strong>Content migration</strong> - Clean text during CMS transfers</li>
-      </ul>
+      <h3>The caveat you should know about</h3>
+      <p>Sometimes blank lines are intentional. Paragraph breaks. Section dividers. That breathing room between chunks of content. This tool removes those too. It doesn't distinguish between "accidental blank line from a bad paste" and "intentional spacing I wanted to keep."</p>
 
-      <h3>Preserving Intentional Formatting</h3>
-      <p>While our tool removes all empty lines by default, keep in mind that some blank lines serve formatting purposes (paragraph breaks, section separators). Consider your content needs before processing, and manually re-add paragraph breaks if needed.</p>
+      <p>If you need to preserve some structure, you'll have to add paragraph breaks back manually after. Or be more surgical about what you paste in the first place.</p>
 
-      <h3>Processing Large Files</h3>
-      <p>This tool handles text of any size efficiently. Whether you're cleaning a few lines of code or processing a massive log file, the operation completes instantly in your browser.</p>
+      <h3>Where this is most useful:</h3>
+      <p>Cleaning up log files before analysis. Compacting email chains before forwarding. Preparing CSV data where blank rows cause import errors. Tidying code that accumulated too much vertical whitespace over time. Processing OCR output that interpreted margins as blank lines.</p>
+
+      <p>Handles any file size. Runs in your browser. Nothing gets uploaded anywhere.</p>
     `,
     examples: [
       {
@@ -1138,45 +915,24 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['join lines', 'merge lines', 'single line text', 'remove newlines', 'unwrap text', 'combine lines', 'paragraph to single line', 'strip line breaks'],
     relatedEntities: ['text processing', 'content formatting', 'data transformation', 'paragraph formatting'],
     longDescription: `
-      <p>The <strong>Remove Line Breaks Tool</strong> combines multiple lines of text into a single continuous line by removing all line break characters. This utility is essential for converting multi-line content into single-line format for spreadsheets, databases, code strings, and various data processing needs.</p>
+      <p>Picture this: you've written a SQL query across 15 lines for readability. Now you need to paste it into a single-line input field in some admin panel from 2003. Or you're prepping an address for a CSV cell and Excel keeps interpreting the line breaks as new rows.</p>
 
-      <h3>Understanding Line Breaks</h3>
-      <p>Line breaks (also called newlines or carriage returns) are invisible characters that create new lines in text:</p>
-      <ul>
-        <li><strong>LF (Line Feed)</strong> - Used by Linux, macOS, and Unix systems</li>
-        <li><strong>CRLF (Carriage Return + Line Feed)</strong> - Used by Windows</li>
-        <li><strong>CR (Carriage Return)</strong> - Used by classic Mac OS</li>
-      </ul>
-      <p>Our tool removes all types of line breaks, ensuring compatibility regardless of the source system.</p>
+      <p>Line breaks become the enemy real fast when systems don't expect them.</p>
 
-      <h3>Why Remove Line Breaks?</h3>
-      <ul>
-        <li><strong>Spreadsheet compatibility</strong> - Multi-line text breaks CSV imports</li>
-        <li><strong>Database fields</strong> - Many systems expect single-line values</li>
-        <li><strong>Code strings</strong> - Programming strings often need to be one line</li>
-        <li><strong>API inputs</strong> - Form fields and APIs may not accept newlines</li>
-        <li><strong>Social media</strong> - Some platforms handle line breaks poorly</li>
-        <li><strong>Data cleaning</strong> - Standardize text format for processing</li>
-      </ul>
+      <h3>The invisible characters causing the problem</h3>
+      <p>There's actually no single "line break" character. Windows uses CRLF (two characters: carriage return + line feed). Mac and Linux use just LF. Ancient Mac OS used just CR. This tool removes all of them. Doesn't matter where your text came from.</p>
 
-      <h3>How Text is Joined</h3>
-      <p>When line breaks are removed, lines are joined with a space by default to prevent words from running together. For example:</p>
-      <ul>
-        <li>Input: "Hello\\nWorld" → Output: "Hello World"</li>
-      </ul>
-      <p>This preserves readability while creating a single-line result.</p>
+      <h3>Words don't smash together</h3>
+      <p>When we remove the breaks, we replace them with spaces. So "Hello\\nWorld" becomes "Hello World", not "HelloWorld". The output stays readable.</p>
 
-      <h3>Common Applications</h3>
-      <ul>
-        <li><strong>Address formatting</strong> - Convert multi-line addresses to single line</li>
-        <li><strong>SQL queries</strong> - Combine formatted SQL into one line</li>
-        <li><strong>Meta descriptions</strong> - Prepare SEO descriptions without breaks</li>
-        <li><strong>Form submissions</strong> - Clean text before submitting to forms</li>
-        <li><strong>Email processing</strong> - Flatten email content for analysis</li>
-      </ul>
+      <h3>Classic scenarios where you need this:</h3>
+      <p>• That multi-line address that needs to fit in one field<br/>
+      • SQL queries going into command-line tools<br/>
+      • Meta descriptions written across multiple lines in your notes<br/>
+      • JSON values that can't have literal newlines<br/>
+      • Cleaning up poetry or lyrics for a spreadsheet cell</p>
 
-      <h3>Preserving Intentional Breaks</h3>
-      <p>This tool removes ALL line breaks. If you have intentional paragraph structure, the result will be one continuous paragraph. Consider whether your use case requires preserving some structure before processing.</p>
+      <p>Warning: this flattens everything into one line. If you had intentional paragraph breaks, they're gone too. The tool doesn't distinguish between "unwanted newline" and "paragraph I wanted to keep." Keep your original if you might need to restore structure.</p>
     `,
     examples: [
       {
@@ -1234,40 +990,31 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['delete duplicate rows', 'unique lines only', 'deduplicate text', 'remove repeated lines', 'eliminate duplicates', 'distinct lines', 'filter duplicates', 'unique text lines'],
     relatedEntities: ['data deduplication', 'text processing', 'list cleanup', 'data quality'],
     longDescription: `
-      <p>The <strong>Remove Duplicate Lines Tool</strong> instantly identifies and eliminates repeated lines from your text, leaving only unique entries. This powerful deduplication utility is essential for cleaning lists, processing data, removing redundant content, and ensuring data quality.</p>
+      <p>Duplicates in data are like cockroaches — if you see one, there are probably a hundred more hiding. Merged spreadsheets, combined lists, sloppy copy-paste jobs... duplicates accumulate faster than you'd expect.</p>
 
-      <h3>How Duplicate Detection Works</h3>
-      <p>Our tool compares each line exactly as it appears:</p>
-      <ul>
-        <li><strong>Case-sensitive matching</strong> - "Apple" and "apple" are treated as different lines</li>
-        <li><strong>Whitespace-sensitive</strong> - Leading/trailing spaces affect matching</li>
-        <li><strong>Order preserved</strong> - The first occurrence of each line is kept</li>
-        <li><strong>Exact matching</strong> - Lines must be identical to be considered duplicates</li>
-      </ul>
+      <p>This tool finds them and kills them. Paste your list, get unique lines back.</p>
 
-      <h3>Common Deduplication Scenarios</h3>
-      <ul>
-        <li><strong>Email lists</strong> - Remove duplicate addresses before campaigns</li>
-        <li><strong>Keyword lists</strong> - Eliminate repeated terms for SEO</li>
-        <li><strong>Log files</strong> - Find unique entries in system logs</li>
-        <li><strong>Data exports</strong> - Clean up duplicate records</li>
-        <li><strong>Merged lists</strong> - Combine lists without repetition</li>
-        <li><strong>Code cleanup</strong> - Remove duplicate import statements</li>
-      </ul>
+      <h3>How matching works (important details)</h3>
+      <p>Two lines count as duplicates only if they're character-for-character identical. That means:</p>
 
-      <h3>Preserving Order</h3>
-      <p>Unlike some deduplication tools that sort output alphabetically, our tool preserves the original order of lines. When duplicates are found, the first occurrence is kept and subsequent duplicates are removed, maintaining your original sequence.</p>
+      <p>• "Apple" and "apple" = NOT duplicates (case matters)<br/>
+      • "hello" and "hello " = NOT duplicates (trailing space matters)<br/>
+      • "data" and "data" = duplicates (obviously)</p>
 
-      <h3>Processing Large Datasets</h3>
-      <p>This tool efficiently handles large text files with thousands of lines. The deduplication algorithm runs entirely in your browser, processing content quickly without uploading data to any server.</p>
+      <p>Want case-insensitive matching? Lowercase everything first with our lowercase converter, then run it through here.</p>
 
-      <h3>Tips for Best Results</h3>
-      <ul>
-        <li><strong>Normalize case first</strong> - Convert to lowercase if you want case-insensitive deduplication</li>
-        <li><strong>Trim whitespace</strong> - Remove leading/trailing spaces for cleaner matching</li>
-        <li><strong>Sort first</strong> - Sorting before deduplication groups similar items together</li>
-        <li><strong>Check results</strong> - Review output to ensure expected duplicates were removed</li>
-      </ul>
+      <h3>First occurrence wins</h3>
+      <p>When we find duplicates, we keep the first one and delete the rest. Your original order stays intact — we don't alphabetize or shuffle anything.</p>
+
+      <table>
+        <tr><th>Before</th><th>After</th></tr>
+        <tr><td>apple<br/>banana<br/>apple<br/>cherry<br/>banana</td><td>apple<br/>banana<br/>cherry</td></tr>
+      </table>
+
+      <h3>Real-world uses</h3>
+      <p>Cleaning email lists before a campaign. Deduplicating keywords for SEO. Merging multiple export files without redundancy. Finding unique error messages in log dumps. Removing duplicate import statements someone copy-pasted into code.</p>
+
+      <p>Works on files with thousands of lines. All processing happens locally — nothing uploaded.</p>
     `,
     examples: [
       {
@@ -1325,44 +1072,27 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['join text lines', 'merge paragraphs', 'one line text', 'flatten text', 'combine text lines', 'paragraph to line', 'unwrap paragraphs'],
     relatedEntities: ['text formatting', 'content processing', 'data transformation'],
     longDescription: `
-      <p>The <strong>Text to Single Line Tool</strong> converts multi-line text into one continuous line, perfect for preparing content for spreadsheets, databases, code strings, and systems that require single-line input. This utility smartly handles line breaks while preserving word spacing for readability.</p>
+      <p>Multi-line text → single line. That's it.</p>
 
-      <h3>Why Convert to Single Line?</h3>
-      <p>Many systems and applications require or work better with single-line text:</p>
-      <ul>
-        <li><strong>Spreadsheet cells</strong> - Multi-line content disrupts CSV structure</li>
-        <li><strong>Database fields</strong> - VARCHAR fields often expect single lines</li>
-        <li><strong>JSON values</strong> - String values shouldn't contain raw newlines</li>
-        <li><strong>API parameters</strong> - Query strings and form data need flat text</li>
-        <li><strong>Command line</strong> - Shell commands work with single-line input</li>
-        <li><strong>Meta tags</strong> - SEO descriptions should be continuous</li>
-      </ul>
+      <p>Line breaks become spaces. Your text becomes one continuous string. Useful when some field or system expects flat input and freaks out at newlines.</p>
 
-      <h3>Intelligent Line Joining</h3>
-      <p>Our tool doesn't just strip newlines—it joins lines intelligently:</p>
-      <ul>
-        <li>Replaces line breaks with spaces</li>
-        <li>Prevents words from running together</li>
-        <li>Maintains natural readability</li>
-        <li>Handles all line ending formats</li>
-      </ul>
+      <h3>Where you'll need this</h3>
+      <table>
+        <tr><th>Situation</th><th>Why single-line matters</th></tr>
+        <tr><td>CSV/Excel cells</td><td>Line breaks in cells break row structure</td></tr>
+        <tr><td>JSON strings</td><td>Raw newlines in values cause parse errors</td></tr>
+        <tr><td>Meta descriptions</td><td>CMS fields often strip/mangle line breaks</td></tr>
+        <tr><td>Command line args</td><td>Shells interpret newlines as command endings</td></tr>
+        <tr><td>Database VARCHAR</td><td>Some schemas just don't handle multiline</td></tr>
+      </table>
 
-      <h3>Common Applications</h3>
-      <ul>
-        <li><strong>SEO descriptions</strong> - Prepare meta descriptions without breaks</li>
-        <li><strong>CSV preparation</strong> - Flatten fields for clean import</li>
-        <li><strong>Social media</strong> - Format posts for platforms that don't handle breaks well</li>
-        <li><strong>Email templates</strong> - Prepare text for systems requiring single-line input</li>
-        <li><strong>Data entry</strong> - Format content for form fields</li>
-      </ul>
+      <h3>The space thing</h3>
+      <p>We add spaces between joined lines. "Hello\\nWorld" becomes "Hello World" not "HelloWorld". Keeps it readable.</p>
 
-      <h3>Processing Considerations</h3>
-      <p>Converting to single line removes all paragraph structure. Consider whether your content needs breaks for readability before processing. This tool is best for:</p>
-      <ul>
-        <li>Data that will be machine-processed</li>
-        <li>Short text snippets</li>
-        <li>Content going into single-line fields</li>
-      </ul>
+      <h3>Loss of structure</h3>
+      <p>Fair warning: all your paragraphs become one block. If you needed those breaks for meaning — section dividers, stanza breaks, whatever — they're gone. This is a destructive operation in that sense. Keep your original if you might need to undo it.</p>
+
+      <p>Works with Windows (CRLF), Mac/Linux (LF), and ancient Mac (CR) line endings. Whatever you paste in, it flattens.</p>
     `,
     examples: [
       {
@@ -1420,49 +1150,40 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['trim spaces', 'strip whitespace', 'remove extra spaces', 'clean whitespace', 'delete spaces', 'trim text', 'normalize spaces', 'remove tabs'],
     relatedEntities: ['text cleaning', 'string manipulation', 'data normalization', 'code formatting'],
     longDescription: `
-      <p>The <strong>Remove Whitespace Tool</strong> cleans your text by removing or normalizing whitespace characters including spaces, tabs, and other invisible characters. Choose from multiple modes: trim edges, collapse multiple spaces, or remove all whitespace entirely.</p>
+      <p>Whitespace. The invisible enemy that breaks your string comparisons, bloats your databases, and makes "John Smith" ≠ "John Smith" even though they look identical on screen.</p>
 
-      <h3>Understanding Whitespace</h3>
-      <p>Whitespace includes various invisible characters:</p>
+      <p>The thing about whitespace is there's like 25 different types of it in Unicode. Regular spaces, non-breaking spaces (the sneaky ones from web copy), em spaces, hair spaces, tabs... you name it. They all <em>look</em> the same but they're completely different characters under the hood.</p>
+
+      <h3>Real talk: when you actually need this</h3>
+      <p>You're here because something broke. Maybe your CSV import failed. Maybe your form validation is rejecting perfectly valid emails. Maybe you copy-pasted from a PDF and now everything's    spaced   like    this.</p>
+
+      <table>
+        <tr><th>Problem</th><th>The culprit</th><th>Solution mode</th></tr>
+        <tr><td>"John" ≠ "John "</td><td>Trailing space</td><td>Trim edges</td></tr>
+        <tr><td>Words    spread    apart</td><td>Multiple spaces</td><td>Collapse spaces</td></tr>
+        <tr><td>Need text as one blob</td><td>All whitespace</td><td>Remove everything</td></tr>
+        <tr><td>PDF copy-paste mess</td><td>Mixed whitespace types</td><td>Normalize</td></tr>
+      </table>
+
+      <blockquote>
+        <p>Fun fact: non-breaking spaces (U+00A0) are why copying from web pages into Excel often creates phantom characters that break formulas. This tool catches those too.</p>
+      </blockquote>
+
+      <h3>The modes, explained without jargon</h3>
+      <p><strong>Trim edges</strong> removes spaces before the first character and after the last. "  hello  " becomes "hello". Words stay intact.</p>
+      <p><strong>Collapse</strong> turns multiple spaces into one. Great for cleaning up pasted content that has weird formatting.</p>
+      <p><strong>Remove all</strong> is nuclear. Deletes every single whitespace character. "Hello World" becomes "HelloWorld". Use with intention.</p>
+      <p><strong>Normalize</strong> does trim + collapse. Usually what you actually want for general cleanup.</p>
+
+      <h3>Things I've seen whitespace break</h3>
       <ul>
-        <li><strong>Space</strong> - The most common (U+0020)</li>
-        <li><strong>Tab</strong> - Horizontal tabulation (U+0009)</li>
-        <li><strong>Non-breaking space</strong> - Prevents line breaks (U+00A0)</li>
-        <li><strong>Em/En spaces</strong> - Typographic spacing</li>
-        <li><strong>Zero-width spaces</strong> - Invisible width characters</li>
+        <li>Login systems (username had trailing space in database)</li>
+        <li>API integrations (JSON keys with hidden characters)</li>
+        <li>Email matching ("user@test.com " vs "user@test.com")</li>
+        <li>SEO meta tags (extra spaces causing character limit issues)</li>
       </ul>
 
-      <h3>Whitespace Removal Modes</h3>
-      <p>Different situations require different approaches:</p>
-      <ul>
-        <li><strong>Trim edges</strong> - Remove leading/trailing spaces from each line</li>
-        <li><strong>Collapse spaces</strong> - Replace multiple spaces with single space</li>
-        <li><strong>Remove all</strong> - Delete every whitespace character</li>
-        <li><strong>Normalize</strong> - Trim edges AND collapse multiple spaces</li>
-      </ul>
-
-      <h3>Why Clean Whitespace?</h3>
-      <ul>
-        <li><strong>Data consistency</strong> - Ensure uniform text formatting</li>
-        <li><strong>String comparison</strong> - Extra spaces cause false mismatches</li>
-        <li><strong>Database storage</strong> - Prevent bloated text fields</li>
-        <li><strong>User input cleanup</strong> - Normalize form submissions</li>
-        <li><strong>Code cleanup</strong> - Remove trailing whitespace from files</li>
-        <li><strong>Copy-paste fixes</strong> - Clean text from various sources</li>
-      </ul>
-
-      <h3>Common Issues Solved</h3>
-      <p>Whitespace problems appear everywhere:</p>
-      <ul>
-        <li>Copied text from PDFs with irregular spacing</li>
-        <li>Data exports with padding in fields</li>
-        <li>User-entered text with extra spaces</li>
-        <li>Code with inconsistent indentation</li>
-        <li>Content from OCR with spacing errors</li>
-      </ul>
-
-      <h3>Processing Options</h3>
-      <p>Our tool provides flexible whitespace handling so you can choose the level of cleaning appropriate for your content, from gentle normalization to aggressive removal of all whitespace.</p>
+      <p>Paste your text, pick a mode, clean it up. The invisible gremlins don't stand a chance.</p>
     `,
     examples: [
       {
@@ -1520,41 +1241,39 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['dedupe text', 'remove duplicate text', 'unique content finder', 'text deduplicator', 'duplicate content removal', 'find unique text', 'eliminate repetition'],
     relatedEntities: ['data cleaning', 'content management', 'duplicate detection', 'text analysis'],
     longDescription: `
-      <p>The <strong>Text Deduplication Tool</strong> provides advanced duplicate detection and removal capabilities for your text content. Whether you're working with lines, words, or sentences, this utility helps identify and eliminate redundant content to ensure clean, unique data.</p>
+      <p>Got duplicates? Course you do. That's why you're here.</p>
 
-      <h3>Deduplication Modes</h3>
-      <p>Our tool offers multiple deduplication approaches:</p>
+      <p>Text deduplication is one of those unglamorous tasks that saves hours of manual scanning. Instead of eyeballing a 500-line list looking for repeats, paste it here and let the algorithm do what algorithms do best: compare things really, really fast.</p>
+
+      <h3>How it actually works</h3>
+      <p>Each line (or word, or sentence—your choice) gets compared to every other one. Duplicates get flagged and removed, keeping only the first occurrence. Order stays intact.</p>
+
+      <blockquote>
+        <p>"Apple" vs "apple" — same or different? That's the case-sensitivity question. You decide based on your use case. Email lists? Probably case-insensitive. Code identifiers? Case-sensitive all the way.</p>
+      </blockquote>
+
+      <h3>Pick your dedup mode</h3>
+      <table>
+        <tr><th>Mode</th><th>What it does</th><th>Best for</th></tr>
+        <tr><td>Line-by-line</td><td>Compares entire lines</td><td>Email lists, CSV rows, log entries</td></tr>
+        <tr><td>Word-level</td><td>Removes repeated words</td><td>Keyword lists, tag cleanup</td></tr>
+        <tr><td>Sentence</td><td>Finds duplicate sentences</td><td>Content auditing, plagiarism cleanup</td></tr>
+      </table>
+
+      <p>The algorithm runs in your browser. Your data never leaves your machine. For those paranoid about sending customer emails through some random API—this isn't that.</p>
+
+      <h3>Typical scenarios</h3>
       <ul>
-        <li><strong>Line deduplication</strong> - Remove duplicate lines, keeping unique entries</li>
-        <li><strong>Word deduplication</strong> - Eliminate repeated words within text</li>
-        <li><strong>Sentence deduplication</strong> - Find and remove duplicate sentences</li>
-        <li><strong>Phrase detection</strong> - Identify repeated phrases and segments</li>
+        <li>You merged three contact lists and now have duplicates everywhere</li>
+        <li>Exported keywords from multiple tools, need unique list</li>
+        <li>Research notes have accidentally repeated paragraphs</li>
+        <li>Log file with redundant error messages cluttering analysis</li>
       </ul>
 
-      <h3>Why Deduplicate Content?</h3>
-      <ul>
-        <li><strong>Data quality</strong> - Clean datasets by removing redundant entries</li>
-        <li><strong>SEO improvement</strong> - Eliminate duplicate content that hurts rankings</li>
-        <li><strong>Storage efficiency</strong> - Reduce file sizes by removing repetition</li>
-        <li><strong>Analysis accuracy</strong> - Get accurate word counts and statistics</li>
-        <li><strong>List cleaning</strong> - Ensure unique items in lists</li>
-        <li><strong>Content review</strong> - Identify accidentally repeated content</li>
-      </ul>
+      <p>First occurrence stays. Everything else goes. Clean output in seconds.</p>
 
-      <h3>Comparison Options</h3>
-      <p>Customize how duplicates are detected:</p>
-      <ul>
-        <li><strong>Case-sensitive</strong> - "Apple" and "apple" are different</li>
-        <li><strong>Case-insensitive</strong> - Treat upper/lowercase as same</li>
-        <li><strong>Whitespace handling</strong> - Ignore or include spacing differences</li>
-        <li><strong>Punctuation options</strong> - Include or exclude punctuation in comparisons</li>
-      </ul>
-
-      <h3>Preserving Original Order</h3>
-      <p>When duplicates are removed, the first occurrence is preserved and the original order is maintained. Your content structure stays intact, just without the repetition.</p>
-
-      <h3>Duplicate Analysis</h3>
-      <p>Beyond removal, see statistics about duplication in your content: how many duplicates were found, what percentage of content was repeated, and which items appeared most frequently.</p>
+      <h3>One thing to know</h3>
+      <p>This finds <em>exact</em> duplicates. "John Smith" and "John  Smith" (two spaces) are different unless you normalize whitespace first. "Jon Smith" and "John Smith" are definitely different—that's fuzzy matching territory, not deduplication.</p>
     `,
     examples: [
       {
@@ -1612,46 +1331,39 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['alphabetize text', 'sort lines alphabetically', 'text sorter', 'line sorter', 'alphabetical order', 'sort list', 'organize text', 'ascending descending sort'],
     relatedEntities: ['data organization', 'text processing', 'alphabetical sorting', 'list management'],
     longDescription: `
-      <p>The <strong>Sort Text Lines Tool</strong> instantly alphabetizes or organizes your text lines in ascending or descending order. This essential utility helps you sort lists, organize data, arrange names, and bring order to any multi-line content with just one click.</p>
+      <p>Alphabetizing a list manually takes forever. Sorting 200 lines of anything by hand is an exercise in tedium that nobody should endure in the 21st century.</p>
 
-      <h3>Sorting Options</h3>
-      <p>Our tool offers flexible sorting modes:</p>
+      <p>This sorts lines. A-Z, Z-A, by number, by length, or randomly if you're feeling chaotic. Paste text, click, done.</p>
+
+      <h3>The numerical sorting gotcha</h3>
+      <p>Ever wonder why "10" sorts before "2" in most tools? Because "1" comes before "2" alphabetically. Computers compare character-by-character unless you tell them otherwise. Our numerical mode understands that 10 > 2. You'd be surprised how many tools get this wrong.</p>
+
+      <table>
+        <tr><th>Alphabetical sort</th><th>Numerical sort</th></tr>
+        <tr><td>1<br>10<br>2<br>20<br>3</td><td>1<br>2<br>3<br>10<br>20</td></tr>
+      </table>
+
+      <h3>Case sensitivity matters sometimes</h3>
+      <p>In ASCII, uppercase letters (A=65) come before lowercase (a=97). So case-sensitive sorting puts "Zebra" before "apple". Usually not what you want.</p>
+
+      <p>Case-insensitive treats "Apple" and "apple" as equal for ordering purposes. More intuitive for most human-readable lists.</p>
+
+      <blockquote>
+        <p>Pro tip: blank lines sort to the top in ascending order. Remove them first if you don't want empty rows messing up your sorted output.</p>
+      </blockquote>
+
+      <h3>What people actually use this for</h3>
       <ul>
-        <li><strong>Alphabetical (A-Z)</strong> - Standard ascending alphabetical order</li>
-        <li><strong>Reverse alphabetical (Z-A)</strong> - Descending alphabetical order</li>
-        <li><strong>Numerical</strong> - Sort by numeric value (1, 2, 10, not 1, 10, 2)</li>
-        <li><strong>Length</strong> - Sort by line length (shortest to longest or reverse)</li>
-        <li><strong>Random</strong> - Shuffle lines into random order</li>
+        <li>Bibliographies that need alphabetizing</li>
+        <li>Import statements in code (some linters require alphabetical)</li>
+        <li>Keyword research exports</li>
+        <li>Name lists for events</li>
+        <li>Inventory items</li>
+        <li>Any list that's currently a mess</li>
       </ul>
 
-      <h3>Case Sensitivity Options</h3>
-      <p>Choose how capitalization affects sorting:</p>
-      <ul>
-        <li><strong>Case-sensitive</strong> - Uppercase letters sort before lowercase (ASCII order)</li>
-        <li><strong>Case-insensitive</strong> - Treat "Apple" and "apple" as equivalent for sorting</li>
-      </ul>
-
-      <h3>Common Sorting Applications</h3>
-      <ul>
-        <li><strong>Contact lists</strong> - Alphabetize names and addresses</li>
-        <li><strong>Glossaries</strong> - Arrange terms in alphabetical order</li>
-        <li><strong>Keyword lists</strong> - Organize SEO keywords</li>
-        <li><strong>Bibliography</strong> - Sort references alphabetically</li>
-        <li><strong>Data files</strong> - Organize CSV rows or data entries</li>
-        <li><strong>To-do lists</strong> - Arrange tasks systematically</li>
-      </ul>
-
-      <h3>Understanding Sort Order</h3>
-      <p>In standard alphabetical sorting:</p>
-      <ul>
-        <li>Numbers come before letters (0-9, then A-Z)</li>
-        <li>Uppercase letters may sort before lowercase (in case-sensitive mode)</li>
-        <li>Special characters have their own positions in the sort order</li>
-        <li>Accented characters may sort after standard letters</li>
-      </ul>
-
-      <h3>Stable Sorting</h3>
-      <p>When lines are equal (identical or equivalent in case-insensitive mode), their relative order is preserved from the original text. This is called "stable sorting" and ensures predictable results.</p>
+      <h3>Stable sorting (if you care)</h3>
+      <p>When two items are "equal" for sorting purposes, they keep their original relative order. This is technically called stable sorting. Matters when you have items with the same key but want predictable results.</p>
     `,
     examples: [
       {
@@ -1709,53 +1421,39 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['number lines', 'line numbering', 'add numbers to text', 'numbered list', 'line number generator', 'number each line', 'text with line numbers'],
     relatedEntities: ['text formatting', 'document processing', 'code editing', 'list formatting'],
     longDescription: `
-      <p>The <strong>Add Line Numbers Tool</strong> automatically prefixes each line of your text with sequential numbers, creating numbered lists or adding reference numbers for easier navigation, discussion, and citation of specific lines.</p>
+      <p>"Can you look at line 47?" Way easier to say than "the part about three-quarters down where it talks about refunds."</p>
 
-      <h3>Numbering Format Options</h3>
-      <p>Customize how numbers appear:</p>
-      <ul>
-        <li><strong>Simple numbers</strong> - "1. ", "2. ", "3. " (with period and space)</li>
-        <li><strong>Parentheses</strong> - "1) ", "2) ", "3) "</li>
-        <li><strong>Brackets</strong> - "[1] ", "[2] ", "[3] "</li>
-        <li><strong>Code style</strong> - Right-aligned with padding: "  1 | ", " 10 | "</li>
-        <li><strong>Custom separator</strong> - Define your own format</li>
-      </ul>
+      <p>Line numbers exist for a reason. They make referencing specific content trivial. Code editors have them. Legal documents have them. Screenplays have them. This tool adds them to whatever you've got.</p>
 
-      <h3>Starting Number Options</h3>
-      <p>Don't always need to start at 1:</p>
-      <ul>
-        <li>Start from any number</li>
-        <li>Continue numbering from a previous section</li>
-        <li>Use zero-based numbering (0, 1, 2...)</li>
-      </ul>
+      <h3>Format options</h3>
+      <p>Different contexts call for different styles:</p>
 
-      <h3>Common Use Cases</h3>
-      <ul>
-        <li><strong>Code review</strong> - Reference specific lines in discussions</li>
-        <li><strong>Document review</strong> - Cite lines in feedback</li>
-        <li><strong>Meeting agendas</strong> - Create numbered discussion points</li>
-        <li><strong>Legal documents</strong> - Add line numbers for reference</li>
-        <li><strong>Educational materials</strong> - Reference lines in worksheets</li>
-        <li><strong>Poetry and lyrics</strong> - Number lines for analysis</li>
-      </ul>
+      <table>
+        <tr><th>Style</th><th>Looks like</th><th>Good for</th></tr>
+        <tr><td>Period</td><td>1. Line here</td><td>Lists, agendas</td></tr>
+        <tr><td>Parenthesis</td><td>1) Line here</td><td>Outlines</td></tr>
+        <tr><td>Brackets</td><td>[1] Line here</td><td>References, citations</td></tr>
+        <tr><td>Code style</td><td>  1 | Line here</td><td>Code snippets, logs</td></tr>
+      </table>
 
-      <h3>Alignment and Padding</h3>
-      <p>For documents with many lines, proper alignment matters:</p>
-      <ul>
-        <li>Right-align numbers for consistent margins</li>
-        <li>Pad with spaces or zeros (001, 002 vs 1, 2)</li>
-        <li>Auto-calculate padding based on total line count</li>
-      </ul>
+      <blockquote>
+        <p>The code style uses right-aligned padding. So line 9 shows as " 9 |" and line 10 shows as "10 |" — keeps everything visually aligned.</p>
+      </blockquote>
 
-      <h3>Professional Applications</h3>
-      <p>Line numbers are essential in:</p>
-      <ul>
-        <li>Legal briefs and court documents</li>
-        <li>Academic papers and manuscripts</li>
-        <li>Source code and programming</li>
-        <li>Script writing and screenplays</li>
-        <li>Technical documentation</li>
-      </ul>
+      <h3>Starting from something other than 1</h3>
+      <p>Sometimes you're numbering a section that continues from page 2 (or wherever). Set your starting number to pick up where you left off. Zero-based numbering is also an option for the programmers in the room.</p>
+
+      <h3>Where this actually matters</h3>
+      <p>Legal world: court transcripts and depositions require line numbers. Standard is every line, often every 5 lines marked in the margin.</p>
+
+      <p>Code review: "There's a bug on line 142" is specific. "There's a bug somewhere in that function" is not helpful.</p>
+
+      <p>Academic papers: citing specific lines in source material. MLA and Chicago styles have conventions for this.</p>
+
+      <p>Script writing: industry standard includes scene and line numbers for production coordination.</p>
+
+      <h3>One quirk to know</h3>
+      <p>Blank lines get numbers too. If you want to skip numbering empty lines, remove them first or accept that line 5 might be blank.</p>
     `,
     examples: [
       {
@@ -1813,52 +1511,38 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['strip HTML', 'HTML to plain text', 'remove markup', 'clean HTML', 'extract text from HTML', 'HTML tag remover', 'strip tags', 'HTML stripper'],
     relatedEntities: ['HTML', 'web content', 'text extraction', 'markup languages', 'content cleaning'],
     longDescription: `
-      <p>The <strong>Remove HTML Tags Tool</strong> strips all HTML markup from your content, leaving only the plain text. This essential utility extracts readable content from HTML source code, web pages, and formatted documents, converting them to clean, unformatted text.</p>
+      <p>You copied a web page. Now it's full of &lt;div&gt;s and &lt;span&gt;s and CSS classes nobody cares about. You just want the words.</p>
 
-      <h3>What Gets Removed</h3>
-      <p>Our tool removes all HTML elements:</p>
-      <ul>
-        <li><strong>All HTML tags</strong> - &lt;p&gt;, &lt;div&gt;, &lt;span&gt;, &lt;a&gt;, etc.</li>
-        <li><strong>Attributes</strong> - class, id, style, href, src, etc.</li>
-        <li><strong>Comments</strong> - &lt;!-- comment --&gt;</li>
-        <li><strong>Script and style blocks</strong> - &lt;script&gt; and &lt;style&gt; content</li>
-        <li><strong>DOCTYPE declarations</strong></li>
-      </ul>
+      <p>This strips everything that isn't actual text content. Tags, attributes, inline styles, script blocks—gone. Just the readable parts remain.</p>
 
-      <h3>What Gets Preserved</h3>
-      <ul>
-        <li><strong>Text content</strong> - All readable text between tags</li>
-        <li><strong>Basic structure</strong> - Paragraph breaks where appropriate</li>
-        <li><strong>HTML entities</strong> - Converted to readable characters (&amp;amp; → &)</li>
-      </ul>
+      <h3>What disappears</h3>
+      <table>
+        <tr><th>Element type</th><th>What happens</th></tr>
+        <tr><td>Tags (&lt;p&gt;, &lt;div&gt;, etc.)</td><td>Removed completely</td></tr>
+        <tr><td>Attributes (class, id, href)</td><td>Gone</td></tr>
+        <tr><td>Script/style blocks</td><td>Content and tags deleted</td></tr>
+        <tr><td>Comments</td><td>Stripped out</td></tr>
+        <tr><td>HTML entities (&amp;amp;)</td><td>Converted to characters (&)</td></tr>
+      </table>
 
-      <h3>Common Use Cases</h3>
-      <ul>
-        <li><strong>Content extraction</strong> - Pull text from web pages</li>
-        <li><strong>Email cleaning</strong> - Convert HTML emails to plain text</li>
-        <li><strong>Data processing</strong> - Extract text for analysis</li>
-        <li><strong>CMS migration</strong> - Clean content for new platforms</li>
-        <li><strong>Accessibility</strong> - Create plain text versions</li>
-        <li><strong>SEO analysis</strong> - Analyze actual text content</li>
-      </ul>
+      <blockquote>
+        <p>Heads up: if you're extracting link URLs, you'll lose them. The tool keeps "click here" but discards the href destination. Same for images—only alt text survives, if that.</p>
+      </blockquote>
 
-      <h3>Handling Special Cases</h3>
-      <p>The tool intelligently handles:</p>
-      <ul>
-        <li><strong>Nested tags</strong> - All levels of nesting are stripped</li>
-        <li><strong>Self-closing tags</strong> - &lt;br /&gt;, &lt;img /&gt;, etc.</li>
-        <li><strong>Malformed HTML</strong> - Best-effort processing of imperfect markup</li>
-        <li><strong>Inline styles</strong> - Removed along with other attributes</li>
-      </ul>
+      <h3>Where people use this</h3>
+      <p><strong>CMS migrations.</strong> Moving content between platforms? Strip the old HTML and start clean rather than debugging someone else's nested div soup.</p>
 
-      <h3>Limitations</h3>
-      <p>Keep in mind:</p>
-      <ul>
-        <li>Table structure is flattened to linear text</li>
-        <li>Image content is lost (only alt text may remain)</li>
-        <li>Link destinations are removed (unless preserved in text)</li>
-        <li>CSS-styled text effects are lost</li>
-      </ul>
+      <p><strong>Email extraction.</strong> HTML emails are nightmare markup. This gives you just the message body text.</p>
+
+      <p><strong>Research and analysis.</strong> Running text analysis? You need actual words, not HTML structure polluting your word counts.</p>
+
+      <p><strong>Accessibility conversions.</strong> Creating plain text versions of web content for users who need them.</p>
+
+      <h3>It handles messy HTML too</h3>
+      <p>Real-world HTML is rarely clean. Unclosed tags, weird nesting, copy-pasted from Word documents that went through three different CMSes... the tool does its best. Most imperfect HTML processes fine. Edge cases with severely broken markup might have quirks.</p>
+
+      <h3>Structural reality check</h3>
+      <p>Tables become linear text. Formatted lists flatten out. The <em>visual</em> layout was CSS magic—once that's gone, you're left with the text in source order. Usually fine, but occasionally requires manual cleanup for complex layouts.</p>
     `,
     examples: [
       {
@@ -1916,51 +1600,45 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['convert text to CSV', 'create CSV', 'text to spreadsheet', 'comma separated values', 'CSV generator', 'tabular data converter', 'text to Excel'],
     relatedEntities: ['CSV format', 'spreadsheet data', 'data conversion', 'tabular data', 'Excel'],
     longDescription: `
-      <p>The <strong>Text to CSV Converter</strong> transforms plain text into properly formatted CSV (Comma-Separated Values) files, making it easy to import your data into spreadsheets like Excel and Google Sheets, databases, and other data processing tools.</p>
+      <p>CSV: the cockroach of data formats. Been around forever, will outlive us all, works everywhere.</p>
 
-      <h3>Understanding CSV Format</h3>
-      <p>CSV is a universal data format that:</p>
+      <p>This converts whatever text you have into proper CSV that Excel, Google Sheets, databases, and basically anything else will accept without complaint.</p>
+
+      <h3>The deal with CSV</h3>
+      <p>Commas separate columns. Line breaks separate rows. Sounds trivial until your data has commas <em>in</em> it. Or quotes. Or line breaks within a field. Then things get interesting.</p>
+
+      <blockquote>
+        <p>The value "He said, "Hello"" needs careful escaping or everything breaks. This tool handles that automatically. You don't need to think about it.</p>
+      </blockquote>
+
+      <h3>Input → Output scenarios</h3>
+      <table>
+        <tr><th>What you have</th><th>What happens</th></tr>
+        <tr><td>Tab-separated data</td><td>Tabs become commas</td></tr>
+        <tr><td>Space-separated</td><td>Spaces become commas (configurable)</td></tr>
+        <tr><td>Pipe-delimited</td><td>Pipes become commas</td></tr>
+        <tr><td>Just a list</td><td>Each line = one row, one column</td></tr>
+      </table>
+
+      <h3>Why CSV instead of Excel files?</h3>
+      <p>CSV is plain text. You can open it anywhere. No proprietary format issues. No version compatibility problems. Email it, upload it, paste it—just works.</p>
+
+      <p>Excel files (.xlsx) are actually compressed XML archives. Great for complex spreadsheets with formulas. Overkill for simple data transfer.</p>
+
+      <h3>The quoting rules (RFC 4180 if you're curious)</h3>
+      <p>Fields with commas get wrapped in quotes: <code>"New York, NY"</code></p>
+      <p>Quotes inside quoted fields get doubled: <code>"He said ""Hello"""</code></p>
+      <p>Line breaks inside fields are allowed (when quoted)</p>
+
+      <h3>Practical uses</h3>
       <ul>
-        <li>Uses commas to separate values (fields)</li>
-        <li>Uses line breaks to separate records (rows)</li>
-        <li>Quotes values containing commas, quotes, or line breaks</li>
-        <li>Is compatible with virtually all spreadsheet and database software</li>
+        <li>Import data into Airtable, Notion, or other tools</li>
+        <li>Feed data into SQL databases</li>
+        <li>Create test fixtures for development</li>
+        <li>Share data with people who use different systems</li>
       </ul>
 
-      <h3>Conversion Options</h3>
-      <p>Our tool handles various input formats:</p>
-      <ul>
-        <li><strong>Tab-separated</strong> - Convert TSV to CSV</li>
-        <li><strong>Space-separated</strong> - Fixed-width or space-delimited data</li>
-        <li><strong>Custom delimiter</strong> - Pipe (|), semicolon (;), or any character</li>
-        <li><strong>Line-based</strong> - Each line becomes a row with one column</li>
-      </ul>
-
-      <h3>Common Conversion Scenarios</h3>
-      <ul>
-        <li><strong>Spreadsheet import</strong> - Prepare data for Excel or Google Sheets</li>
-        <li><strong>Database import</strong> - Format data for SQL imports</li>
-        <li><strong>Data cleaning</strong> - Standardize messy data to CSV</li>
-        <li><strong>Report formatting</strong> - Convert text reports to tabular data</li>
-        <li><strong>List processing</strong> - Turn simple lists into CSV format</li>
-      </ul>
-
-      <h3>Proper CSV Formatting</h3>
-      <p>Our converter ensures valid CSV by:</p>
-      <ul>
-        <li>Properly quoting fields with special characters</li>
-        <li>Escaping quotes within quoted fields (doubling them)</li>
-        <li>Handling line breaks within field values</li>
-        <li>Ensuring consistent field counts per row</li>
-      </ul>
-
-      <h3>Output Options</h3>
-      <ul>
-        <li><strong>Standard CSV</strong> - Comma-separated with quoted strings</li>
-        <li><strong>Excel CSV</strong> - Optimized for Microsoft Excel import</li>
-        <li><strong>TSV output</strong> - Tab-separated for specific needs</li>
-        <li><strong>Custom delimiter</strong> - Generate with any separator</li>
-      </ul>
+      <p>Paste your data, download CSV, import wherever. No special software required.</p>
     `,
     examples: [
       {
@@ -2022,24 +1700,28 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['encode URL', 'percent encoding', 'URL escape', 'URI encoder', 'encode special characters', 'web safe encoding', 'query string encoder'],
     relatedEntities: ['RFC 3986', 'percent-encoding', 'URI', 'web development', 'HTTP'],
     longDescription: `
-      <p>The <strong>URL Encoder</strong> converts text into URL-safe format by replacing special characters with percent-encoded equivalents. Essential for building query strings, API requests, and ensuring URLs work correctly across all browsers.</p>
+      <p>URLs are picky about which characters they'll accept. Spaces? Nope. Ampersands? Those have special meaning. Equals signs? Reserved. Most punctuation? Problematic.</p>
 
-      <h3>Understanding URL Encoding</h3>
-      <p>URLs can only contain a limited set of ASCII characters. URL encoding converts unsafe characters:</p>
-      <ul>
-        <li><strong>Space</strong> becomes %20</li>
-        <li><strong>&amp;</strong> becomes %26</li>
-        <li><strong>=</strong> becomes %3D</li>
-        <li><strong>?</strong> becomes %3F</li>
-      </ul>
+      <p>URL encoding fixes this by converting unsafe characters to percent-encoded format: %20 for space, %26 for &, and so on. Every unsafe character becomes a % followed by its two-digit hex code.</p>
 
-      <h3>Common Use Cases</h3>
-      <ul>
-        <li><strong>Query parameters</strong> - Encode values for URL strings</li>
-        <li><strong>API requests</strong> - Format data for REST APIs</li>
-        <li><strong>Redirect URLs</strong> - Encode URLs passed as parameters</li>
-        <li><strong>Form data</strong> - Encode form submissions</li>
-      </ul>
+      <h3>The characters that need encoding</h3>
+      <table>
+        <tr><th>Character</th><th>Encoded as</th><th>Why it's problematic</th></tr>
+        <tr><td>Space</td><td>%20</td><td>URLs can't contain spaces</td></tr>
+        <tr><td>&</td><td>%26</td><td>Separates query parameters</td></tr>
+        <tr><td>=</td><td>%3D</td><td>Assigns values in query strings</td></tr>
+        <tr><td>?</td><td>%3F</td><td>Starts query string</td></tr>
+        <tr><td>#</td><td>%23</td><td>Fragment identifier</td></tr>
+      </table>
+
+      <blockquote>
+        <p>Letters, numbers, and -_.~ are safe without encoding. Everything else... probably needs it.</p>
+      </blockquote>
+
+      <h3>Real scenarios</h3>
+      <p>Building query strings with user input. Passing URLs as parameters (redirect URLs get double-trouble). Sending form data. Any time user-generated content ends up in a URL.</p>
+
+      <p>Paste text, get URL-safe output. Simple as that.</p>
     `,
     examples: [
       { title: 'Space Encoding', input: 'hello world', output: 'hello%20world' },
@@ -2064,21 +1746,22 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['decode URL', 'percent decoding', 'URL unescape', 'URI decoder', 'decode special characters', 'parse URL'],
     relatedEntities: ['RFC 3986', 'percent-encoding', 'URI', 'web development'],
     longDescription: `
-      <p>The <strong>URL Decoder</strong> converts percent-encoded URLs back to readable text. Essential for debugging, analyzing server logs, and understanding encoded URLs and query strings.</p>
+      <p>%20%2C%20%26%2C%20%3D... Yeah, that's supposed to be ", &, =". URL encoding makes things unreadable pretty fast.</p>
 
-      <h3>How URL Decoding Works</h3>
-      <ul>
-        <li><strong>%20</strong> becomes space</li>
-        <li><strong>%26</strong> becomes &amp;</li>
-        <li><strong>%3D</strong> becomes =</li>
-      </ul>
+      <p>This reverses the process. Paste encoded URL gibberish, get human-readable text back.</p>
 
-      <h3>Common Scenarios</h3>
-      <ul>
-        <li><strong>Debugging</strong> - Understand encoded URLs</li>
-        <li><strong>Log analysis</strong> - Read URLs from server logs</li>
-        <li><strong>API troubleshooting</strong> - Decode request parameters</li>
-      </ul>
+      <h3>When you'll need this</h3>
+      <p><strong>Server logs.</strong> Apache and nginx log URLs encoded. "Page not found: /search%3Fq%3Dtest" is easier to debug as "/search?q=test".</p>
+
+      <p><strong>Debugging API calls.</strong> Your REST client shows you the encoded request. What was the actual value sent?</p>
+
+      <p><strong>Tracking URLs.</strong> Marketing links often encode destination URLs multiple times. Decode to see where it actually goes.</p>
+
+      <blockquote>
+        <p>Double-encoded URLs exist. If decoding once still shows % signs, decode again. Some systems encode already-encoded text.</p>
+      </blockquote>
+
+      <p>Drop the encoded mess in, get readable text out.</p>
     `,
     examples: [
       { title: 'Decode Spaces', input: 'hello%20world', output: 'hello world' },
@@ -2102,18 +1785,24 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['encode Base64', 'text to Base64', 'Base64 conversion', 'binary to text', 'Base64 string'],
     relatedEntities: ['Base64', 'ASCII', 'binary data', 'MIME', 'data encoding'],
     longDescription: `
-      <p>The <strong>Base64 Encoder</strong> converts text and binary data into Base64 format—a text representation that's safe for URLs, emails, JSON, and other text-based systems.</p>
+      <p>Base64 turns any data into text using just 64 characters: A-Z, a-z, 0-9, plus, and slash. The = signs at the end are padding.</p>
 
-      <h3>What is Base64?</h3>
-      <p>Base64 uses 64 characters (A-Z, a-z, 0-9, +, /) plus = for padding to represent binary data as text.</p>
+      <h3>Why does this exist?</h3>
+      <p>Some systems only handle text. Email was designed for text. JSON is text. Embedding an image in CSS? That's text. But images are binary data. Base64 bridges the gap.</p>
 
-      <h3>Common Use Cases</h3>
-      <ul>
-        <li><strong>Data URLs</strong> - Embed images in HTML/CSS</li>
-        <li><strong>API authentication</strong> - Basic Auth headers</li>
-        <li><strong>Email attachments</strong> - MIME encoding</li>
-        <li><strong>JWT tokens</strong> - Encode payloads</li>
-      </ul>
+      <table>
+        <tr><th>Use case</th><th>What's happening</th></tr>
+        <tr><td>Data URLs</td><td>Image data embedded directly in HTML/CSS</td></tr>
+        <tr><td>Basic Auth</td><td>"user:password" encoded in HTTP headers</td></tr>
+        <tr><td>JWT tokens</td><td>Payload and signature as URL-safe text</td></tr>
+        <tr><td>Email attachments</td><td>Files encoded for MIME transport</td></tr>
+      </table>
+
+      <blockquote>
+        <p>Important: Base64 is encoding, not encryption. Anyone can decode it instantly. It provides zero security—just format transformation.</p>
+      </blockquote>
+
+      <p>Text in, Base64 out. The equals signs at the end ensure the length is divisible by 4.</p>
     `,
     examples: [
       { title: 'Simple Text', input: 'Hello World', output: 'SGVsbG8gV29ybGQ=' },
@@ -2137,15 +1826,22 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['decode Base64', 'Base64 to text', 'Base64 conversion', 'text from Base64'],
     relatedEntities: ['Base64', 'ASCII', 'binary data', 'data decoding'],
     longDescription: `
-      <p>The <strong>Base64 Decoder</strong> converts Base64-encoded strings back to original text or binary data. Essential for inspecting encoded API responses, JWT tokens, and embedded content.</p>
+      <p>SGVsbG8gV29ybGQ= looks like gibberish. It's actually "Hello World" in Base64.</p>
 
-      <h3>Common Scenarios</h3>
-      <ul>
-        <li><strong>API responses</strong> - Decode Base64 data</li>
-        <li><strong>JWT tokens</strong> - Inspect token payloads</li>
-        <li><strong>Configuration</strong> - Read encoded config values</li>
-        <li><strong>Debugging</strong> - Inspect encoded credentials</li>
-      </ul>
+      <p>Paste any Base64 string here to see what it actually contains. JWT payload? Config value? API response? Decode it and find out.</p>
+
+      <h3>What you'll use this for</h3>
+      <p><strong>JWT inspection.</strong> The middle section of JWTs (between the dots) is Base64-encoded JSON. Decode it to see claims, expiration, user data.</p>
+
+      <p><strong>API debugging.</strong> Some APIs return Base64-encoded data. Especially when dealing with binary content or legacy systems.</p>
+
+      <p><strong>Config files.</strong> Kubernetes secrets, some environment variables—often Base64 encoded.</p>
+
+      <blockquote>
+        <p>If decoded output looks like random characters or boxes, the original was binary data (image, PDF, etc.) not text. Binary decoded as text = garbage display.</p>
+      </blockquote>
+
+      <p>Paste encoded string, get original content. No API calls, no data leaves your browser.</p>
     `,
     examples: [
       { title: 'Decode Text', input: 'SGVsbG8gV29ybGQ=', output: 'Hello World' },
@@ -2168,17 +1864,28 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['MD5 checksum', 'MD5 hash', 'message digest', 'file hash', 'MD5 calculator'],
     relatedEntities: ['MD5', 'cryptographic hash', 'checksum', 'data integrity'],
     longDescription: `
-      <p>The <strong>MD5 Hash Generator</strong> creates 128-bit MD5 hashes (32 hex characters) from text. Used for checksums, data integrity, and legacy system compatibility.</p>
+      <p>MD5 takes any input and produces a 32-character hex string. Always the same output for the same input. "Hello World" is always b10a8db164e0754105b7a99be72e3fe5.</p>
 
-      <h3>MD5 Applications</h3>
-      <ul>
-        <li><strong>File verification</strong> - Confirm downloads are uncorrupted</li>
-        <li><strong>Data deduplication</strong> - Identify duplicate files</li>
-        <li><strong>Cache keys</strong> - Generate unique identifiers</li>
-      </ul>
+      <h3>Where MD5 is still useful</h3>
+      <p><strong>File checksums.</strong> Downloaded a 4GB file? Compare MD5 hashes to verify it's not corrupted. Fast and good enough for integrity checks.</p>
 
-      <h3>Security Note</h3>
-      <p>MD5 is cryptographically broken. Do NOT use for passwords, security, or digital signatures. Use SHA-256 for security applications.</p>
+      <p><strong>Cache keys.</strong> Need a unique identifier from arbitrary input? MD5 the content. Works great for caching systems.</p>
+
+      <p><strong>Deduplication.</strong> Hash files to find duplicates without comparing entire contents.</p>
+
+      <h3>Where MD5 is dangerously wrong</h3>
+      <table>
+        <tr><th>Use case</th><th>Why MD5 fails</th><th>Use instead</th></tr>
+        <tr><td>Passwords</td><td>Rainbow tables, collision attacks</td><td>bcrypt, Argon2</td></tr>
+        <tr><td>Digital signatures</td><td>Collision attacks proven</td><td>SHA-256</td></tr>
+        <tr><td>Security certificates</td><td>Can be forged</td><td>SHA-256</td></tr>
+      </table>
+
+      <blockquote>
+        <p>MD5 was broken in 2004. Researchers created two different files with identical MD5 hashes. For security: use SHA-256 or better.</p>
+      </blockquote>
+
+      <p>For non-security checksums and identifiers, MD5 still works fine. Just know its limits.</p>
     `,
     examples: [
       { title: 'Simple Text', input: 'Hello World', output: 'b10a8db164e0754105b7a99be72e3fe5' },
@@ -2202,15 +1909,26 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['SHA256 hash', 'SHA-256 checksum', 'secure hash algorithm', 'cryptographic hash'],
     relatedEntities: ['SHA-2', 'cryptographic hash', 'blockchain', 'data integrity'],
     longDescription: `
-      <p>The <strong>SHA-256 Hash Generator</strong> creates cryptographically secure 256-bit hashes (64 hex characters). Used in blockchain, SSL certificates, digital signatures, and security applications.</p>
+      <p>SHA-256 is what you use when MD5 isn't secure enough—which is anytime security matters.</p>
 
-      <h3>Security Applications</h3>
+      <p>Same concept: input goes in, fixed-length hash comes out. But 256 bits instead of 128, and no known practical attacks. Bitcoin runs on it. SSL certificates use it. It's the industry standard for "we need this to be secure."</p>
+
+      <h3>The numbers</h3>
+      <p>64 hex characters. 2^256 possible hashes. That's roughly 10^77—more than atoms in the observable universe. Brute-forcing isn't happening.</p>
+
+      <h3>Where you'll see SHA-256</h3>
       <ul>
-        <li><strong>Blockchain</strong> - Bitcoin and cryptocurrencies</li>
-        <li><strong>SSL certificates</strong> - Secure web connections</li>
-        <li><strong>Digital signatures</strong> - Document verification</li>
-        <li><strong>File verification</strong> - Ensure downloads are genuine</li>
+        <li><strong>Blockchain:</strong> Every Bitcoin block includes SHA-256 hashes. Mining is literally SHA-256 computation.</li>
+        <li><strong>SSL/TLS:</strong> Certificates are signed using SHA-256.</li>
+        <li><strong>Git:</strong> Commit IDs are SHA-256 (or SHA-1 historically).</li>
+        <li><strong>Package managers:</strong> npm, pip, and others verify downloads with SHA-256.</li>
       </ul>
+
+      <blockquote>
+        <p>For passwords, SHA-256 alone isn't enough. Use bcrypt or Argon2 which include salting and intentional slowness to prevent brute force.</p>
+      </blockquote>
+
+      <p>For general secure hashing—file verification, integrity checks, unique identifiers where security matters—SHA-256 is the answer.</p>
     `,
     examples: [
       { title: 'Simple Text', input: 'Hello World', output: 'a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e' },
@@ -2234,14 +1952,27 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['format JSON', 'pretty print JSON', 'JSON beautifier', 'JSON validator', 'JSON viewer'],
     relatedEntities: ['JSON', 'JavaScript', 'API', 'data format', 'web development'],
     longDescription: `
-      <p>The <strong>JSON Formatter</strong> beautifies and validates JSON data, transforming minified JSON into readable, indented format. Essential for debugging APIs and working with JSON data.</p>
+      <p>API gave you {"name":"John","settings":{"notifications":true,"theme":"dark"}}? Good luck reading that.</p>
 
-      <h3>Features</h3>
-      <ul>
-        <li><strong>Pretty Print</strong> - Format with proper indentation</li>
-        <li><strong>Validation</strong> - Detect syntax errors</li>
-        <li><strong>Minification</strong> - Compress by removing whitespace</li>
-      </ul>
+      <p>This turns minified JSON into properly indented, human-readable format. Also catches syntax errors—missing commas, unclosed brackets, the usual suspects.</p>
+
+      <h3>Common JSON mistakes this catches</h3>
+      <table>
+        <tr><th>Error</th><th>Example</th></tr>
+        <tr><td>Trailing comma</td><td>{"a": 1, "b": 2,}</td></tr>
+        <tr><td>Single quotes</td><td>{'key': 'value'}</td></tr>
+        <tr><td>Unquoted keys</td><td>{key: "value"}</td></tr>
+        <tr><td>Missing comma</td><td>{"a": 1 "b": 2}</td></tr>
+      </table>
+
+      <blockquote>
+        <p>JSON isn't JavaScript. No trailing commas, no single quotes, no comments. These work in JS but break JSON parsers.</p>
+      </blockquote>
+
+      <h3>Minification works too</h3>
+      <p>Going the other direction—readable JSON to compact format—is also an option. Useful for production configs or reducing payload size.</p>
+
+      <p>Paste JSON, get formatted output or error message explaining what's wrong.</p>
     `,
     examples: [
       { title: 'Format Object', input: '{"name":"John","age":30}', output: '{\n  "name": "John",\n  "age": 30\n}' },
@@ -2265,14 +1996,24 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['format XML', 'pretty print XML', 'XML beautifier', 'XML validator'],
     relatedEntities: ['XML', 'XHTML', 'SOAP', 'RSS', 'markup language'],
     longDescription: `
-      <p>The <strong>XML Formatter</strong> beautifies and validates XML documents. Essential for configuration files, SOAP services, RSS feeds, and legacy data formats.</p>
+      <p>XML still powers a surprising amount of the web. RSS feeds, SOAP APIs, Android layouts, Maven configs, Microsoft Office files (they're XML inside). When you need to read or debug it, proper formatting helps.</p>
 
-      <h3>Features</h3>
+      <p>This indents nested elements so you can actually see the structure. Also validates that tags are properly closed and nested.</p>
+
+      <h3>What makes XML "well-formed"</h3>
       <ul>
-        <li><strong>Pretty Print</strong> - Format with proper indentation</li>
-        <li><strong>Validation</strong> - Check for well-formed XML</li>
-        <li><strong>Error Detection</strong> - Find unclosed tags and syntax issues</li>
+        <li>Single root element (everything inside one parent)</li>
+        <li>Tags properly closed (&lt;tag&gt;...&lt;/tag&gt; or &lt;tag /&gt;)</li>
+        <li>Tags properly nested (no &lt;a&gt;&lt;b&gt;&lt;/a&gt;&lt;/b&gt;)</li>
+        <li>Attributes quoted (&lt;tag attr="value"&gt;)</li>
+        <li>Case-sensitive (&lt;Tag&gt; ≠ &lt;tag&gt;)</li>
       </ul>
+
+      <blockquote>
+        <p>Unlike HTML, XML doesn't forgive mistakes. Browsers fix broken HTML. XML parsers just fail. Every tag must close, every attribute must quote.</p>
+      </blockquote>
+
+      <p>Paste XML, see it properly indented, catch errors before your parser does.</p>
     `,
     examples: [
       { title: 'Simple Element', input: '<root><item>value</item></root>', output: '<root>\n  <item>value</item>\n</root>' },
@@ -2295,22 +2036,27 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['CSS minifier', 'compress CSS', 'CSS compressor', 'reduce CSS size', 'optimize CSS'],
     relatedEntities: ['CSS', 'web performance', 'stylesheet', 'front-end development'],
     longDescription: `
-      <p>The <strong>CSS Minifier</strong> compresses CSS by removing whitespace, comments, and optimizing syntax—reducing file size for faster website loading.</p>
+      <p>Your CSS has comments, indentation, and nice formatting for humans. Browsers don't care. They just want the rules.</p>
 
-      <h3>What Gets Removed</h3>
-      <ul>
-        <li>Whitespace (spaces, tabs, newlines)</li>
-        <li>Comments</li>
-        <li>Redundant semicolons</li>
-        <li>Unnecessary zeros (0.5 → .5)</li>
-      </ul>
+      <p>Minification strips everything that isn't essential: whitespace, comments, redundant characters. Same rendering, smaller file, faster download.</p>
 
-      <h3>Benefits</h3>
-      <ul>
-        <li>Faster page loading</li>
-        <li>Reduced bandwidth</li>
-        <li>Better Core Web Vitals</li>
-      </ul>
+      <h3>What disappears</h3>
+      <table>
+        <tr><th>Original</th><th>Minified</th></tr>
+        <tr><td>.class {<br>  color: red;<br>}</td><td>.class{color:red}</td></tr>
+        <tr><td>/* comment */</td><td>(gone)</td></tr>
+        <tr><td>margin: 0.5em;</td><td>margin:.5em</td></tr>
+        <tr><td>color: #ffffff;</td><td>color:#fff</td></tr>
+      </table>
+
+      <h3>Real impact</h3>
+      <p>Typical savings: 10-30% depending on how verbose your original CSS is. On a 100KB stylesheet, that's 10-30KB saved—multiplied by every page view.</p>
+
+      <blockquote>
+        <p>For production, most build tools (webpack, Vite) minify automatically. This tool is useful for quick one-off minification or when you don't have a build pipeline.</p>
+      </blockquote>
+
+      <p>Paste CSS, get compressed output. Keep the readable version in your source files, serve the minified version to users.</p>
     `,
     examples: [
       { title: 'Basic Minification', input: '.class {\n  color: red;\n  padding: 10px;\n}', output: '.class{color:red;padding:10px}' },
@@ -2333,17 +2079,29 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['JavaScript minifier', 'JS minifier', 'compress JavaScript', 'JS compressor', 'uglify JavaScript'],
     relatedEntities: ['JavaScript', 'web performance', 'front-end development', 'optimization'],
     longDescription: `
-      <p>The <strong>JavaScript Minifier</strong> compresses JavaScript by removing whitespace, shortening variable names, and optimizing syntax for dramatically smaller files and faster loading.</p>
+      <p>JavaScript minification goes beyond CSS. Besides removing whitespace and comments, it can shorten variable names (userProfileData → a), inline simple functions, and eliminate dead code.</p>
 
-      <h3>Minification Techniques</h3>
-      <ul>
-        <li>Whitespace and comment removal</li>
-        <li>Variable name shortening</li>
-        <li>Dead code elimination</li>
-      </ul>
+      <h3>The transformation</h3>
+      <p>Your readable code:</p>
+      <pre>function calculateTotal(items) {
+  let sum = 0;
+  for (let item of items) {
+    sum += item.price;
+  }
+  return sum;
+}</pre>
+      <p>Becomes:</p>
+      <pre>function calculateTotal(t){let e=0;for(let n of t)e+=n.price;return e}</pre>
 
-      <h3>Performance Impact</h3>
-      <p>40-80% size reduction typical, leading to faster downloads and better performance metrics.</p>
+      <h3>Size impact</h3>
+      <p>40-80% reduction is common. A 500KB bundle dropping to 150KB means noticeably faster page loads, especially on mobile.</p>
+
+      <blockquote>
+        <p>Debugging minified code is brutal. That's what source maps are for—they map minified code back to original source. Most bundlers generate them automatically.</p>
+      </blockquote>
+
+      <h3>When to use this tool</h3>
+      <p>Quick one-off minification without setting up a build process. Testing what your code looks like minified. Most real projects use bundlers (webpack, Rollup, esbuild) that handle this automatically.</p>
     `,
     examples: [
       { title: 'Basic Function', input: 'function greet(name) {\n  return "Hello " + name;\n}', output: 'function greet(n){return"Hello "+n}' },
@@ -2366,18 +2124,27 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['encode HTML entities', 'HTML escape', 'special characters HTML', 'XSS prevention'],
     relatedEntities: ['HTML', 'character encoding', 'XSS', 'web security'],
     longDescription: `
-      <p>The <strong>HTML Entity Encoder</strong> converts special characters to HTML entities, preventing XSS attacks and ensuring text displays correctly in web pages.</p>
+      <p>User types: &lt;script&gt;alert('hacked')&lt;/script&gt;</p>
+      <p>You display it without encoding: congratulations, you have an XSS vulnerability.</p>
 
-      <h3>What Gets Encoded</h3>
-      <ul>
-        <li>&lt; becomes &amp;lt;</li>
-        <li>&gt; becomes &amp;gt;</li>
-        <li>&amp; becomes &amp;amp;</li>
-        <li>" becomes &amp;quot;</li>
-      </ul>
+      <p>HTML entity encoding converts special characters to safe representations. The browser displays them as text instead of interpreting them as HTML.</p>
 
-      <h3>Security Importance</h3>
-      <p>Encoding user input before displaying in HTML is crucial for preventing XSS attacks.</p>
+      <h3>The essential conversions</h3>
+      <table>
+        <tr><th>Character</th><th>Entity</th><th>Why it matters</th></tr>
+        <tr><td>&lt;</td><td>&amp;lt;</td><td>Opens HTML tags</td></tr>
+        <tr><td>&gt;</td><td>&amp;gt;</td><td>Closes HTML tags</td></tr>
+        <tr><td>&amp;</td><td>&amp;amp;</td><td>Starts entity sequences</td></tr>
+        <tr><td>"</td><td>&amp;quot;</td><td>Breaks out of attributes</td></tr>
+        <tr><td>'</td><td>&amp;#39;</td><td>Breaks out of attributes</td></tr>
+      </table>
+
+      <blockquote>
+        <p>Any framework worth using (React, Vue, Angular) does this automatically. Raw JavaScript or server-side templating? You need to handle it yourself.</p>
+      </blockquote>
+
+      <h3>Beyond security</h3>
+      <p>Also useful for displaying code snippets. Want to show "&lt;div&gt;" as text in your HTML? Encode it, or it becomes an actual div.</p>
     `,
     examples: [
       { title: 'HTML Tags', input: '<script>alert("XSS")</script>', output: '&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;' },
@@ -2399,15 +2166,28 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['decode HTML entities', 'HTML unescape', 'convert HTML entities'],
     relatedEntities: ['HTML', 'character encoding', 'web development'],
     longDescription: `
-      <p>The <strong>HTML Entity Decoder</strong> converts HTML entities back to original characters, making encoded content readable.</p>
+      <p>You've got text full of &amp;amp; and &amp;lt; and &amp;nbsp; and it needs to be readable. This fixes that.</p>
 
-      <h3>What Gets Decoded</h3>
-      <ul>
-        <li>&amp;lt; becomes &lt;</li>
-        <li>&amp;gt; becomes &gt;</li>
-        <li>&amp;amp; becomes &amp;</li>
-        <li>&amp;nbsp; becomes space</li>
-      </ul>
+      <p>HTML entities are how special characters survive in HTML source. Decoding reverses the process—&amp;amp; becomes &, &amp;lt; becomes <, &amp;copy; becomes ©.</p>
+
+      <h3>Common entities you'll encounter</h3>
+      <table>
+        <tr><th>Entity</th><th>Character</th><th>Where it shows up</th></tr>
+        <tr><td>&amp;nbsp;</td><td>(space)</td><td>Non-breaking space, everywhere</td></tr>
+        <tr><td>&amp;mdash;</td><td>—</td><td>Em dash</td></tr>
+        <tr><td>&amp;rsquo;</td><td>'</td><td>Smart quote, Word documents</td></tr>
+        <tr><td>&amp;#8217;</td><td>'</td><td>Same thing, numeric format</td></tr>
+        <tr><td>&amp;euro;</td><td>€</td><td>Currency symbol</td></tr>
+      </table>
+
+      <h3>Why text gets entity-encoded</h3>
+      <p>CMS exports. RSS feeds. Old HTML from the early 2000s. Content scraped from web pages. Email HTML. Some systems encode aggressively.</p>
+
+      <blockquote>
+        <p>Both named entities (&amp;copy;) and numeric entities (&amp;#169;) decode to the same character. This tool handles both.</p>
+      </blockquote>
+
+      <p>Paste encoded mess, get clean text.</p>
     `,
     examples: [
       { title: 'Common Entities', input: '&lt;div&gt;Hello &amp; World&lt;/div&gt;', output: '<div>Hello & World</div>' },
@@ -2434,16 +2214,24 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['bubble letters', 'circle text', 'enclosed letters', 'fancy bubble font', 'circled alphabet'],
     relatedEntities: ['Unicode', 'special characters', 'social media text', 'text effects'],
     longDescription: `
-      <p>The <strong>Bubble Text Generator</strong> converts your text into ⓑⓤⓑⓑⓛⓔ letters using Unicode circled characters. Perfect for social media bios, usernames, and eye-catching content.</p>
+      <p>ⓣⓨⓟⓔ ⓛⓘⓚⓔ ⓣⓗⓘⓢ instead of like this.</p>
 
-      <h3>Bubble Text Styles</h3>
-      <ul>
-        <li><strong>Filled circles</strong> - 🅐🅑🅒 (negative circled)</li>
-        <li><strong>Outline circles</strong> - ⓐⓑⓒ (circled letters)</li>
-      </ul>
+      <p>Bubble text uses Unicode circled characters—letters that come pre-packaged inside circles. They're not a font (fonts don't work in bios), they're completely different characters that happen to look like circled letters.</p>
 
-      <h3>Platform Compatibility</h3>
-      <p>Works on Twitter, Instagram, Facebook, Discord, and most modern platforms.</p>
+      <h3>Two flavors</h3>
+      <table>
+        <tr><th>Style</th><th>Example</th><th>Technical name</th></tr>
+        <tr><td>Outline</td><td>ⓐⓑⓒ</td><td>Circled Latin letters</td></tr>
+        <tr><td>Filled</td><td>🅐🅑🅒</td><td>Negative circled Latin</td></tr>
+      </table>
+
+      <p>Both work on Instagram, Twitter/X, Discord, Facebook, TikTok—anywhere that accepts Unicode text. Which is basically everywhere except very old systems.</p>
+
+      <blockquote>
+        <p>Heads up: only letters A-Z are available in circled form. Numbers have circles too (①②③), but punctuation stays normal.</p>
+      </blockquote>
+
+      <p>Type text, get bubbles. Copy and paste wherever you want attention.</p>
     `,
     examples: [
       { title: 'Bubble Text', input: 'Hello', output: 'ⓗⓔⓛⓛⓞ' },
@@ -2466,13 +2254,19 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['square letters', 'boxed text', 'enclosed squares', 'fancy square font'],
     relatedEntities: ['Unicode', 'special characters', 'social media text'],
     longDescription: `
-      <p>The <strong>Square Text Generator</strong> converts text into 🅂🅀🅄🄰🅁🄴 letters using Unicode squared characters. Create distinctive text for profiles and posts.</p>
+      <p>🄱🄾🅇🄴🄳 letters. Like bubble text's edgier cousin.</p>
 
-      <h3>Square Text Styles</h3>
-      <ul>
-        <li><strong>Filled squares</strong> - 🅂🅃🅈🅁🄴</li>
-        <li><strong>Outline squares</strong> - 🄰🄱🄲</li>
-      </ul>
+      <p>Same concept as circles—Unicode characters that look like letters inside squares. Works anywhere Unicode works, which is pretty much everywhere these days.</p>
+
+      <h3>Outline vs filled</h3>
+      <p><strong>Outline squares</strong> (🄰🄱🄲) look cleaner, more minimal. Good for subtle emphasis.</p>
+      <p><strong>Filled squares</strong> (🅂🅃🅈) have that bold, in-your-face vibe. Stand out more but can look heavy with lots of text.</p>
+
+      <blockquote>
+        <p>Fun fact: these squared letters exist because Unicode includes "Enclosed Alphanumeric Supplement" characters originally designed for Japanese text formatting. We just repurposed them for social media aesthetics.</p>
+      </blockquote>
+
+      <p>Convert your text, copy the squares, paste into your bio or post.</p>
     `,
     examples: [
       { title: 'Square Text', input: 'Hello', output: '🄷🄴🄻🄻🄾' },
@@ -2493,17 +2287,25 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['glitch text', 'corrupted text', 'creepy text', 'cursed text', 'scary text generator'],
     relatedEntities: ['Unicode combining characters', 'text effects', 'creepypasta'],
     longDescription: `
-      <p>The <strong>Zalgo Text Generator</strong> creates c̷̢̛̳̓r̷̨̞̈́ę̴̻̌e̷͇̽̚p̵̧̛̱ȳ̶̢̳ "corrupted" text by stacking Unicode combining characters. Used for horror themes, memes, and attention-grabbing content.</p>
+      <p>H̸̤̓ę̴̛̣ ̷̧̇c̸̨̛o̸͎͑m̷̢̾e̴̤̚s̵̱̈́.</p>
 
-      <h3>Intensity Levels</h3>
-      <ul>
-        <li><strong>Mini</strong> - Subtle distortion</li>
-        <li><strong>Normal</strong> - Moderate effect</li>
-        <li><strong>Maxi</strong> - Maximum chaos</li>
-      </ul>
+      <p>Zalgo text looks broken. Corrupted. Like something is very wrong with your computer. That's the point. Named after a creepypasta horror entity, it's become internet shorthand for chaos and corruption.</p>
 
-      <h3>The Zalgo Meme</h3>
-      <p>Named after a creepypasta entity, Zalgo text represents corruption and chaos, popularized in internet horror culture.</p>
+      <h3>How it actually works</h3>
+      <p>Unicode has "combining characters"—diacritical marks meant to stack on letters (accents, umlauts, etc.). Zalgo abuses this by stacking dozens of them above and below each letter. The result is text that overflows its boundaries in unsettling ways.</p>
+
+      <table>
+        <tr><th>Level</th><th>Effect</th><th>Use case</th></tr>
+        <tr><td>Mini</td><td>Slight corruption</td><td>Subtle unease</td></tr>
+        <tr><td>Normal</td><td>Visible distortion</td><td>Standard creepy</td></tr>
+        <tr><td>Maxi</td><td>Maximum chaos</td><td>Full eldritch horror</td></tr>
+      </table>
+
+      <blockquote>
+        <p>Some platforms strip combining characters. Others render them fine. Test before committing to your creepy username.</p>
+      </blockquote>
+
+      <p>Type normal text, invoke the darkness, copy the corruption.</p>
     `,
     examples: [
       { title: 'Creepy Text', input: 'Hello', output: 'H̸̡̪̯ͨ͊̽̅̾ȩ̶̵̣̠͍̜̭͔̓̌̃l̷̢͖̲̻̥l̢̠͓̻̳o' },
@@ -2525,10 +2327,27 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['aesthetic text', 'full width text', 'wide text', 'Japanese aesthetic'],
     relatedEntities: ['Unicode fullwidth', 'aesthetic', 'Japanese culture', 'retrowave'],
     longDescription: `
-      <p>The <strong>Vaporwave Text Generator</strong> creates ＡＥＳＴＨＥＴＩＣ wide text using fullwidth Unicode characters. Associated with vaporwave art, 80s nostalgia, and Japanese aesthetics.</p>
+      <p>ＡＥＳＴＨＥＴＩＣ</p>
 
-      <h3>The Vaporwave Aesthetic</h3>
-      <p>Vaporwave is a visual and musical genre celebrating 80s/90s nostalgia, Japanese culture, and internet surrealism. Fullwidth text is a key element of the aesthetic.</p>
+      <p>If you know, you know. If you don't: vaporwave is an internet microgenre built on 80s nostalgia, Japanese culture references, Greek statues, palm trees, and this exact stretched-out text style.</p>
+
+      <h3>The technical bit</h3>
+      <p>These are "fullwidth" Unicode characters. Originally designed for displaying Latin letters in East Asian typography where they need to align with wide CJK characters. We appropriated them for the ａｅｓｔｈｅｔｉｃ.</p>
+
+      <blockquote>
+        <p>Pair with pink and cyan gradients, Roman busts, Japanese kanji you don't understand, and lo-fi remixes of 80s pop for maximum vaporwave energy.</p>
+      </blockquote>
+
+      <h3>Where to use it</h3>
+      <ul>
+        <li>Social media aesthetics</li>
+        <li>Meme creation</li>
+        <li>Ironic usernames</li>
+        <li>Album art</li>
+        <li>Anything deliberately retro-internet</li>
+      </ul>
+
+      <p>Type text. Get　ｗｉｄｅ　ｔｅｘｔ. Embrace the nostalgia.</p>
     `,
     examples: [
       { title: 'Aesthetic Text', input: 'Aesthetic', output: 'Ａｅｓｔｈｅｔｉｃ' },
@@ -2550,13 +2369,31 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['text to Braille', 'Braille translator', 'Braille alphabet', 'accessibility'],
     relatedEntities: ['Braille', 'accessibility', 'Louis Braille', 'Unicode Braille'],
     longDescription: `
-      <p>The <strong>Braille Text Converter</strong> transforms text into Unicode Braille patterns. Educational for learning Braille and useful for creative text effects.</p>
+      <p>⠓⠑⠇⠇⠕ = "hello" in Braille patterns.</p>
 
-      <h3>About Braille</h3>
-      <p>Braille is a tactile writing system invented by Louis Braille. Each character uses a pattern of 1-6 raised dots. Unicode includes Braille patterns for digital representation.</p>
+      <p>Braille was invented by Louis Braille in 1824—he was 15 years old. Each character is a pattern of 1-6 raised dots arranged in a 2×3 grid. This tool converts text to Unicode representations of those patterns.</p>
 
-      <h3>Note on Accessibility</h3>
-      <p>Unicode Braille is for visual representation. Actual accessibility requires proper screen reader support and tactile Braille displays.</p>
+      <h3>Important context</h3>
+      <p>Unicode Braille is <em>visual</em> representation. Actual blind users don't read dots on screens—they use tactile Braille displays or screen readers that speak text. This tool is educational and creative, not an accessibility solution.</p>
+
+      <table>
+        <tr><th>Letter</th><th>Pattern</th><th>Unicode</th></tr>
+        <tr><td>A</td><td>⠁</td><td>U+2801</td></tr>
+        <tr><td>B</td><td>⠃</td><td>U+2803</td></tr>
+        <tr><td>C</td><td>⠉</td><td>U+2809</td></tr>
+      </table>
+
+      <h3>Legitimate uses</h3>
+      <ul>
+        <li>Learning Braille basics</li>
+        <li>Educational materials</li>
+        <li>Creative text effects</li>
+        <li>Generating patterns for actual Braille production</li>
+      </ul>
+
+      <blockquote>
+        <p>Grade 2 Braille uses contractions to shorten common words. This tool converts letter-by-letter (Grade 1), which is technically correct but verbose.</p>
+      </blockquote>
     `,
     examples: [
       { title: 'Braille Text', input: 'Hello', output: '⠓⠑⠇⠇⠕' },
@@ -2578,14 +2415,22 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['phonetic alphabet', 'Alpha Bravo Charlie', 'military alphabet', 'spelling alphabet'],
     relatedEntities: ['NATO', 'ICAO', 'aviation', 'military communication'],
     longDescription: `
-      <p>The <strong>NATO Phonetic Alphabet Converter</strong> converts text to the international spelling alphabet (Alpha, Bravo, Charlie...). Used in aviation, military, and clear voice communication.</p>
+      <p>"Was that B as in boy or D as in dog?" → "That's Bravo, Delta."</p>
 
-      <h3>Why Use Phonetic Alphabet?</h3>
-      <ul>
-        <li>Prevents miscommunication (B vs D, M vs N)</li>
-        <li>Works across accents and languages</li>
-        <li>Standard in aviation and military</li>
-      </ul>
+      <p>The NATO phonetic alphabet exists because radio communication is terrible for distinguishing similar-sounding letters. B and D, M and N, S and F—they all blur together with static, accents, or noise. Standardized code words eliminate guesswork.</p>
+
+      <h3>The alphabet</h3>
+      <p>Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu.</p>
+
+      <blockquote>
+        <p>It's not just military. Call centers use it. Tech support uses it. Anyone who's spelled out a serial number or confirmation code over the phone knows the pain it solves.</p>
+      </blockquote>
+
+      <h3>History</h3>
+      <p>Current version adopted by NATO in 1956 and used internationally. Previous versions existed, but this one stuck because the words are distinct across languages and accents.</p>
+
+      <h3>Numbers too</h3>
+      <p>Nine becomes "Niner" (distinguishes from "Nein"/no). Three is sometimes "Tree" to avoid confusion with "Free". Zero can be "Zero" or "Zee-ro" depending on context.</p>
     `,
     examples: [
       { title: 'Spell Out', input: 'SOS', output: 'Sierra Oscar Sierra' },
@@ -2608,18 +2453,28 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['text to ASCII art', 'ASCII text', 'text banner', 'figlet', 'text art'],
     relatedEntities: ['ASCII', 'text art', 'terminal art', 'figlet'],
     longDescription: `
-      <p>The <strong>ASCII Art Generator</strong> converts text into large ASCII art banners using various fonts and styles. Perfect for terminal displays, README files, and creative text presentations.</p>
+<pre>
+ _   _ _____ _     _     ___
+| | | | ____| |   | |   / _ \\
+| |_| |  _| | |   | |  | | | |
+|  _  | |___| |___| |__| |_| |
+|_| |_|_____|_____|_____\\___/
+</pre>
 
-      <h3>Font Styles</h3>
-      <p>Multiple fonts available from simple block letters to elaborate decorative styles.</p>
+      <p>That's "HELLO" in ASCII art. From the era when terminals were text-only and creativity meant arranging characters cleverly.</p>
 
-      <h3>Common Uses</h3>
-      <ul>
-        <li>Terminal welcome messages</li>
-        <li>README file headers</li>
-        <li>Code comments</li>
-        <li>Retro-style graphics</li>
-      </ul>
+      <h3>Where ASCII art lives now</h3>
+      <p><strong>README files.</strong> Project headers that add personality to repositories.</p>
+      <p><strong>Terminal splash screens.</strong> CLI tools that want to look cool on startup.</p>
+      <p><strong>Code comments.</strong> Section dividers for developers who appreciate aesthetics.</p>
+      <p><strong>Email signatures.</strong> For the nostalgically inclined.</p>
+
+      <blockquote>
+        <p>FIGlet (Frank, Ian, and Glenn's letters) is the classic tool for this. Many fonts you'll see originated there. This tool renders similar styles in your browser.</p>
+      </blockquote>
+
+      <h3>Font choices</h3>
+      <p>Simple block letters for clarity. Slanted styles for drama. Elaborate decorative fonts for when you really want to make an entrance. Some fonts work better at larger sizes; others stay readable small.</p>
     `,
     examples: [
       { title: 'Simple Banner', input: 'HI', output: ' _   _ ___ \n| | | |_ _|\n| |_| || | \n \\___/|___|' },
@@ -2641,14 +2496,25 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['corrupted text', 'distorted text', 'broken text', 'matrix text'],
     relatedEntities: ['Unicode', 'text effects', 'cyberpunk', 'digital art'],
     longDescription: `
-      <p>The <strong>Glitch Text Generator</strong> creates d̷i̸s̵t̷o̴r̷t̴e̶d̴ text effects that look like digital corruption. Perfect for cyberpunk aesthetics, tech themes, and edgy designs.</p>
+      <p>E̶R̷R̸O̵R̴: system corrupted. Just kidding—it's just strikethroughs.</p>
 
-      <h3>Glitch Styles</h3>
-      <ul>
-        <li>Strikethrough glitches</li>
-        <li>Combining character distortion</li>
-        <li>Mixed Unicode effects</li>
-      </ul>
+      <p>Glitch text simulates digital corruption. Like Zalgo's cleaner cousin. Less eldritch horror, more cyberpunk aesthetic. The text looks broken without going full chaos mode.</p>
+
+      <h3>The difference from Zalgo</h3>
+      <table>
+        <tr><th>Glitch text</th><th>Zalgo text</th></tr>
+        <tr><td>Controlled distortion</td><td>Maximum chaos</td></tr>
+        <tr><td>Strikethroughs mainly</td><td>Stacked diacritics everywhere</td></tr>
+        <tr><td>Tech/cyberpunk vibe</td><td>Horror/corruption vibe</td></tr>
+        <tr><td>Still fairly readable</td><td>Can be illegible</td></tr>
+      </table>
+
+      <blockquote>
+        <p>The strikethrough effect uses Unicode combining long stroke overlay (U+0336) applied to each character. Simple technique, effective result.</p>
+      </blockquote>
+
+      <h3>Where it works</h3>
+      <p>Tech-themed content. Error messages (fake ones). Cyberpunk aesthetics. Hacker vibes. Edgy usernames. Album titles. Anywhere you want that "something's wrong with the matrix" feeling without full corruption.</p>
     `,
     examples: [
       { title: 'Glitched Text', input: 'ERROR', output: 'E̵R̷R̸O̶R̴' },
@@ -2669,13 +2535,22 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['fancy cursive text', 'script font', 'handwriting text', 'elegant text'],
     relatedEntities: ['Unicode mathematical script', 'typography', 'calligraphy'],
     longDescription: `
-      <p>The <strong>Cursive Text Generator</strong> converts text into 𝓮𝓵𝓮𝓰𝓪𝓷𝓽 𝓬𝓾𝓻𝓼𝓲𝓿𝓮 using Unicode mathematical script characters. Perfect for elegant social media bios and fancy text.</p>
+      <p>𝒯𝒽ℯ 𝒻𝒶𝓃𝒸𝓎 𝓉ℯ𝓍𝓉 𝓎ℴ𝓊 𝓈ℯℯ ℴ𝓃 𝐼𝓃𝓈𝓉𝒶ℊ𝓇𝒶𝓂 𝒷𝒾ℴ𝓈.</p>
 
-      <h3>Cursive Styles</h3>
-      <ul>
-        <li><strong>Script</strong> - 𝓪𝓫𝓬 (Mathematical Script)</li>
-        <li><strong>Bold Script</strong> - 𝓐𝓑𝓒</li>
-      </ul>
+      <p>These aren't fonts—fonts don't work in plain text fields. They're Mathematical Script characters from Unicode, originally intended for mathematical notation. We use them to look fancy on social media.</p>
+
+      <h3>Script varieties</h3>
+      <p><strong>Regular script</strong> (𝒶𝒷𝒸) — lighter, more delicate appearance.</p>
+      <p><strong>Bold script</strong> (𝓪𝓫𝓬) — heavier, more dramatic look.</p>
+
+      <blockquote>
+        <p>Technical note: these are actually "Mathematical Script" and "Mathematical Bold Script" characters from the Mathematical Alphanumeric Symbols Unicode block. Mathematicians needed them for notation. Influencers repurposed them.</p>
+      </blockquote>
+
+      <h3>Compatibility warning</h3>
+      <p>Works on most modern platforms. Some older systems, cheap fonts, or specific apps might show boxes or question marks. Test before committing to a permanent bio or username.</p>
+
+      <p>Type normally, get elegant. Copy and paste your fancy text anywhere.</p>
     `,
     examples: [
       { title: 'Cursive Text', input: 'Elegant', output: '𝓔𝓵𝓮𝓰𝓪𝓷𝓽' },
@@ -2696,10 +2571,25 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['Gothic text', 'medieval font', 'blackletter', 'Fraktur text'],
     relatedEntities: ['Unicode Fraktur', 'Gothic script', 'medieval typography'],
     longDescription: `
-      <p>The <strong>Old English Text Generator</strong> converts text into 𝔒𝔩𝔡 𝔈𝔫𝔤𝔩𝔦𝔰𝔥 style using Unicode Fraktur characters. Perfect for medieval themes, fantasy content, and Gothic aesthetics.</p>
+      <p>𝔗𝔥𝔲𝔰 𝔰𝔭𝔢𝔞𝔨𝔢𝔱𝔥 𝔱𝔥𝔢 𝔞𝔫𝔠𝔦𝔢𝔫𝔱 𝔱𝔢𝔵𝔱.</p>
 
-      <h3>Fraktur/Blackletter</h3>
-      <p>This style replicates medieval blackletter script, commonly associated with Old English, Gothic themes, and historical documents.</p>
+      <p>Not actually Old English (that's a language, not a font). This is Fraktur—a blackletter typeface style used in medieval manuscripts and German printing until the mid-20th century.</p>
+
+      <h3>Historical context</h3>
+      <p>Blackletter was the standard script in medieval Europe. Gutenberg's Bible used it. German newspapers printed in Fraktur until the 1940s. It's associated with medieval documents, Gothic architecture, and heavy metal band logos.</p>
+
+      <table>
+        <tr><th>Style</th><th>Look</th><th>Technical name</th></tr>
+        <tr><td>Regular</td><td>𝔞𝔟𝔠</td><td>Mathematical Fraktur</td></tr>
+        <tr><td>Bold</td><td>𝖆𝖇𝖈</td><td>Mathematical Bold Fraktur</td></tr>
+      </table>
+
+      <blockquote>
+        <p>These are Unicode Mathematical Fraktur characters, not an actual Fraktur font. The real script has way more ornate letters—especially capitals—than Unicode can represent.</p>
+      </blockquote>
+
+      <h3>When to deploy the medieval vibes</h3>
+      <p>Fantasy content. Metal aesthetics. Ye olde jokes. Renaissance faire announcements. Anything that needs to feel ancient, gothic, or dramatically European.</p>
     `,
     examples: [
       { title: 'Gothic Text', input: 'Medieval', output: '𝔐𝔢𝔡𝔦𝔢𝔳𝔞𝔩' },
@@ -2724,17 +2614,26 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['count words', 'word count tool', 'text statistics', 'word frequency'],
     relatedEntities: ['text analysis', 'writing tools', 'content length'],
     longDescription: `
-      <p>The <strong>Word Counter</strong> instantly counts words, characters, sentences, and paragraphs in your text. Essential for writers, students, and anyone tracking content length requirements.</p>
+      <p>"How many words is this?" The question behind every blog post, essay, tweet, and email that needs to hit a specific length.</p>
 
-      <h3>Statistics Provided</h3>
-      <ul>
-        <li>Word count</li>
-        <li>Character count (with/without spaces)</li>
-        <li>Sentence count</li>
-        <li>Paragraph count</li>
-        <li>Average word length</li>
-        <li>Reading time estimate</li>
-      </ul>
+      <p>Paste text, get instant counts. Words, characters, sentences, paragraphs, reading time. No signup, no waiting, just numbers.</p>
+
+      <h3>What you get</h3>
+      <table>
+        <tr><th>Metric</th><th>Why it matters</th></tr>
+        <tr><td>Word count</td><td>Essay requirements, article targets</td></tr>
+        <tr><td>Characters</td><td>Twitter limits, meta descriptions</td></tr>
+        <tr><td>Sentences</td><td>Complexity analysis</td></tr>
+        <tr><td>Paragraphs</td><td>Structure overview</td></tr>
+        <tr><td>Reading time</td><td>~200-250 words/minute average</td></tr>
+      </table>
+
+      <blockquote>
+        <p>The "1000 word essay" is actually measured by your word processor, not your teacher manually counting. We use the same logic: spaces and punctuation divide words.</p>
+      </blockquote>
+
+      <h3>Hyphenated words?</h3>
+      <p>"Self-driving" could be one word or two depending on who's counting. Most style guides say one. We match what Microsoft Word does.</p>
     `,
     examples: [
       { title: 'Count Words', input: 'Hello world! How are you?', output: 'Words: 5, Characters: 25, Sentences: 2' },
@@ -2756,22 +2655,25 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['count characters', 'letter count', 'text length', 'character limit'],
     relatedEntities: ['text analysis', 'Twitter character limit', 'SMS length'],
     longDescription: `
-      <p>The <strong>Character Counter</strong> counts every character in your text, helping you meet character limits for Twitter, SMS, meta descriptions, and other platforms with length restrictions.</p>
+      <p>280 characters for Twitter. 160 for SMS. 155-160 for meta descriptions. Character limits are everywhere.</p>
 
-      <h3>Character Counting Options</h3>
-      <ul>
-        <li>Total characters</li>
-        <li>Characters without spaces</li>
-        <li>Letters only</li>
-        <li>Numbers only</li>
-      </ul>
+      <p>This counts them. All of them. With spaces, without spaces, letters only, numbers only—however you need to slice it.</p>
 
-      <h3>Common Limits</h3>
-      <ul>
-        <li>Twitter/X: 280 characters</li>
-        <li>SMS: 160 characters</li>
-        <li>Meta description: 155-160 characters</li>
-      </ul>
+      <h3>The limits you're probably hitting</h3>
+      <table>
+        <tr><th>Platform</th><th>Limit</th><th>Notes</th></tr>
+        <tr><td>Twitter/X</td><td>280</td><td>Used to be 140, remember?</td></tr>
+        <tr><td>SMS</td><td>160</td><td>Per segment; longer = multiple messages</td></tr>
+        <tr><td>Meta descriptions</td><td>155-160</td><td>Google truncates around here</td></tr>
+        <tr><td>Title tags</td><td>60-70</td><td>Also truncated in search results</td></tr>
+        <tr><td>LinkedIn posts</td><td>3,000</td><td>But first ~140 show before "see more"</td></tr>
+      </table>
+
+      <blockquote>
+        <p>Spaces: most platforms count them. Some don't. We show both counts so you're covered either way.</p>
+      </blockquote>
+
+      <p>Type or paste, see your count instantly. Edit until it fits.</p>
     `,
     examples: [
       { title: 'Count Characters', input: 'Hello World', output: '11 characters (10 without spaces)' },
@@ -2792,15 +2694,23 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['count lines', 'line count tool', 'text lines', 'newline count'],
     relatedEntities: ['text analysis', 'code analysis', 'data processing'],
     longDescription: `
-      <p>The <strong>Line Counter</strong> counts the number of lines in your text, including empty lines. Useful for code, data files, and multi-line content analysis.</p>
+      <p>wc -l for people who don't want to open a terminal.</p>
 
-      <h3>Line Counting Options</h3>
-      <ul>
-        <li>Total lines</li>
-        <li>Non-empty lines</li>
-        <li>Empty lines</li>
-        <li>Lines with content</li>
-      </ul>
+      <p>Counts lines. Total lines, empty lines, lines with actual content. Simple tool, clear output.</p>
+
+      <h3>When line count matters</h3>
+      <p><strong>Code.</strong> "How many lines of code is this file?" is a reasonable question during code review or project estimation.</p>
+
+      <p><strong>Data files.</strong> CSV with 10,000 rows? Good to know before you try to open it in Excel.</p>
+
+      <p><strong>Log analysis.</strong> How many log entries? How many errors? Line count is step one.</p>
+
+      <blockquote>
+        <p>Empty lines count as lines. A file with just one blank line has 1 line. We show both totals separately so you can see content density.</p>
+      </blockquote>
+
+      <h3>What defines a "line"</h3>
+      <p>Anything between newline characters (\\n). A file ending without a trailing newline still counts its last content as a line. Windows line endings (\\r\\n) work too.</p>
     `,
     examples: [
       { title: 'Count Lines', input: 'Line 1\nLine 2\n\nLine 4', output: 'Total: 4 lines, Empty: 1, Non-empty: 3' },
@@ -2821,21 +2731,30 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['Flesch reading ease', 'readability test', 'grade level', 'reading difficulty'],
     relatedEntities: ['Flesch-Kincaid', 'readability formulas', 'content optimization'],
     longDescription: `
-      <p>The <strong>Readability Score Checker</strong> analyzes your text using established formulas to determine reading difficulty and appropriate grade level. Essential for ensuring content is accessible to your target audience.</p>
+      <p>Is your writing too complex for your audience? Readability scores answer that question with math.</p>
 
-      <h3>Readability Scores</h3>
+      <p>These formulas have been around since the 1940s. The US Navy developed Flesch-Kincaid to test training manual clarity. The formulas count syllables, sentence length, and word complexity to estimate reading difficulty.</p>
+
+      <h3>The scores explained</h3>
+      <table>
+        <tr><th>Score type</th><th>Range</th><th>What it means</th></tr>
+        <tr><td>Flesch Reading Ease</td><td>0-100</td><td>Higher = easier to read</td></tr>
+        <tr><td>Flesch-Kincaid Grade</td><td>1-12+</td><td>US school grade level</td></tr>
+        <tr><td>Gunning Fog</td><td>1-17+</td><td>Years of education needed</td></tr>
+      </table>
+
+      <blockquote>
+        <p>Hemingway wrote at a 4th-grade level. Academic papers hit 12+. Neither is wrong—they have different audiences.</p>
+      </blockquote>
+
+      <h3>What makes text "harder"</h3>
       <ul>
-        <li><strong>Flesch Reading Ease</strong> - 0-100 scale (higher = easier)</li>
-        <li><strong>Flesch-Kincaid Grade</strong> - US grade level</li>
-        <li><strong>Gunning Fog Index</strong> - Years of education needed</li>
+        <li>Longer sentences (more clauses, more commas)</li>
+        <li>More syllables per word (complicated → hard, used → easy)</li>
+        <li>Passive voice (debatable, but some formulas penalize it)</li>
       </ul>
 
-      <h3>Score Interpretation</h3>
-      <ul>
-        <li>90-100: 5th grade (very easy)</li>
-        <li>60-70: 8th-9th grade (standard)</li>
-        <li>0-30: College graduate (very difficult)</li>
-      </ul>
+      <p>For general web content, aim for grade 8 or lower. Specialized content can go higher if your audience expects it.</p>
     `,
     examples: [
       { title: 'Check Readability', input: 'The cat sat on the mat.', output: 'Flesch Reading Ease: 116, Grade Level: 0.5' },
@@ -2857,18 +2776,27 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['keyword frequency', 'SEO keyword tool', 'word frequency analysis', 'keyword count'],
     relatedEntities: ['SEO', 'content optimization', 'keyword research'],
     longDescription: `
-      <p>The <strong>Keyword Density Analyzer</strong> calculates how frequently keywords appear in your text as a percentage. Essential for SEO content optimization without over-optimization.</p>
+      <p>Keyword density mattered more in 2008. Google's algorithms are smarter now. But density still tells you something useful: are you actually talking about your topic?</p>
 
-      <h3>Analysis Features</h3>
-      <ul>
-        <li>Single keyword density</li>
-        <li>Top keywords by frequency</li>
-        <li>Two/three-word phrase analysis</li>
-        <li>Stop words filtering</li>
-      </ul>
+      <p>If your target keyword appears 0 times in 1000 words... you're probably not ranking for it. If it appears 50 times... that's keyword stuffing and Google will notice.</p>
 
-      <h3>Optimal Density</h3>
-      <p>Generally, 1-2% keyword density is recommended. Over 3% may be seen as keyword stuffing.</p>
+      <h3>Modern interpretation</h3>
+      <table>
+        <tr><th>Density</th><th>What it signals</th></tr>
+        <tr><td>0-0.5%</td><td>Topic barely mentioned</td></tr>
+        <tr><td>1-2%</td><td>Natural, focused content</td></tr>
+        <tr><td>3%+</td><td>Getting spammy</td></tr>
+        <tr><td>5%+</td><td>Definitely keyword stuffing</td></tr>
+      </table>
+
+      <blockquote>
+        <p>More important than exact percentage: use variations, synonyms, and related terms. "Running shoes" should also mention "sneakers," "athletic footwear," "jogging," etc.</p>
+      </blockquote>
+
+      <h3>What this tool shows</h3>
+      <p>Single word frequency. Two-word phrases. Three-word phrases. You'll see what terms dominate your content—sometimes revealing unintentional repetition you didn't notice while writing.</p>
+
+      <p>Think of it as a diagnostic, not a target. Write naturally first, check density after.</p>
     `,
     examples: [
       { title: 'Analyze Keywords', input: 'SEO is important. Good SEO helps rankings.', output: 'SEO: 2 occurrences (22.2%)' },
@@ -2890,15 +2818,28 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['compare text', 'text comparison', 'find differences', 'diff checker'],
     relatedEntities: ['diff algorithm', 'version control', 'text comparison'],
     longDescription: `
-      <p>The <strong>Text Diff Tool</strong> compares two texts and highlights the differences between them. Essential for reviewing changes, comparing versions, and finding edits.</p>
+      <p>Two versions of a document. What changed? This tool shows you.</p>
 
-      <h3>Diff Features</h3>
+      <p>Git uses diff. Wikipedia shows diffs for every edit. Code review tools highlight diffs. It's fundamental infrastructure for tracking changes—and you shouldn't need a developer setup to access it.</p>
+
+      <h3>What you'll see</h3>
+      <p><span style="color: green;">+ Added lines</span> show what's new in the second version.</p>
+      <p><span style="color: red;">- Removed lines</span> show what was deleted from the first version.</p>
+      <p><span style="color: yellow;">~ Changed lines</span> highlight where wording was modified.</p>
+
+      <blockquote>
+        <p>Character-level highlighting shows exactly which words or even letters changed within a line. Not just "this line is different" but "this specific word changed."</p>
+      </blockquote>
+
+      <h3>Real uses</h3>
       <ul>
-        <li>Line-by-line comparison</li>
-        <li>Inline character highlighting</li>
-        <li>Added/removed/changed indicators</li>
-        <li>Side-by-side or unified view</li>
+        <li>Compare contract versions (what did they actually change?)</li>
+        <li>Review document edits before accepting</li>
+        <li>Find what broke between working and broken code</li>
+        <li>See what your editor/collaborator modified</li>
       </ul>
+
+      <p>Paste both versions, see the differences. Green = added. Red = removed. Yellow = changed.</p>
     `,
     examples: [
       { title: 'Compare Texts', input: 'Text A: Hello World\nText B: Hello There', output: 'Changed: "World" → "There"' },
@@ -2920,15 +2861,26 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['search and replace', 'text replace', 'bulk replace', 'regex replace'],
     relatedEntities: ['text editing', 'regular expressions', 'batch editing'],
     longDescription: `
-      <p>The <strong>Find and Replace Tool</strong> searches for text patterns and replaces them with new content. Supports plain text and regular expressions for powerful batch editing.</p>
+      <p>Ctrl+H for the web. Find something, replace it with something else, everywhere at once.</p>
 
-      <h3>Features</h3>
-      <ul>
-        <li>Plain text search</li>
-        <li>Regular expression support</li>
-        <li>Case-sensitive option</li>
-        <li>Replace all or first occurrence</li>
-      </ul>
+      <p>Simple version: change "John" to "Jane" throughout your document. Done. No clicking through 47 "Replace Next" dialogs.</p>
+
+      <h3>When it gets powerful: regex</h3>
+      <p>Regular expressions let you match patterns, not just literal text. Replace all phone numbers with [REDACTED]. Find dates in any format. Match email addresses. It's search on steroids.</p>
+
+      <table>
+        <tr><th>Pattern</th><th>Matches</th></tr>
+        <tr><td>\\d{3}-\\d{4}</td><td>555-1234 (phone numbers)</td></tr>
+        <tr><td>\\b[A-Z]{2,}\\b</td><td>All-caps words</td></tr>
+        <tr><td>\\s+</td><td>Multiple spaces → one space</td></tr>
+      </table>
+
+      <blockquote>
+        <p>Case sensitivity matters. "The" and "the" are different unless you toggle case-insensitive mode. Accidentally replacing "the" inside "other" is a classic gotcha.</p>
+      </blockquote>
+
+      <h3>Replace all vs first</h3>
+      <p>Most of the time you want "Replace All." But sometimes you specifically want to change only the first occurrence and leave the rest. Both options available.</p>
     `,
     examples: [
       { title: 'Simple Replace', input: 'Hello World → Hello Universe', output: 'Find: "World", Replace: "Universe"' },
@@ -2950,15 +2902,27 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['email extractor', 'find emails', 'email scraper', 'email finder'],
     relatedEntities: ['email addresses', 'data extraction', 'regex'],
     longDescription: `
-      <p>The <strong>Email Extractor</strong> finds and extracts all email addresses from your text. Useful for collecting contacts from documents, web pages, and data files.</p>
+      <p>You've got a wall of text. Somewhere in there are email addresses. You need just the emails, in a clean list.</p>
 
-      <h3>Features</h3>
+      <p>Paste the mess, get a list. That's it.</p>
+
+      <h3>What it catches</h3>
+      <p>Standard email formats: user@domain.com, first.last@company.co.uk, name+tag@gmail.com. The regex covers common patterns. Edge cases with unusual TLDs or weird formats might slip through, but 99% of real-world emails get caught.</p>
+
+      <blockquote>
+        <p>Duplicates are removed automatically. If someone's email appears 12 times in the source text, you get it once in the output.</p>
+      </blockquote>
+
+      <h3>Where this is useful</h3>
       <ul>
-        <li>Extract all email addresses</li>
-        <li>Remove duplicates</li>
-        <li>Output as list</li>
-        <li>Copy-friendly format</li>
+        <li>Extracting contacts from exported data</li>
+        <li>Pulling emails from old documents</li>
+        <li>Cleaning up scraped web content</li>
+        <li>Processing form submissions</li>
       </ul>
+
+      <h3>Privacy note</h3>
+      <p>This runs entirely in your browser. No text gets sent to any server. Your data stays on your machine.</p>
     `,
     examples: [
       { title: 'Extract Emails', input: 'Contact john@example.com or jane@test.org', output: 'john@example.com\njane@test.org' },
@@ -2980,15 +2944,26 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['URL extractor', 'find links', 'link scraper', 'URL finder'],
     relatedEntities: ['URLs', 'hyperlinks', 'data extraction'],
     longDescription: `
-      <p>The <strong>URL Extractor</strong> finds and extracts all URLs and links from your text. Useful for collecting links from documents, analyzing web content, and data processing.</p>
+      <p>Pull every link out of a document. Research notes with 50 URLs scattered throughout? Meeting notes with random links? This extracts them all into a clean list.</p>
 
-      <h3>Features</h3>
-      <ul>
-        <li>Extract HTTP/HTTPS URLs</li>
-        <li>Find all link formats</li>
-        <li>Remove duplicates</li>
-        <li>Output as clickable list</li>
-      </ul>
+      <h3>What it finds</h3>
+      <table>
+        <tr><th>Pattern</th><th>Examples</th></tr>
+        <tr><td>HTTPS URLs</td><td>https://example.com/page</td></tr>
+        <tr><td>HTTP URLs</td><td>http://oldsite.org</td></tr>
+        <tr><td>With paths</td><td>https://site.com/folder/page.html</td></tr>
+        <tr><td>With query strings</td><td>https://site.com?id=123&ref=abc</td></tr>
+      </table>
+
+      <blockquote>
+        <p>URLs without http/https (like "example.com") might not be detected—they look like regular text to a regex. The protocol prefix is what makes a URL clearly a URL.</p>
+      </blockquote>
+
+      <h3>Duplicate handling</h3>
+      <p>Same URL appears multiple times? You get it once in the output. Clean, deduplicated list ready to use.</p>
+
+      <h3>Practical applications</h3>
+      <p>Link auditing. Source collection for research. Checking what sites are referenced in a document. Extracting bookmarks from exported data. Any time you need "just the links."</p>
     `,
     examples: [
       { title: 'Extract URLs', input: 'Visit https://example.com or http://test.org', output: 'https://example.com\nhttp://test.org' },
@@ -3009,18 +2984,26 @@ export const toolContent: Record<string, ToolContentData> = {
     nlpKeywords: ['dummy text', 'placeholder text', 'filler text', 'sample text'],
     relatedEntities: ['Lorem Ipsum', 'placeholder content', 'design mockups'],
     longDescription: `
-      <p>The <strong>Lorem Ipsum Generator</strong> creates placeholder text for design mockups, templates, and development. Generate paragraphs, sentences, or words as needed.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
 
-      <h3>Generation Options</h3>
-      <ul>
-        <li>Paragraphs</li>
-        <li>Sentences</li>
-        <li>Words</li>
-        <li>Custom length</li>
-      </ul>
+      <p>The most famous text nobody reads. Five centuries of designers using scrambled Latin as placeholder content. It looks like real text—same rhythm, same visual weight—but doesn't distract from the design because it's meaningless.</p>
 
-      <h3>About Lorem Ipsum</h3>
-      <p>Lorem Ipsum is scrambled Latin text used since the 1500s as placeholder content for design and typesetting.</p>
+      <h3>The history (it's actually interesting)</h3>
+      <p>Derived from Cicero's "De Finibus Bonorum et Malorum" written in 45 BC. A printer in the 1500s scrambled it for typesetting specimens. It's been the industry standard ever since. The phrase "Lorem ipsum" is actually Latin word fragments—the original text says "dolorem ipsum" meaning "pain itself."</p>
+
+      <blockquote>
+        <p>Why not just use real content? Because clients read the words instead of evaluating the layout. Lorem ipsum forces focus on typography, spacing, and structure.</p>
+      </blockquote>
+
+      <h3>Generate what you need</h3>
+      <table>
+        <tr><th>Unit</th><th>Use case</th></tr>
+        <tr><td>Words</td><td>Short labels, button text</td></tr>
+        <tr><td>Sentences</td><td>Captions, headings</td></tr>
+        <tr><td>Paragraphs</td><td>Body content, articles</td></tr>
+      </table>
+
+      <p>Pick a length, generate, paste into your mockup. The design process continues.</p>
     `,
     examples: [
       { title: 'Generate Paragraph', input: '1 paragraph', output: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...' },
