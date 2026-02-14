@@ -2031,7 +2031,7 @@ export const toolContent: Record<string, ToolContentData> = {
     },
   },
 
-  'minify-css': {
+  'css-minifier': {
     targetKeyword: 'minify CSS',
     nlpKeywords: ['CSS minifier', 'compress CSS', 'CSS compressor', 'reduce CSS size', 'optimize CSS'],
     relatedEntities: ['CSS', 'web performance', 'stylesheet', 'front-end development'],
@@ -2074,7 +2074,7 @@ export const toolContent: Record<string, ToolContentData> = {
     },
   },
 
-  'minify-javascript': {
+  'javascript-minifier': {
     targetKeyword: 'minify JavaScript',
     nlpKeywords: ['JavaScript minifier', 'JS minifier', 'compress JavaScript', 'JS compressor', 'uglify JavaScript'],
     relatedEntities: ['JavaScript', 'web performance', 'front-end development', 'optimization'],
@@ -2282,6 +2282,43 @@ export const toolContent: Record<string, ToolContentData> = {
     },
   },
 
+  'currency-text-generator': {
+    targetKeyword: 'currency text generator',
+    nlpKeywords: ['money text', 'dollar sign text', 'currency symbols', 'cash text'],
+    relatedEntities: ['Unicode', 'special characters', 'text effects'],
+    longDescription: `
+      <p>Turn your text into $$$. Or €€€. Or ¥¥¥. Whatever currency fits your vibe.</p>
+
+      <p>This wraps letters with currency symbols or converts text into money-themed styling. Because sometimes you want your username to scream "cash money" without actually typing it out.</p>
+
+      <h3>Style variations</h3>
+      <table>
+        <tr><th>Style</th><th>Example</th></tr>
+        <tr><td>Dollar wrapped</td><td>$H$E$L$L$O$</td></tr>
+        <tr><td>Euro style</td><td>€H€E€L€L€O€</td></tr>
+        <tr><td>Yen flavor</td><td>¥H¥E¥L¥L¥O¥</td></tr>
+      </table>
+
+      <blockquote>
+        <p>Peak irony: using money text while being broke. That's the internet aesthetic.</p>
+      </blockquote>
+
+      <p>Type your text, pick a currency symbol, flex on your timeline.</p>
+    `,
+    examples: [
+      { title: 'Dollar Text', input: 'Money', output: '$M$O$N$E$Y$' },
+    ],
+    faqs: [
+      { question: 'What currencies are available?', answer: 'Dollar ($), Euro (€), Yen (¥), Pound (£), and other common currency symbols.' },
+    ],
+    useCases: {
+      writers: 'Create attention-grabbing social posts.',
+      developers: 'Build text effect tools.',
+      students: 'Make fun presentations.',
+      marketers: 'Create memorable promotional content.',
+    },
+  },
+
   'zalgo-text-generator': {
     targetKeyword: 'Zalgo text generator',
     nlpKeywords: ['glitch text', 'corrupted text', 'creepy text', 'cursed text', 'scary text generator'],
@@ -2410,7 +2447,7 @@ export const toolContent: Record<string, ToolContentData> = {
     },
   },
 
-  'phonetic-alphabet-converter': {
+  'phonetic-alphabet-generator': {
     targetKeyword: 'NATO phonetic alphabet converter',
     nlpKeywords: ['phonetic alphabet', 'Alpha Bravo Charlie', 'military alphabet', 'spelling alphabet'],
     relatedEntities: ['NATO', 'ICAO', 'aviation', 'military communication'],
@@ -2448,7 +2485,7 @@ export const toolContent: Record<string, ToolContentData> = {
     },
   },
 
-  'ascii-art-generator': {
+  'text-to-ascii-art': {
     targetKeyword: 'ASCII art generator',
     nlpKeywords: ['text to ASCII art', 'ASCII text', 'text banner', 'figlet', 'text art'],
     relatedEntities: ['ASCII', 'text art', 'terminal art', 'figlet'],
@@ -2527,6 +2564,49 @@ export const toolContent: Record<string, ToolContentData> = {
       developers: 'Build text effect features.',
       students: 'Design tech-themed projects.',
       marketers: 'Create edgy, tech-forward content.',
+    },
+  },
+
+  'invisible-ink-generator': {
+    targetKeyword: 'invisible text generator',
+    nlpKeywords: ['invisible text', 'hidden text', 'zero width characters', 'blank text'],
+    relatedEntities: ['Unicode', 'zero width', 'hidden characters'],
+    longDescription: `
+      <p>Text that's there but isn't. Zero-width characters that occupy space in a string but render as nothing visible.</p>
+
+      <h3>What's actually happening</h3>
+      <p>Unicode includes characters with zero display width: zero-width space (U+200B), zero-width joiner (U+200D), zero-width non-joiner (U+200C). They exist for text processing purposes but can be used creatively.</p>
+
+      <table>
+        <tr><th>Character</th><th>Code</th><th>Original purpose</th></tr>
+        <tr><td>Zero-width space</td><td>U+200B</td><td>Suggest line break opportunities</td></tr>
+        <tr><td>Zero-width joiner</td><td>U+200D</td><td>Connect emoji sequences</td></tr>
+        <tr><td>Zero-width non-joiner</td><td>U+200C</td><td>Prevent ligatures</td></tr>
+      </table>
+
+      <blockquote>
+        <p>These characters copy like normal text. Someone can paste your "blank" message and see nothing—but the bytes are there.</p>
+      </blockquote>
+
+      <h3>What people use this for</h3>
+      <ul>
+        <li>Blank usernames (on platforms that allow it)</li>
+        <li>Empty-looking messages</li>
+        <li>Watermarking text invisibly</li>
+        <li>Bypassing "required field" checks (sometimes)</li>
+      </ul>
+    `,
+    examples: [
+      { title: 'Invisible Text', input: 'Hide this', output: '​​​​​​​​​​' },
+    ],
+    faqs: [
+      { question: 'Is it really invisible?', answer: 'To human eyes, yes. To computers, no—the characters are still there in the data.' },
+    ],
+    useCases: {
+      writers: 'Create blank-looking text for creative effects.',
+      developers: 'Test input validation, understand zero-width characters.',
+      students: 'Learn about Unicode edge cases.',
+      marketers: 'Create unique social media formatting.',
     },
   },
 
@@ -2689,7 +2769,7 @@ export const toolContent: Record<string, ToolContentData> = {
     },
   },
 
-  'line-counter': {
+  'line-counter-tool': {
     targetKeyword: 'line counter',
     nlpKeywords: ['count lines', 'line count tool', 'text lines', 'newline count'],
     relatedEntities: ['text analysis', 'code analysis', 'data processing'],
@@ -2771,7 +2851,7 @@ export const toolContent: Record<string, ToolContentData> = {
     },
   },
 
-  'keyword-density-analyzer': {
+  'keyword-density-checker': {
     targetKeyword: 'keyword density analyzer',
     nlpKeywords: ['keyword frequency', 'SEO keyword tool', 'word frequency analysis', 'keyword count'],
     relatedEntities: ['SEO', 'content optimization', 'keyword research'],
@@ -2813,7 +2893,7 @@ export const toolContent: Record<string, ToolContentData> = {
     },
   },
 
-  'text-diff-tool': {
+  'text-difference-checker': {
     targetKeyword: 'text diff tool',
     nlpKeywords: ['compare text', 'text comparison', 'find differences', 'diff checker'],
     relatedEntities: ['diff algorithm', 'version control', 'text comparison'],
@@ -2856,7 +2936,47 @@ export const toolContent: Record<string, ToolContentData> = {
     },
   },
 
-  'find-and-replace': {
+  'remove-punctuation-tool': {
+    targetKeyword: 'remove punctuation',
+    nlpKeywords: ['strip punctuation', 'delete punctuation', 'clean text', 'remove symbols'],
+    relatedEntities: ['text processing', 'data cleaning', 'NLP preprocessing'],
+    longDescription: `
+      <p>Periods, commas, exclamation marks, quotes—sometimes you just need the raw words without the decorations.</p>
+
+      <h3>When punctuation gets in the way</h3>
+      <p><strong>Text analysis.</strong> Word frequency counts get skewed when "word" and "word." are treated as different tokens.</p>
+      <p><strong>Data processing.</strong> Importing into systems that choke on special characters.</p>
+      <p><strong>Search preparation.</strong> Normalizing text for matching.</p>
+      <p><strong>NLP preprocessing.</strong> Many language models work better with clean, punctuation-free input.</p>
+
+      <table>
+        <tr><th>Before</th><th>After</th></tr>
+        <tr><td>Hello, world! How are you?</td><td>Hello world How are you</td></tr>
+        <tr><td>"Quoted text," she said.</td><td>Quoted text she said</td></tr>
+      </table>
+
+      <blockquote>
+        <p>This removes punctuation but keeps spaces. You get words separated by spaces, not a blob of concatenated text.</p>
+      </blockquote>
+
+      <h3>What counts as punctuation?</h3>
+      <p>Periods, commas, semicolons, colons, exclamation marks, question marks, quotes (single and double), parentheses, brackets, braces, hyphens (configurable), and other standard punctuation marks.</p>
+    `,
+    examples: [
+      { title: 'Clean Text', input: 'Hello, world! How are you?', output: 'Hello world How are you' },
+    ],
+    faqs: [
+      { question: 'Does this remove hyphens?', answer: 'Configurable. Hyphens in words like "self-driving" can be preserved or removed based on your needs.' },
+    ],
+    useCases: {
+      writers: 'Clean text for analysis.',
+      developers: 'Preprocess text for NLP, clean data input.',
+      students: 'Prepare text for word analysis.',
+      marketers: 'Clean content for processing tools.',
+    },
+  },
+
+  'find-and-replace-tool': {
     targetKeyword: 'find and replace',
     nlpKeywords: ['search and replace', 'text replace', 'bulk replace', 'regex replace'],
     relatedEntities: ['text editing', 'regular expressions', 'batch editing'],
@@ -2894,6 +3014,125 @@ export const toolContent: Record<string, ToolContentData> = {
       developers: 'Refactor code, update patterns.',
       students: 'Edit assignments efficiently.',
       marketers: 'Update content in bulk, fix campaign text.',
+    },
+  },
+
+  'text-extractor-regex': {
+    targetKeyword: 'regex text extractor',
+    nlpKeywords: ['regex extract', 'pattern extraction', 'text mining', 'regular expression extract'],
+    relatedEntities: ['regular expressions', 'pattern matching', 'data extraction'],
+    longDescription: `
+      <p>Know regex? Then you know how powerful this is. Don't know regex? You're about to find out why programmers tolerate its cryptic syntax.</p>
+
+      <h3>What regex extraction does</h3>
+      <p>You define a pattern. The tool finds every match. Instead of searching for specific text, you search for <em>patterns</em> of text.</p>
+
+      <table>
+        <tr><th>Pattern</th><th>Extracts</th></tr>
+        <tr><td>\\d{3}-\\d{3}-\\d{4}</td><td>Phone numbers (555-123-4567)</td></tr>
+        <tr><td>[A-Z]{2}\\d{6}</td><td>ID codes (AB123456)</td></tr>
+        <tr><td>\\$[\\d,]+\\.\\d{2}</td><td>Dollar amounts ($1,234.56)</td></tr>
+        <tr><td>https?://[^\\s]+</td><td>URLs</td></tr>
+      </table>
+
+      <blockquote>
+        <p>Regex is one of those skills that feels useless until you need it—then it's the only thing that can solve your problem in under 10 minutes.</p>
+      </blockquote>
+
+      <h3>Capture groups</h3>
+      <p>Parentheses capture specific parts of matches. Pattern "Name: (\\w+)" extracts just the name part, not the "Name: " prefix. Powerful for structured data.</p>
+
+      <p>Paste text, write pattern, extract matches. Beats manual copying every time.</p>
+    `,
+    examples: [
+      { title: 'Extract Dates', input: 'Meeting on 2024-01-15 and 2024-02-20', output: '2024-01-15\n2024-02-20' },
+    ],
+    faqs: [
+      { question: 'Do I need to know regex?', answer: 'Basic patterns are simple. Complex extraction requires learning regex syntax, but the effort pays off.' },
+    ],
+    useCases: {
+      writers: 'Extract specific patterns from documents.',
+      developers: 'Parse logs, extract data, validate patterns.',
+      students: 'Learn regex, extract research data.',
+      marketers: 'Extract data patterns from reports.',
+    },
+  },
+
+  'list-randomizer': {
+    targetKeyword: 'list randomizer',
+    nlpKeywords: ['shuffle list', 'random order', 'randomize lines', 'shuffle text'],
+    relatedEntities: ['randomization', 'list processing', 'Fisher-Yates shuffle'],
+    longDescription: `
+      <p>Need random order? Paste a list, shuffle it, done.</p>
+
+      <p>Each line becomes one item. The tool randomizes their order using a proper shuffle algorithm (Fisher-Yates, if you're curious). Every possible arrangement has equal probability.</p>
+
+      <h3>What people use this for</h3>
+      <ul>
+        <li><strong>Raffles</strong> — Pick winners fairly</li>
+        <li><strong>Testing</strong> — Randomize test inputs</li>
+        <li><strong>Decision making</strong> — Can't choose? Let randomness decide</li>
+        <li><strong>Study</strong> — Randomize flashcard order</li>
+        <li><strong>Presentations</strong> — Random speaking order</li>
+      </ul>
+
+      <blockquote>
+        <p>The shuffle runs in your browser using JavaScript's crypto API for better randomness than Math.random(). Not cryptographically audited, but good enough for non-security purposes.</p>
+      </blockquote>
+
+      <h3>Multiple shuffles</h3>
+      <p>Each click produces a new random order. Run it multiple times if you want to see different arrangements.</p>
+    `,
+    examples: [
+      { title: 'Shuffle Names', input: 'Alice\nBob\nCharlie\nDana', output: 'Charlie\nAlice\nDana\nBob' },
+    ],
+    faqs: [
+      { question: 'Is the randomization truly random?', answer: 'As random as browser-based JavaScript gets. Suitable for most purposes, not for cryptographic security.' },
+    ],
+    useCases: {
+      writers: 'Randomize story elements, shuffle brainstorm ideas.',
+      developers: 'Generate random test data, shuffle arrays.',
+      students: 'Randomize study materials, create fair group assignments.',
+      marketers: 'Randomize A/B test variants, shuffle contest entries.',
+    },
+  },
+
+  'text-to-slug-converter': {
+    targetKeyword: 'text to slug converter',
+    nlpKeywords: ['URL slug', 'slug generator', 'SEO slug', 'URL-friendly text'],
+    relatedEntities: ['URL structure', 'SEO', 'web development'],
+    longDescription: `
+      <p>"My Blog Post Title!" becomes "my-blog-post-title". That's a slug—URL-friendly text stripped of spaces, special characters, and uppercase.</p>
+
+      <h3>What makes a good slug</h3>
+      <table>
+        <tr><th>Input</th><th>Slug</th></tr>
+        <tr><td>Hello World!</td><td>hello-world</td></tr>
+        <tr><td>What's New in 2024?</td><td>whats-new-in-2024</td></tr>
+        <tr><td>Café & Restaurant</td><td>cafe-restaurant</td></tr>
+      </table>
+
+      <h3>The rules</h3>
+      <p><strong>Lowercase everything.</strong> URLs are case-insensitive but lowercase looks cleaner.</p>
+      <p><strong>Spaces become hyphens.</strong> Not underscores, not plus signs—hyphens are the standard.</p>
+      <p><strong>Special characters disappear.</strong> Apostrophes, quotes, punctuation—gone.</p>
+      <p><strong>Accents normalize.</strong> "café" becomes "cafe" for maximum compatibility.</p>
+
+      <blockquote>
+        <p>SEO tip: keep slugs short and descriptive. "best-running-shoes-2024" beats "this-is-my-article-about-running-shoes-that-i-wrote".</p>
+      </blockquote>
+    `,
+    examples: [
+      { title: 'Blog Title', input: 'How to Build a Website in 2024!', output: 'how-to-build-a-website-in-2024' },
+    ],
+    faqs: [
+      { question: 'What is a URL slug?', answer: 'The part of a URL that identifies a specific page in readable form—like /blog/my-post-title instead of /blog/12345.' },
+    ],
+    useCases: {
+      writers: 'Create URL-friendly titles for blog posts.',
+      developers: 'Generate slugs for CMS entries, API endpoints.',
+      students: 'Learn about URL structure.',
+      marketers: 'Create SEO-friendly URLs for campaigns.',
     },
   },
 
