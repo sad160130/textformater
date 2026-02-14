@@ -1,74 +1,66 @@
-// Dynamic SEO content system with varied page structures
-// Each tool has unique sections, ordering, and presentation styles
+// Dynamic page structure system - each section is a standalone card
+// Tools can have completely different page layouts
 
 export type SectionType =
-  | 'prose'           // Standard paragraph(s)
-  | 'table'           // Data table
-  | 'tips'            // Tip/trick boxes
-  | 'warning'         // Caution/warning callout
-  | 'history'         // Historical background
-  | 'comparison'      // Side-by-side comparison
-  | 'steps'           // Numbered steps (custom, not generic)
-  | 'faq-inline'      // FAQ mixed into content
-  | 'blockquote'      // Quote/callout
-  | 'checklist'       // Checkbox-style list
-  | 'code-example'    // Code snippet
-  | 'use-case-story'  // Narrative use case
-  | 'technical-deep-dive'; // Technical explanation
+  | 'intro'              // Opening text, no heading, clean card
+  | 'prose'              // Prose with heading
+  | 'table'              // Data table
+  | 'tips'               // Tip callout (green)
+  | 'warning'            // Warning callout (amber)
+  | 'history'            // Historical background (indigo)
+  | 'comparison'         // Comparison box (slate)
+  | 'how-to'             // Custom how-to steps
+  | 'faq-inline'         // Single Q&A inline
+  | 'blockquote'         // Quote callout
+  | 'checklist'          // Checkmark list
+  | 'code-example'       // Code block (dark)
+  | 'use-case-story'     // Narrative (purple gradient)
+  | 'technical'          // Technical deep-dive (dark)
+  | 'examples'           // Input/output examples - renders examples array
+  | 'faqs';              // FAQ section - renders faqs array
 
 export interface ContentSection {
   type: SectionType;
   heading?: string;
-  content: string;
+  content?: string;
+  // For how-to sections
+  steps?: Array<{ title: string; description: string }>;
 }
 
 export interface ToolContentData {
-  // SEO fields
   targetKeyword: string;
-  metaDescription?: string;
-
-  // Page structure - array of sections in display order
+  // Page structure - array of sections in display order, each becomes its own card
   sections: ContentSection[];
-
-  // Optional: custom "how to use" (null = skip this section entirely)
-  howToUse?: {
-    heading?: string; // Custom heading like "Getting Started" or "Quick Start"
-    steps: Array<{ title: string; description: string }>;
-  } | null;
-
-  // Examples with varied presentation
+  // Data for examples sections (referenced by type: 'examples')
   examples?: Array<{
     title: string;
     description?: string;
     input: string;
     output: string;
   }>;
-
-  // FAQs (can be rendered inline or as separate section based on tool config)
+  // Data for faqs sections (referenced by type: 'faqs')
   faqs?: Array<{
     question: string;
     answer: string;
   }>;
-
-  // Hide the generic related tools section?
   hideRelatedTools?: boolean;
-
-  // Custom CTA text
-  ctaText?: string;
 }
 
 export const toolContent: Record<string, ToolContentData> = {
 
   // ============================================
-  // CASE MANIPULATION TOOLS (10 tools)
+  // CASE MANIPULATION TOOLS
   // ============================================
 
   'title-case-converter': {
     targetKeyword: 'title case converter',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Ever stared at a headline wondering if "with" should be capitalized? You're not alone. Title case trips up even experienced writers because the rules aren't as straightforward as "capitalize everything."</p>`
+      },
+      {
+        type: 'examples'
       },
       {
         type: 'table',
@@ -85,10 +77,6 @@ export const toolContent: Record<string, ToolContentData> = {
         `
       },
       {
-        type: 'faq-inline',
-        content: `<p><strong>What about "Is" and "It"?</strong> They're verbs, so capitalize them. Yes, even though they're short. "It Is What It Is" — all caps except "What."</p>`
-      },
-      {
         type: 'comparison',
         heading: 'Style Guide Differences',
         content: `
@@ -98,11 +86,12 @@ export const toolContent: Record<string, ToolContentData> = {
             <li><strong>Chicago:</strong> Lowercases all prepositions regardless of length</li>
             <li><strong>APA:</strong> Capitalizes words of 4+ letters, including prepositions</li>
           </ul>
-          <p>This tool defaults to the most common convention, but ultimately — check your style guide.</p>
         `
+      },
+      {
+        type: 'faqs'
       }
     ],
-    howToUse: null, // Skip generic how-to, it's obvious
     examples: [
       { title: 'Blog Post', input: 'how to write better headlines for your blog', output: 'How to Write Better Headlines for Your Blog' },
       { title: 'With Prepositions', input: 'the man who sold the world', output: 'The Man Who Sold the World' }
@@ -117,13 +106,22 @@ export const toolContent: Record<string, ToolContentData> = {
     targetKeyword: 'sentence case converter',
     sections: [
       {
-        type: 'prose',
-        content: `<p>Sentence case. First letter up, rest down. That's it.</p>
-        <p>Except... proper nouns stay capitalized. And acronyms. And sometimes brand names have weird casing (iPhone, eBay) that you might want to preserve.</p>`
-      },
-      {
         type: 'blockquote',
         content: `<blockquote>Used by: The New York Times, The Guardian, most academic writing, and anyone who thinks title case looks shouty.</blockquote>`
+      },
+      {
+        type: 'prose',
+        heading: 'What Is Sentence Case?',
+        content: `<p>First letter up, rest down. Except proper nouns stay capitalized. And acronyms. And sometimes brand names have weird casing (iPhone, eBay) that you might want to preserve.</p>`
+      },
+      {
+        type: 'how-to',
+        heading: 'Quick Start',
+        steps: [
+          { title: 'Paste your text', description: 'Works with any length — single headline or entire paragraphs.' },
+          { title: 'Get results instantly', description: 'First letter capitalized, rest lowercase.' },
+          { title: 'Review proper nouns', description: 'Fix any names or acronyms that need re-capitalizing.' }
+        ]
       },
       {
         type: 'tips',
@@ -134,23 +132,17 @@ export const toolContent: Record<string, ToolContentData> = {
             <li>News headlines (many publications)</li>
             <li>Email subject lines (more casual feel)</li>
             <li>UI text and button labels</li>
-            <li>Social media posts</li>
           </ul>
         `
       },
       {
         type: 'warning',
         content: `<p><strong>Watch out:</strong> Converting to sentence case will lowercase proper nouns too. "APPLE ANNOUNCES IPHONE" becomes "Apple announces iphone" — you'll need to fix "iPhone" manually.</p>`
+      },
+      {
+        type: 'examples'
       }
     ],
-    howToUse: {
-      heading: 'Quick Start',
-      steps: [
-        { title: 'Paste your text', description: 'Works with any length — single headline or entire paragraphs.' },
-        { title: 'Get results instantly', description: 'First letter capitalized, rest lowercase.' },
-        { title: 'Review proper nouns', description: 'Fix any names or acronyms that need re-capitalizing.' }
-      ]
-    },
     examples: [
       { title: 'From Title Case', input: 'The Quick Brown Fox Jumps Over The Lazy Dog', output: 'The quick brown fox jumps over the lazy dog' }
     ]
@@ -160,27 +152,29 @@ export const toolContent: Record<string, ToolContentData> = {
     targetKeyword: 'alternating case generator',
     sections: [
       {
-        type: 'prose',
-        content: `<p>yOu KnOw ExAcTlY wHaT tHiS iS fOr.</p>
-        <p>The SpongeBob mocking meme. That sarcastic tone that text alone can't convey. When you need to express "I'm mocking what you just said" in written form.</p>`
-      },
-      {
-        type: 'history',
-        heading: 'Origin Story',
-        content: `<p>This became internet-famous around 2017 with the "Mocking SpongeBob" meme. The alternating caps visually represent a mocking, sarcastic tone of voice — like when someone repeats what you said in a whiny voice.</p>
-        <p>It's now standard internet vernacular for sarcasm.</p>`
+        type: 'intro',
+        content: `<p>yOu KnOw ExAcTlY wHaT tHiS iS fOr.</p>`
       },
       {
         type: 'use-case-story',
+        heading: 'The Mocking Text',
         content: `
+          <p>The SpongeBob mocking meme. That sarcastic tone that text alone can't convey.</p>
           <p><strong>Real usage:</strong></p>
           <p>Friend: "You should exercise more"</p>
           <p>You: "yOu ShOuLd ExErCiSe MoRe"</p>
           <p>Communication achieved.</p>
         `
+      },
+      {
+        type: 'history',
+        heading: 'Origin Story',
+        content: `<p>This became internet-famous around 2017 with the "Mocking SpongeBob" meme. The alternating caps visually represent a mocking, sarcastic tone of voice — like when someone repeats what you said in a whiny voice. It's now standard internet vernacular for sarcasm.</p>`
+      },
+      {
+        type: 'examples'
       }
     ],
-    howToUse: null,
     examples: [
       { title: 'Mocking Text', input: 'I love Mondays', output: 'i LoVe MoNdAyS' }
     ]
@@ -190,9 +184,12 @@ export const toolContent: Record<string, ToolContentData> = {
     targetKeyword: 'reverse text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>txet siht ekil — .sdrawkcab tI .esrever ni txet sevig looT</p>
         <p>Wait, let me write that properly: Tool gives text in reverse. It backwards. Like this text.</p>`
+      },
+      {
+        type: 'examples'
       },
       {
         type: 'checklist',
@@ -204,17 +201,15 @@ export const toolContent: Record<string, ToolContentData> = {
             <li>Dyslexia simulation exercises</li>
             <li>Checking for palindromes</li>
             <li>Creative social media posts</li>
-            <li>Testing input handling in software</li>
           </ul>
         `
       },
       {
-        type: 'technical-deep-dive',
+        type: 'technical',
         heading: 'How Reversal Works',
         content: `<p>Character-by-character reversal. "Hello" → "olleH". Simple enough, but Unicode makes it interesting — emojis and combined characters (like é) need special handling to not break.</p>`
       }
     ],
-    howToUse: null,
     examples: [
       { title: 'Basic Reverse', input: 'Hello World', output: 'dlroW olleH' },
       { title: 'Palindrome Test', input: 'racecar', output: 'racecar' }
@@ -225,7 +220,7 @@ export const toolContent: Record<string, ToolContentData> = {
     targetKeyword: 'upside down text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>ʇxǝʇ uʍop ǝpᴉsdn</p>
         <p>That's not a special font. Those are actual Unicode characters that happen to look like upside-down letters. Copy them anywhere — they work in tweets, bios, messages, anywhere text works.</p>`
       },
@@ -240,22 +235,21 @@ export const toolContent: Record<string, ToolContentData> = {
             <tr><td>e</td><td>ǝ</td><td>U+01DD</td></tr>
             <tr><td>t</td><td>ʇ</td><td>U+0287</td></tr>
           </table>
-          <p>Some letters (like x, o, s) look the same upside down. Others have dedicated Unicode characters. A few are approximations.</p>
+          <p>Some letters (like x, o, s) look the same upside down. Others have dedicated Unicode characters.</p>
         `
       },
       {
         type: 'warning',
-        content: `<p>Not all letters have perfect upside-down equivalents. Some are approximations that look close but aren't perfect. Good enough for social media, not for anything requiring accuracy.</p>`
+        content: `<p>Not all letters have perfect upside-down equivalents. Some are approximations. Good enough for social media, not for anything requiring accuracy.</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'small-caps-generator': {
     targetKeyword: 'small caps generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>ꜱᴍᴀʟʟ ᴄᴀᴘꜱ ʟᴏᴏᴋ ʟɪᴋᴇ ᴛʜɪꜱ — uppercase letters at lowercase height. Elegant, understated, professional.</p>`
       },
       {
@@ -274,19 +268,20 @@ export const toolContent: Record<string, ToolContentData> = {
             <li>Adjusted proportions</li>
             <li>Consistent x-height with lowercase letters</li>
           </ul>
-          <p>The Unicode characters we use approximate this effect for plain text contexts.</p>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'strikethrough-text-generator': {
     targetKeyword: 'strikethrough text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>S̶t̶r̶i̶k̶e̶t̶h̶r̶o̶u̶g̶h̶ ̶t̶e̶x̶t̶ — for when you want to say something but also pretend you didn't say it.</p>`
+      },
+      {
+        type: 'examples'
       },
       {
         type: 'use-case-story',
@@ -298,11 +293,10 @@ export const toolContent: Record<string, ToolContentData> = {
         `
       },
       {
-        type: 'technical-deep-dive',
-        content: `<p>This uses Unicode combining characters (U+0336) applied to each letter. It's not a font — these characters literally have a line drawn through them in the Unicode spec. Works almost everywhere, though rendering varies slightly by system.</p>`
+        type: 'technical',
+        content: `<p>This uses Unicode combining characters (U+0336) applied to each letter. It's not a font — these characters literally have a line drawn through them in the Unicode spec.</p>`
       }
     ],
-    howToUse: null,
     examples: [
       { title: 'Comedic Edit', input: 'This meeting could have been an email', output: 'T̶h̶i̶s̶ ̶m̶e̶e̶t̶i̶n̶g̶ ̶c̶o̶u̶l̶d̶ ̶h̶a̶v̶e̶ ̶b̶e̶e̶n̶ ̶a̶n̶ ̶e̶m̶a̶i̶l̶' }
     ]
@@ -312,7 +306,7 @@ export const toolContent: Record<string, ToolContentData> = {
     targetKeyword: 'underline text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>U̲n̲d̲e̲r̲l̲i̲n̲e̲d̲ text without HTML or Markdown. Just Unicode characters you can paste anywhere.</p>
         <p>Instagram bio? Works. Tweet? Works. Discord message? Works.</p>`
       },
@@ -321,32 +315,32 @@ export const toolContent: Record<string, ToolContentData> = {
         content: `<blockquote>Fun fact: Underlining for emphasis came from typewriters, which couldn't do italic or bold. In the digital age, underlining typically means "this is a link" — so using it for emphasis can confuse readers.</blockquote>`
       },
       {
-        type: 'tips',
+        type: 'comparison',
+        heading: 'When to Use (and Avoid)',
         content: `
-          <p><strong>When to use:</strong></p>
+          <p><strong>Use for:</strong></p>
           <ul>
             <li>Social media where formatting isn't supported</li>
             <li>Emphasis in plain text contexts</li>
             <li>Mimicking form fields or blanks</li>
           </ul>
-          <p><strong>When to avoid:</strong></p>
+          <p><strong>Avoid for:</strong></p>
           <ul>
             <li>Web content (looks like broken links)</li>
             <li>Professional documents (italic/bold preferred)</li>
           </ul>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'bold-text-generator-unicode': {
     targetKeyword: 'bold text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>𝗕𝗼𝗹𝗱 𝘁𝗲𝘅𝘁 that works in places where bold formatting doesn't exist.</p>
-        <p>These aren't formatted regular letters — they're completely different Unicode characters called "Mathematical Bold" that happen to look like bold versions of the alphabet.</p>`
+        <p>These aren't formatted regular letters — they're completely different Unicode characters called "Mathematical Bold."</p>`
       },
       {
         type: 'table',
@@ -358,22 +352,20 @@ export const toolContent: Record<string, ToolContentData> = {
             <tr><td>Italic</td><td>𝐴𝐵𝐶</td><td>Mathematical Italic</td></tr>
             <tr><td>Bold Italic</td><td>𝑨𝑩𝑪</td><td>Mathematical Bold Italic</td></tr>
           </table>
-          <p>These were designed for mathematical notation but got repurposed for social media styling.</p>
         `
       },
       {
         type: 'warning',
         content: `<p>Screen readers might read these as "mathematical bold capital A" instead of just "A". For accessibility, use sparingly and not for critical text.</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'italic-text-generator-unicode': {
     targetKeyword: 'italic text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>𝘐𝘵𝘢𝘭𝘪𝘤 𝘵𝘦𝘹𝘵 for Twitter bios, Instagram captions, and anywhere else that doesn't support formatting.</p>`
       },
       {
@@ -386,26 +378,29 @@ export const toolContent: Record<string, ToolContentData> = {
       },
       {
         type: 'tips',
+        heading: 'Pro Tip',
         content: `
           <p>Mix with regular text for emphasis:</p>
           <p>"Just announced: our 𝘯𝘦𝘸 𝘤𝘰𝘭𝘭𝘦𝘤𝘵𝘪𝘰𝘯 drops Friday"</p>
           <p>Subtle, effective, doesn't look like you're trying too hard.</p>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   // ============================================
-  // DATA FORMATTING TOOLS (10 tools)
+  // DATA FORMATTING TOOLS
   // ============================================
 
   'remove-empty-lines': {
     targetKeyword: 'remove empty lines',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>You pasted something. Now there are blank lines everywhere. Just get rid of them.</p>`
+      },
+      {
+        type: 'examples'
       },
       {
         type: 'checklist',
@@ -417,16 +412,15 @@ export const toolContent: Record<string, ToolContentData> = {
             <li>Emails pasted from Outlook</li>
             <li>Spreadsheet exports</li>
             <li>OCR output</li>
-            <li>Markdown that rendered weird</li>
           </ul>
         `
       },
       {
-        type: 'technical-deep-dive',
+        type: 'technical',
+        heading: 'What Counts as Empty',
         content: `<p>An "empty line" is usually just two newline characters in a row (or carriage return + newline on Windows). This tool collapses those sequences. Multiple blank lines become zero blank lines.</p>`
       }
     ],
-    howToUse: null,
     examples: [
       { title: 'Clean Up', input: 'Line 1\n\n\nLine 2\n\nLine 3', output: 'Line 1\nLine 2\nLine 3' }
     ]
@@ -436,7 +430,7 @@ export const toolContent: Record<string, ToolContentData> = {
     targetKeyword: 'remove line breaks',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Turn multi-line text into a single paragraph. Every line break becomes a space.</p>`
       },
       {
@@ -451,15 +445,14 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'warning',
         content: `<p>This removes ALL line breaks. If you had intentional paragraph breaks, they're gone too. Use "remove empty lines" if you want to keep paragraph structure.</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'remove-duplicate-lines': {
     targetKeyword: 'remove duplicate lines',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Got a list with duplicates? This kills the dupes. First occurrence stays, rest disappear.</p>`
       },
       {
@@ -482,17 +475,15 @@ export const toolContent: Record<string, ToolContentData> = {
           </ul>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'text-to-single-line': {
     targetKeyword: 'text to single line',
     sections: [
       {
-        type: 'prose',
-        content: `<p>Multi-line → single line. That's the entire tool.</p>
-        <p>Every line break becomes a space. You get one continuous string.</p>`
+        type: 'intro',
+        content: `<p>Multi-line → single line. That's the entire tool.</p>`
       },
       {
         type: 'table',
@@ -507,16 +498,15 @@ export const toolContent: Record<string, ToolContentData> = {
           </table>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'remove-whitespace': {
     targetKeyword: 'remove whitespace',
     sections: [
       {
-        type: 'prose',
-        content: `<p>The invisible enemy. Spaces, tabs, non-breaking spaces, em spaces, hair spaces — there are literally 25+ types of whitespace in Unicode, and they all cause problems when you least expect it.</p>`
+        type: 'intro',
+        content: `<p>The invisible enemy. Spaces, tabs, non-breaking spaces, em spaces, hair spaces — there are literally 25+ types of whitespace in Unicode, and they all cause problems.</p>`
       },
       {
         type: 'use-case-story',
@@ -528,7 +518,7 @@ export const toolContent: Record<string, ToolContentData> = {
         `
       },
       {
-        type: 'tips',
+        type: 'comparison',
         heading: 'Modes',
         content: `
           <ul>
@@ -538,20 +528,18 @@ export const toolContent: Record<string, ToolContentData> = {
           </ul>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'text-deduping-tool': {
     targetKeyword: 'text deduplication tool',
     sections: [
       {
-        type: 'prose',
-        content: `<p>Got duplicates? Course you do. That's why you're here.</p>
-        <p>Paste text with repeated stuff. Get unique-only output. Simple.</p>`
+        type: 'intro',
+        content: `<p>Got duplicates? Course you do. Paste text with repeated stuff. Get unique-only output.</p>`
       },
       {
-        type: 'comparison',
+        type: 'table',
         heading: 'Dedup Modes',
         content: `
           <table>
@@ -562,15 +550,14 @@ export const toolContent: Record<string, ToolContentData> = {
           </table>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'sort-text-lines': {
     targetKeyword: 'sort text lines',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Alphabetize. A-Z, Z-A, or numerically. Each line becomes one item, sorted.</p>`
       },
       {
@@ -595,15 +582,14 @@ export const toolContent: Record<string, ToolContentData> = {
           </ul>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'add-line-numbers': {
     targetKeyword: 'add line numbers',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>"Look at line 47" — suddenly your document is referenceable. That's what line numbers do.</p>`
       },
       {
@@ -623,16 +609,15 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'use-case-story',
         content: `<p>Legal documents, code reviews, scripts, academic papers — anywhere you need to say "see line X" instead of "the third paragraph, about halfway down."</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'remove-html-tags': {
     targetKeyword: 'remove HTML tags',
     sections: [
       {
-        type: 'prose',
-        content: `<p>You have HTML. You want text. &lt;div&gt;s, &lt;span&gt;s, inline styles — all gone. Just the words remain.</p>`
+        type: 'intro',
+        content: `<p>You have HTML. You want text. All the &lt;div&gt;s, &lt;span&gt;s, inline styles — gone. Just the words remain.</p>`
       },
       {
         type: 'table',
@@ -643,7 +628,7 @@ export const toolContent: Record<string, ToolContentData> = {
             <tr><td>Tags</td><td>Removed completely</td></tr>
             <tr><td>Attributes</td><td>Gone</td></tr>
             <tr><td>Comments</td><td>Stripped</td></tr>
-            <tr><td>Scripts/styles</td><td>Deleted (content and tags)</td></tr>
+            <tr><td>Scripts/styles</td><td>Deleted</td></tr>
             <tr><td>Entities (&amp;amp;)</td><td>Converted (&)</td></tr>
           </table>
         `
@@ -652,20 +637,19 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'warning',
         content: `<p>Links lose their URLs. Images disappear (only alt text might remain). Tables flatten. The visual structure was CSS — without it, you get text in source order.</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'text-to-csv-converter': {
     targetKeyword: 'text to CSV converter',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>CSV: the cockroach of data formats. Works everywhere, outlives everything.</p>
-        <p>Tab-separated? Pipe-delimited? Space-separated? Convert to proper CSV for Excel, Google Sheets, databases, whatever.</p>`
+        <p>Tab-separated? Pipe-delimited? Space-separated? Convert to proper CSV for Excel, Google Sheets, databases.</p>`
       },
       {
-        type: 'technical-deep-dive',
+        type: 'technical',
         heading: 'CSV Escaping Rules (RFC 4180)',
         content: `
           <p>Values with commas get quoted: "New York, NY"</p>
@@ -674,19 +658,18 @@ export const toolContent: Record<string, ToolContentData> = {
           <p>This tool handles all of that automatically.</p>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   // ============================================
-  // TECHNICAL TOOLS (12 tools)
+  // TECHNICAL TOOLS
   // ============================================
 
   'url-encoder': {
     targetKeyword: 'URL encoder',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>URLs can't contain spaces, ampersands, or most special characters. This encodes them so they don't break.</p>`
       },
       {
@@ -706,15 +689,14 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'blockquote',
         content: `<blockquote>Safe characters that don't need encoding: A-Z, a-z, 0-9, hyphen, underscore, period, tilde.</blockquote>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'url-decoder': {
     targetKeyword: 'URL decoder',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>%20%2C%20%26%2C%20%3D → ", &, ="</p>
         <p>Paste URL gibberish, get readable text.</p>`
       },
@@ -727,15 +709,14 @@ export const toolContent: Record<string, ToolContentData> = {
           <p><strong>Tracking URLs:</strong> Marketing links often double-encode. Decode until it makes sense.</p>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'base64-encoder': {
     targetKeyword: 'Base64 encoder',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Base64 turns any data into text using just 64 characters: A-Z, a-z, 0-9, +, /. The = signs are padding.</p>`
       },
       {
@@ -755,38 +736,37 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'warning',
         content: `<p>Base64 is ENCODING, not ENCRYPTION. It provides zero security. Anyone can decode it instantly.</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'base64-decoder': {
     targetKeyword: 'Base64 decoder',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>SGVsbG8gV29ybGQ= → "Hello World"</p>
-        <p>Paste Base64, see what's actually in there. JWT payloads, config values, API responses — decode it all.</p>`
+        <p>Paste Base64, see what's actually in there.</p>`
       },
       {
         type: 'tips',
+        heading: 'Decoding Tips',
         content: `
-          <p><strong>Decodes to garbage?</strong> The original was probably binary data (image, PDF), not text. Binary decoded as text = random characters.</p>
+          <p><strong>Decodes to garbage?</strong> The original was probably binary data (image, PDF), not text.</p>
           <p><strong>JWT inspection:</strong> The middle section (between the dots) is Base64. Decode it to see claims, expiration, user data.</p>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'md5-hash-generator': {
     targetKeyword: 'MD5 hash generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>MD5: 32 hex characters. Same input always produces same output. "Hello World" = b10a8db164e0754105b7a99be72e3fe5. Forever.</p>`
       },
       {
-        type: 'comparison',
+        type: 'table',
         heading: 'When to Use (and When NOT To)',
         content: `
           <table>
@@ -802,16 +782,15 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'warning',
         content: `<p>MD5 was broken in 2004. Researchers created two different files with identical MD5 hashes. For anything security-related, use SHA-256.</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'sha256-hash-generator': {
     targetKeyword: 'SHA-256 hash generator',
     sections: [
       {
-        type: 'prose',
-        content: `<p>SHA-256: 64 hex characters. The secure hash. Bitcoin runs on it. SSL certificates use it. It's the standard when MD5 isn't good enough (which is anything security-related).</p>`
+        type: 'intro',
+        content: `<p>SHA-256: 64 hex characters. The secure hash. Bitcoin runs on it. SSL certificates use it.</p>`
       },
       {
         type: 'checklist',
@@ -828,17 +807,16 @@ export const toolContent: Record<string, ToolContentData> = {
       },
       {
         type: 'blockquote',
-        content: `<blockquote>2^256 possible outputs. That's more than atoms in the observable universe. Nobody's brute-forcing this.</blockquote>`
+        content: `<blockquote>2^256 possible outputs. More than atoms in the observable universe. Nobody's brute-forcing this.</blockquote>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'json-formatter': {
     targetKeyword: 'JSON formatter',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>{"name":"John","settings":{"theme":"dark"}} — good luck reading that.</p>
         <p>This adds indentation, validates syntax, and shows you where the errors are.</p>`
       },
@@ -855,16 +833,15 @@ export const toolContent: Record<string, ToolContentData> = {
           </table>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'xml-formatter': {
     targetKeyword: 'XML formatter',
     sections: [
       {
-        type: 'prose',
-        content: `<p>XML lives on. RSS feeds, SOAP APIs, Android layouts, Maven configs, Office documents. When you need to read or debug it, formatting helps.</p>`
+        type: 'intro',
+        content: `<p>XML lives on. RSS feeds, SOAP APIs, Android layouts, Maven configs. When you need to read or debug it, formatting helps.</p>`
       },
       {
         type: 'checklist',
@@ -872,10 +849,10 @@ export const toolContent: Record<string, ToolContentData> = {
         content: `
           <ul>
             <li>Single root element</li>
-            <li>Tags properly closed (&lt;tag&gt;...&lt;/tag&gt; or &lt;tag /&gt;)</li>
+            <li>Tags properly closed</li>
             <li>Tags properly nested</li>
             <li>Attributes quoted</li>
-            <li>Case-sensitive (&lt;Tag&gt; ≠ &lt;tag&gt;)</li>
+            <li>Case-sensitive</li>
           </ul>
         `
       },
@@ -883,15 +860,14 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'blockquote',
         content: `<blockquote>Unlike HTML, XML doesn't forgive. Every mistake is a parse error.</blockquote>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'css-minifier': {
     targetKeyword: 'CSS minifier',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Remove comments, whitespace, and redundant characters. Same CSS, smaller file, faster download.</p>`
       },
       {
@@ -910,15 +886,14 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'tips',
         content: `<p>Typical savings: 10-30%. For production, bundlers like Vite/webpack minify automatically. This tool is for quick one-offs.</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'javascript-minifier': {
     targetKeyword: 'JavaScript minifier',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>JS minification goes beyond removing whitespace. It shortens variable names, inlines functions, and eliminates dead code. 40-80% size reduction is common.</p>`
       },
       {
@@ -941,18 +916,16 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'tips',
         content: `<p><strong>Debugging minified code:</strong> That's what source maps are for. They map minified code back to original source.</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'html-entity-encoder': {
     targetKeyword: 'HTML entity encoder',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>User types: &lt;script&gt;alert('hacked')&lt;/script&gt;</p>
-        <p>You display it without encoding: congrats, you have an XSS vulnerability.</p>
-        <p>Encoding converts special characters to safe representations that display as text, not execute as code.</p>`
+        <p>You display it without encoding: congrats, you have an XSS vulnerability.</p>`
       },
       {
         type: 'table',
@@ -967,15 +940,14 @@ export const toolContent: Record<string, ToolContentData> = {
           </table>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'html-entity-decoder': {
     targetKeyword: 'HTML entity decoder',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>&amp;amp; &amp;lt; &amp;nbsp; → & < (space)</p>
         <p>Turn entity soup back into readable text.</p>`
       },
@@ -984,29 +956,28 @@ export const toolContent: Record<string, ToolContentData> = {
         heading: 'Common Entities',
         content: `
           <table>
-            <tr><th>Entity</th><th>Character</th><th>Source</th></tr>
-            <tr><td>&amp;nbsp;</td><td>(space)</td><td>Everywhere</td></tr>
-            <tr><td>&amp;mdash;</td><td>—</td><td>Em dashes</td></tr>
-            <tr><td>&amp;rsquo;</td><td>'</td><td>Smart quotes</td></tr>
-            <tr><td>&amp;copy;</td><td>©</td><td>Copyright</td></tr>
+            <tr><th>Entity</th><th>Character</th></tr>
+            <tr><td>&amp;nbsp;</td><td>(space)</td></tr>
+            <tr><td>&amp;mdash;</td><td>—</td></tr>
+            <tr><td>&amp;rsquo;</td><td>'</td></tr>
+            <tr><td>&amp;copy;</td><td>©</td></tr>
           </table>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   // ============================================
-  // CREATIVE GENERATOR TOOLS (10 tools + extras)
+  // CREATIVE GENERATOR TOOLS
   // ============================================
 
   'bubble-text-generator': {
     targetKeyword: 'bubble text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>ⓣⓨⓟⓔ ⓛⓘⓚⓔ ⓣⓗⓘⓢ</p>
-        <p>Not a font — these are Unicode circled characters. They work anywhere text works: Instagram, Twitter, Discord, wherever.</p>`
+        <p>Not a font — these are Unicode circled characters. They work anywhere text works.</p>`
       },
       {
         type: 'table',
@@ -1023,31 +994,28 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'blockquote',
         content: `<blockquote>Only A-Z available. Numbers have circles (①②③) but punctuation stays normal.</blockquote>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'square-text-generator': {
     targetKeyword: 'square text generator',
     sections: [
       {
-        type: 'prose',
-        content: `<p>🄱🄾🅇🄴🄳 letters. The edgier cousin of bubble text.</p>
-        <p>Same concept: Unicode characters that look like letters in squares.</p>`
+        type: 'intro',
+        content: `<p>🄱🄾🅇🄴🄳 letters. The edgier cousin of bubble text.</p>`
       },
       {
         type: 'history',
         content: `<p>These exist because Unicode includes "Enclosed Alphanumeric Supplement" — originally for East Asian typography. We just repurposed them for social media aesthetics.</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'currency-text-generator': {
     targetKeyword: 'currency text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>$M$O$N$E$Y$ — when you want your text to scream cash.</p>`
       },
       {
@@ -1062,24 +1030,23 @@ export const toolContent: Record<string, ToolContentData> = {
           </table>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'zalgo-text-generator': {
     targetKeyword: 'Zalgo text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>H̸̤̓ę̴̛̣ c̸̨̛o̸͎͑m̷̢̾e̴̤̚s̵̱̈́.</p>
-        <p>Zalgo text looks broken, corrupted, wrong. Named after a creepypasta horror entity. Now it's internet shorthand for chaos.</p>`
+        <p>Zalgo text looks broken, corrupted, wrong. Named after a creepypasta horror entity.</p>`
       },
       {
-        type: 'technical-deep-dive',
+        type: 'technical',
         content: `<p>Unicode combining characters (diacritics meant for accents) stack vertically when you abuse them. The text overflows its bounds in unsettling ways.</p>`
       },
       {
-        type: 'tips',
+        type: 'comparison',
         heading: 'Intensity Levels',
         content: `
           <ul>
@@ -1089,15 +1056,14 @@ export const toolContent: Record<string, ToolContentData> = {
           </ul>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'vaporwave-text-generator': {
     targetKeyword: 'vaporwave text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>ＡＥＳＴＨＥＴＩＣ</p>
         <p>If you know, you know. 80s nostalgia, Japanese culture, Greek statues, palm trees, and this exact wide text.</p>`
       },
@@ -1105,33 +1071,31 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'history',
         content: `<p>Fullwidth characters: designed for displaying Latin letters in East Asian typography. Repurposed for the ａｅｓｔｈｅｔｉｃ movement circa 2012.</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'braille-text-converter': {
     targetKeyword: 'Braille text converter',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>⠓⠑⠇⠇⠕ = "hello"</p>
-        <p>Louis Braille invented this in 1824. He was 15. Each character is a pattern of 1-6 dots in a 2×3 grid.</p>`
+        <p>Louis Braille invented this in 1824. He was 15.</p>`
       },
       {
         type: 'warning',
         content: `<p>This is VISUAL representation of Braille patterns. Actual accessibility requires screen readers and tactile displays. Don't use this for real accessibility purposes.</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'phonetic-alphabet-generator': {
     targetKeyword: 'NATO phonetic alphabet',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>"Was that B or D?" → "That's Bravo, Delta."</p>
-        <p>The NATO phonetic alphabet eliminates confusion when spelling over radio, phone, or any lossy audio channel.</p>`
+        <p>The NATO phonetic alphabet eliminates confusion over radio or phone.</p>`
       },
       {
         type: 'blockquote',
@@ -1141,15 +1105,14 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'history',
         content: `<p>Adopted internationally in 1956. Words chosen because they're distinct across languages and accents. "Nine" becomes "Niner" to avoid confusion with German "Nein."</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'text-to-ascii-art': {
     targetKeyword: 'ASCII art generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<pre>
  _   _ _____ _     _     ___
 | | | | ____| |   | |   / _ \\
@@ -1171,22 +1134,19 @@ export const toolContent: Record<string, ToolContentData> = {
           </ul>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'invisible-ink-generator': {
     targetKeyword: 'invisible text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Text that's there but isn't. Zero-width characters that occupy space but render as nothing.</p>`
       },
       {
-        type: 'technical-deep-dive',
-        content: `
-          <p>Zero-width space (U+200B), zero-width joiner (U+200D), zero-width non-joiner (U+200C) — they exist for text processing but can be abused creatively.</p>
-        `
+        type: 'technical',
+        content: `<p>Zero-width space (U+200B), zero-width joiner (U+200D), zero-width non-joiner (U+200C) — they exist for text processing but can be abused creatively.</p>`
       },
       {
         type: 'checklist',
@@ -1196,24 +1156,24 @@ export const toolContent: Record<string, ToolContentData> = {
             <li>Blank usernames (where allowed)</li>
             <li>Empty-looking messages</li>
             <li>Invisible watermarking</li>
-            <li>Bypassing "required field" checks (sometimes)</li>
+            <li>Bypassing "required field" checks</li>
           </ul>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'glitch-text-generator': {
     targetKeyword: 'glitch text generator',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>E̶R̷R̸O̵R̴</p>
         <p>Zalgo's cleaner cousin. Controlled distortion, cyberpunk vibes, still readable.</p>`
       },
       {
-        type: 'comparison',
+        type: 'table',
+        heading: 'Glitch vs Zalgo',
         content: `
           <table>
             <tr><th>Glitch</th><th>Zalgo</th></tr>
@@ -1223,19 +1183,18 @@ export const toolContent: Record<string, ToolContentData> = {
           </table>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   // ============================================
-  // ANALYSIS & UTILITY TOOLS (10 tools + extras)
+  // ANALYSIS & UTILITY TOOLS
   // ============================================
 
   'word-counter': {
     targetKeyword: 'word counter',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>"How many words is this?" The question behind every essay, blog post, and tweet.</p>`
       },
       {
@@ -1251,17 +1210,15 @@ export const toolContent: Record<string, ToolContentData> = {
           </table>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'line-counter-tool': {
     targetKeyword: 'line counter',
     sections: [
       {
-        type: 'prose',
-        content: `<p>wc -l for people who don't want a terminal.</p>
-        <p>Total lines, empty lines, lines with content. Simple.</p>`
+        type: 'intro',
+        content: `<p>wc -l for people who don't want a terminal.</p>`
       },
       {
         type: 'use-case-story',
@@ -1271,16 +1228,15 @@ export const toolContent: Record<string, ToolContentData> = {
           <p><strong>Logs:</strong> "How many entries to parse?"</p>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'readability-score-checker': {
     targetKeyword: 'readability score checker',
     sections: [
       {
-        type: 'prose',
-        content: `<p>Is your writing too complex? Readability formulas answer that with math — syllable counts, sentence length, word complexity.</p>`
+        type: 'intro',
+        content: `<p>Is your writing too complex? Readability formulas answer that with math.</p>`
       },
       {
         type: 'table',
@@ -1298,15 +1254,14 @@ export const toolContent: Record<string, ToolContentData> = {
         type: 'blockquote',
         content: `<blockquote>Hemingway wrote at 4th-grade level. Academic papers hit 12+. Neither is wrong — different audiences.</blockquote>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'keyword-density-checker': {
     targetKeyword: 'keyword density checker',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Keyword density mattered more in 2008. Google's smarter now. But density still tells you: are you actually talking about your topic?</p>`
       },
       {
@@ -1324,18 +1279,17 @@ export const toolContent: Record<string, ToolContentData> = {
       },
       {
         type: 'tips',
-        content: `<p>More important: use variations and synonyms. "Running shoes" should also mention "sneakers," "athletic footwear," "jogging."</p>`
+        content: `<p>More important than density: use variations and synonyms. "Running shoes" should also mention "sneakers," "athletic footwear," "jogging."</p>`
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'text-difference-checker': {
     targetKeyword: 'text diff tool',
     sections: [
       {
-        type: 'prose',
-        content: `<p>Two versions. What changed? Green = added. Red = removed. Simple.</p>`
+        type: 'intro',
+        content: `<p>Two versions. What changed? Green = added. Red = removed.</p>`
       },
       {
         type: 'use-case-story',
@@ -1344,15 +1298,14 @@ export const toolContent: Record<string, ToolContentData> = {
           <p>Contract versions, essay drafts, code changes — paste both, see differences.</p>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'remove-punctuation-tool': {
     targetKeyword: 'remove punctuation',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Periods, commas, quotes — sometimes you just need raw words.</p>`
       },
       {
@@ -1367,19 +1320,18 @@ export const toolContent: Record<string, ToolContentData> = {
           </ul>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'find-and-replace-tool': {
     targetKeyword: 'find and replace',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Ctrl+H for the web. Find text, replace everywhere, done.</p>`
       },
       {
-        type: 'technical-deep-dive',
+        type: 'technical',
         heading: 'Regex Mode',
         content: `
           <p>Regular expressions let you match patterns:</p>
@@ -1390,15 +1342,14 @@ export const toolContent: Record<string, ToolContentData> = {
           </table>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'text-extractor-regex': {
     targetKeyword: 'regex text extractor',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Define a pattern. Extract every match. Regex is cryptic but powerful.</p>`
       },
       {
@@ -1413,15 +1364,14 @@ export const toolContent: Record<string, ToolContentData> = {
           </table>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'list-randomizer': {
     targetKeyword: 'list randomizer',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>Paste list. Shuffle. Done.</p>
         <p>Fisher-Yates algorithm — every arrangement equally likely.</p>`
       },
@@ -1437,15 +1387,14 @@ export const toolContent: Record<string, ToolContentData> = {
           </ul>
         `
       }
-    ],
-    howToUse: null
+    ]
   },
 
   'text-to-slug-converter': {
     targetKeyword: 'text to slug converter',
     sections: [
       {
-        type: 'prose',
+        type: 'intro',
         content: `<p>"My Blog Post Title!" → "my-blog-post-title"</p>
         <p>URL-friendly text: lowercase, hyphens for spaces, no special characters.</p>`
       },
@@ -1454,8 +1403,172 @@ export const toolContent: Record<string, ToolContentData> = {
         heading: 'SEO Tip',
         content: `<p>Keep slugs short: "best-running-shoes-2024" beats "this-is-my-article-about-running-shoes-that-i-wrote"</p>`
       }
-    ],
-    howToUse: null
+    ]
+  },
+
+  'morse-code-translator': {
+    targetKeyword: 'morse code translator',
+    sections: [
+      {
+        type: 'intro',
+        content: `<p>.... . .-.. .-.. --- = HELLO</p>
+        <p>Samuel Morse's 1830s invention still works. Flashlights, ship horns, radio, tapping on walls.</p>`
+      },
+      {
+        type: 'history',
+        heading: 'Still Relevant',
+        content: `<p>SOS (··· --- ···) is still the international distress signal. Pilots learn it. Ships use it. It works when nothing else does — any method of making long and short signals.</p>`
+      },
+      {
+        type: 'table',
+        heading: 'The Code',
+        content: `
+          <table>
+            <tr><th>Letter</th><th>Code</th><th>Letter</th><th>Code</th></tr>
+            <tr><td>A</td><td>.-</td><td>N</td><td>-.</td></tr>
+            <tr><td>E</td><td>.</td><td>T</td><td>-</td></tr>
+            <tr><td>S</td><td>...</td><td>O</td><td>---</td></tr>
+          </table>
+        `
+      }
+    ]
+  },
+
+  'binary-to-text-converter': {
+    targetKeyword: 'binary to text converter',
+    sections: [
+      {
+        type: 'intro',
+        content: `<p>01001000 01101001 = "Hi"</p>
+        <p>Every character is 8 bits (one byte). ASCII defines which number means what.</p>`
+      },
+      {
+        type: 'technical',
+        heading: 'How It Works',
+        content: `<p>H = 72 in decimal = 01001000 in binary. Each position is a power of 2. The encoding is ASCII (or UTF-8 for modern text).</p>`
+      }
+    ]
+  },
+
+  'text-to-binary-converter': {
+    targetKeyword: 'text to binary converter',
+    sections: [
+      {
+        type: 'intro',
+        content: `<p>"Hi" = 01001000 01101001</p>
+        <p>See your text as the computer sees it: ones and zeros.</p>`
+      },
+      {
+        type: 'use-case-story',
+        content: `
+          <p>Learning binary? This shows the conversion clearly.</p>
+          <p>Making geeky decorations? Binary text is aesthetic.</p>
+          <p>Teaching computers? Start here.</p>
+        `
+      }
+    ]
+  },
+
+  'lorem-ipsum-generator': {
+    targetKeyword: 'lorem ipsum generator',
+    sections: [
+      {
+        type: 'intro',
+        content: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Placeholder text that designers have used since the 1500s. Seriously.</p>`
+      },
+      {
+        type: 'history',
+        heading: 'Origin',
+        content: `<p>It's scrambled Latin from Cicero's "de Finibus Bonorum et Malorum" (45 BC). A printer scrambled it in the 1500s for type specimens. It stuck because it looks like real text without being distracting.</p>`
+      },
+      {
+        type: 'comparison',
+        heading: 'Options',
+        content: `
+          <ul>
+            <li><strong>Paragraphs:</strong> For body text mockups</li>
+            <li><strong>Sentences:</strong> For shorter blocks</li>
+            <li><strong>Words:</strong> For precise length control</li>
+          </ul>
+        `
+      }
+    ]
+  },
+
+  'random-string-generator': {
+    targetKeyword: 'random string generator',
+    sections: [
+      {
+        type: 'intro',
+        content: `<p>Need a random string? Pick length, pick characters, generate.</p>`
+      },
+      {
+        type: 'table',
+        heading: 'Character Sets',
+        content: `
+          <table>
+            <tr><th>Set</th><th>Characters</th><th>Use</th></tr>
+            <tr><td>Alphanumeric</td><td>A-Z, a-z, 0-9</td><td>IDs, tokens</td></tr>
+            <tr><td>Hex</td><td>0-9, A-F</td><td>Colors, hashes</td></tr>
+            <tr><td>All printable</td><td>Everything</td><td>Passwords</td></tr>
+          </table>
+        `
+      },
+      {
+        type: 'warning',
+        content: `<p>For security-critical randomness (passwords, tokens), use a cryptographically secure generator. This tool uses Math.random() — fine for testing, not for security.</p>`
+      }
+    ]
+  },
+
+  'number-to-words-converter': {
+    targetKeyword: 'number to words converter',
+    sections: [
+      {
+        type: 'intro',
+        content: `<p>1234 → "one thousand two hundred thirty-four"</p>
+        <p>For checks, legal documents, formal writing.</p>`
+      },
+      {
+        type: 'tips',
+        heading: 'Why This Exists',
+        content: `
+          <ul>
+            <li>Checks require written amounts</li>
+            <li>Legal contracts spell out numbers</li>
+            <li>Prevents tampering ("$100" becomes "$1,000" easily)</li>
+          </ul>
+        `
+      }
+    ]
+  },
+
+  'roman-numeral-converter': {
+    targetKeyword: 'roman numeral converter',
+    sections: [
+      {
+        type: 'intro',
+        content: `<p>2024 → MMXXIV</p>
+        <p>Super Bowl numbers, movie sequels, clock faces, and pretentious outlines.</p>`
+      },
+      {
+        type: 'table',
+        heading: 'The Numerals',
+        content: `
+          <table>
+            <tr><th>Roman</th><th>Value</th></tr>
+            <tr><td>I</td><td>1</td></tr>
+            <tr><td>V</td><td>5</td></tr>
+            <tr><td>X</td><td>10</td></tr>
+            <tr><td>L</td><td>50</td></tr>
+            <tr><td>C</td><td>100</td></tr>
+            <tr><td>D</td><td>500</td></tr>
+            <tr><td>M</td><td>1000</td></tr>
+          </table>
+        `
+      }
+    ]
   }
 
 };
