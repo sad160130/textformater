@@ -310,9 +310,9 @@ function simpleMd5(string: string): string {
   }
 
   function convertToWordArray(string: string): number[] {
-    let messageLength = string.length;
-    let numberOfWords = (((messageLength + 8) - ((messageLength + 8) % 64)) / 64 + 1) * 16;
-    let wordArray = new Array(numberOfWords - 1);
+    const messageLength = string.length;
+    const numberOfWords = (((messageLength + 8) - ((messageLength + 8) % 64)) / 64 + 1) * 16;
+    const wordArray = new Array(numberOfWords - 1);
     let wordCount;
     let bytePosition = 0;
     let byteCount = 0;
